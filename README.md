@@ -19,6 +19,9 @@ Text with links using [Vagrant] and [Puppet].
 * Clone this project:
 
         $ git clone https://github.com/kikitux/vagrant-oracle.git
+        
+* Download this [project]
+
 
 * Download [Text]. Place the file
   `text` in the directory `text` of this project.
@@ -35,3 +38,5 @@ Sometimes installation of domain fails at the first time. In that case run insta
 [Puppet]: http://puppetlabs.com/
 
 [Text]: http://link/
+
+[project]: https://github.com/kikitux/vagrant-oracle/archive/master.zip
