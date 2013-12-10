@@ -1,0 +1,51 @@
+{
+    "variables": {
+        "ssh_name": "root",
+        "ssh_pass": "root",
+        "hostname": "oracle65-packer",
+        "yum":      "http://192.168.56.1/stage/repo/OracleLinux/OL6/latest/x86_64"
+    },
+
+    "builders": [{
+        "type": "virtualbox",
+        "guest_os_type": "Oracle_64",
+        "guest_additions_url": "S:/linux_x86-64/iso/VBoxGuestAdditions_4.3.4.iso",
+        "guest_additions_sha256": "f120793fa35050a8280eacf9c930cf8d9b88795161520f6515c0cc5edda2fe8a",
+        "guest_additions_path": "VBoxGuestAdditions_4.3.4.iso",
+
+        "vboxmanage": [
+            ["modifyvm", "{{.Name}}", "--vram", "32"],
+            ["modifyvm", "{{.Name}}", "--memory", "2048"]
+        ],
+
+	"hard_drive_interface" : "sata",
+        "disk_size" : 32000,
+
+	"headless" : 0,
+
+        "iso_url": "S:/linux_x86-64/iso/OracleLinux-R6-U5-Server-x86_64-dvd-btrfs-uek3.iso",
+        "iso_checksum": "70f55b8b853eac34e43feaa21db553a1",
+        "iso_checksum_type": "md5",
+
+        "http_directory" : "oracle65_http",
+        "http_port_min" : 8080,
+        "http_port_max" : 8080,
+
+        "ssh_username": "{{user `ssh_name`}}",
+        "ssh_password": "{{user `ssh_pass`}}",
+        "ssh_wait_timeout": "20m",
+
+        "shutdown_command": "poweroff",
+        "shutdown_timeout": "30m",
+
+	"boot_wait": "5s",
+        "boot_command" : [
+            "<tab>",
+            " text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
+            "HOSTNAME={{user `hostname`}} ",
+            "YUM={{user `yum`}} ",
+            "<enter>"
+        ]
+    }],
+    "post-processors": ["vagrant"]
+}
