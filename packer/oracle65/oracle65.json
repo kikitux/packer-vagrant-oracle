@@ -2,8 +2,8 @@
     "variables": {
         "ssh_name": "root",
         "ssh_pass": "root",
-        "hostname": "oracle65",
-        "yum":      ""
+        "hostname": "oracle65-packer",
+        "yum":      "http://192.168.56.1/stage/repo/OracleLinux/OL6/latest/x86_64"
     },
 
     "builders": [{
