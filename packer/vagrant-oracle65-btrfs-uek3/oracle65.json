@@ -41,7 +41,7 @@
         "ssh_password": "{{user `ssh_pass`}}",
         "ssh_wait_timeout": "20m",
 
-        "shutdown_command": "poweroff",
+        "shutdown_command": "shutdown -h now",
         "shutdown_timeout": "30m",
 
 	"boot_wait": "5s",
