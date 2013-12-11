@@ -29,7 +29,7 @@ For custom build:
 * [Packer] installed
 * [Vagrant] installed
 * [VirtualBox] installed
-* [OracleLinux ISO] available
+* OracleLinux ISO available
 
 ## Installation
 
@@ -52,27 +52,27 @@ For the impatient one, please skip to Vagrant section to get a environment up an
 
 ### Vagrant
 
-1. In order to have a quick environment, I have share some [vagrant files in dropbox]
+In order to have a quick environment, I have share some [vagrant files in dropbox]
 
 - Download any of the <name>.box
 
 - Add the box into vagrant with 
 
-	$ vagrant box add oracle65 </path/to/the/downloaded/file>
+		$ vagrant box add oracle65 </path/to/the/downloaded/file>
 
 - Verify the machine was imported correctly
 
-	$ vagrant box list
+		$ vagrant box list
 
 - In a new directory, intialize the image
 
-	$ vagrant init oracle65
+		$ vagrant init oracle65
 
 - Run `vagrant up` from the base directory of this project. It takes a while..
 
 - Ready to use
 
-2. Customization the `Vagrantfile`
+* Customization the `Vagrantfile`
 
 
 
