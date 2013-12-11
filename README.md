@@ -31,7 +31,7 @@ For custom build:
 * [VirtualBox] installed
 * OracleLinux ISO available
 
-## Installation
+# Installation
 
 * Clone this project:
 
@@ -40,19 +40,19 @@ For custom build:
 * Or download this [project] as zip file
 
 
-## Getting Started
+# Getting Started
 
 For the impatient one, please skip to Vagrant section to get a environment up and running in no time.
 
-### Oracle Linux ISO files
+## Oracle Linux ISO files
 
 [ol iso in dropbox]
 
-### Packer
+## Packer
 
-### Vagrant
+## Vagrant
 
-In order to have a quick environment, I have share some [vagrant files in dropbox]
+###In order to have a quick environment, I have share some [vagrant files in dropbox]
 
 - Download any of the <name>.box
 
@@ -72,8 +72,8 @@ In order to have a quick environment, I have share some [vagrant files in dropbo
 
 - Ready to use
 
-* Customization the `Vagrantfile`
 
+###Customization the `Vagrantfile`
 
 
 ## Troubleshooting
