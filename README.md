@@ -52,7 +52,9 @@ For the impatient one, please skip to Vagrant section to get a environment up an
 
 ## Vagrant
 
-###In order to have a quick environment, I have share some [vagrant files in dropbox]
+### Short version, quick start
+
+In order to have a quick environment, I have share some [vagrant files in dropbox]
 
 - Download any of the <name>.box
 
@@ -76,7 +78,9 @@ After the vagrant box have been imported and initialized, you will have a workin
 
 Example of the import of the machine with 3 disks.
 
-!(oracle65-3disks)[https://github.com/kikitux/packer-vagrant-oracle/raw/master/vagrant/screenshots/oracle65-3disks.jpg]
+![oracle65-3disks](https://github.com/kikitux/packer-vagrant-oracle/raw/master/vagrant/screenshots/oracle65-3disks.jpg)
+
+![oracle65-3disks](/vagrant/screenshots/oracle65-3disks.jpg)
 
 
 ###Customization of the `Vagrantfile`
