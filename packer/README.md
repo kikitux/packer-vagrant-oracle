@@ -1,16 +1,5 @@
 ## Packer files
 
-### vagrant-oracle65-btrfs-uek3 
-
-A template to create a oracle linux 6.5 guest, using virtualbox, btrfs as root filesystem and kernel UEK3.
-
-On the following path `vagrant-oracle65-btrfs-uek3/` you will find 2 files.
-
-These 2 files are basic component of a packer template
-
-		oracle65.json
-		oracle65_http/ks.cfg
-
 ### Basics of packer
 
 I will explain the basic of packer.
@@ -31,7 +20,6 @@ As post-installation (os perspective), some task will be performed
 
 All this done automatically from packer with just 1 command
 
-
 ### Basics of vagrant
 
 Once the box have been created by packer, or you have just got a box file from any source, you can:
@@ -41,6 +29,16 @@ Once the box have been created by packer, or you have just got a box file from a
 * repackage the box template
 * package a virtual guest
 
+### vagrant-oracle65-btrfs-uek3 
+
+A template to create a oracle linux 6.5 guest, using virtualbox, btrfs as root filesystem and kernel UEK3.
+
+On the following path `vagrant-oracle65-btrfs-uek3/` you will find 2 files.
+
+These 2 files are basic component of a packer template
+
+		oracle65.json
+		oracle65_http/ks.cfg
 
 ##This is a detailed step by step play, of what will be done using these 2 small files in this project:
 
