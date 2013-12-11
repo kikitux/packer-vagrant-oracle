@@ -1,6 +1,8 @@
 ## Packer files
 
-### A template to create a oracle linux 6.5, using virtualbox, btrfs as root filesystem and kernel UEK3.
+### vagrant-oracle65-btrfs-uek3 
+
+A template to create a oracle linux 6.5 guest, using virtualbox, btrfs as root filesystem and kernel UEK3.
 
 On the following path `vagrant-oracle65-btrfs-uek3/` you will find 2 files.
 
