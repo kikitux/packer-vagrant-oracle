@@ -2,8 +2,10 @@
     "variables": {
         "ssh_name": "root",
         "ssh_pass": "root",
-        "hostname": "oracle65-packer",
-        "yum":      "http://192.168.56.1/stage/repo/OracleLinux/OL6/latest/x86_64"
+        "hostname": "vagrant-oracle65",
+        "swapsize": "6000",
+        "rootfs"  : "btrfs",
+        "yum"     : "http://192.168.56.1/stage/repo/OracleLinux/OL6/latest/x86_64"
     },
 
     "builders": [{
@@ -14,12 +16,16 @@
         "guest_additions_path": "VBoxGuestAdditions_4.3.4.iso",
 
         "vboxmanage": [
-            ["modifyvm", "{{.Name}}", "--vram", "32"],
-            ["modifyvm", "{{.Name}}", "--memory", "2048"]
+           ["modifyvm", "{{.Name}}", "--vram", "32"],
+           ["modifyvm", "{{.Name}}", "--memory", "2048"],
+           ["createhd", "--filename", "output-virtualbox/u01.vdi", "--size", "32000", "--format", "VDI", "--variant", "Standard"],
+           ["storageattach", "{{.Name}}", "--storagectl", "SATA Controller", "--port", "1", "--device", "0", "--type", "hdd", "--medium", "output-virtualbox/u01.vdi"],
+           ["createhd", "--filename", "output-virtualbox/u02.vdi", "--size", "20000", "--format", "VDI", "--variant", "Standard"],
+           ["storageattach", "{{.Name}}", "--storagectl", "SATA Controller", "--port", "2", "--device", "0", "--type", "hdd", "--medium", "output-virtualbox/u02.vdi"]
         ],
 
 	"hard_drive_interface" : "sata",
-        "disk_size" : 32000,
+        "disk_size" : 16000,
 
 	"headless" : 0,
 
@@ -43,9 +49,35 @@
             "<tab>",
             " text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
             "HOSTNAME={{user `hostname`}} ",
+            "SWAPSIZE={{user `swapsize`}} ",
+            "ROOTFS={{user `rootfs`}} ",
             "YUM={{user `yum`}} ",
             "<enter>"
         ]
     }],
+
+  "provisioners"             : [{
+    "type": "shell",
+    "execute_command": "sh '{{ .Path }}'",
+    "inline": [
+      "mkdir -p /media/dvd",
+      "mount -o loop VBoxGuestAdditions*.iso /media/dvd",
+      "sh /media/dvd/VBoxLinuxAdditions.run",
+      "umount /media/dvd",
+      "useradd vagrant",
+      "cp /etc/sudoers /etc/sudoers.orig",
+      "sed -i -e '/Defaults    requiretty/aDefaults:%vagrant !requiretty' /etc/sudoers",
+      "sed -i -e '/# %wheel\tALL=(ALL)\tNOPASSWD: ALL/a %vagrant\tALL=(ALL)\tNOPASSWD: ALL' /etc/sudoers",
+      "mkdir ~vagrant/.ssh",
+      "chmod 700 ~vagrant/.ssh",
+      "echo 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key' > ~vagrant/.ssh/authorized_keys",
+      "chmod 600 ~vagrant/.ssh/authorized_keys",
+      "chown -R vagrant: ~vagrant/.ssh",
+      "cp /etc/ssh/sshd_config /etc/ssh/sshd_config.ori",
+      "sed -i -e '/#UseDNS yes/a UseDNS no' /etc/ssh/sshd_config"
+    ]
+  }],
+
+
     "post-processors": ["vagrant"]
 }
