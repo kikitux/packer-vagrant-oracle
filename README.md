@@ -79,7 +79,7 @@ Example of the import of the machine with 3 disks.
 !(oracle65-3disks)[https://github.com/kikitux/packer-vagrant-oracle/raw/master/vagrant/screenshots/oracle65-3disks.jpg]
 
 
-###Customization the `Vagrantfile`
+###Customization of the `Vagrantfile`
 
 
 ## Troubleshooting
