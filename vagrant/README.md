@@ -24,8 +24,7 @@ After the vagrant box have been imported and initialized, you will have a workin
 
 Example of the import of the machine with 3 disks.
 
-
-![oracle65-3disks](/vagrant/screenshots/oracle65-3disks.jpg)
+![oracle65-3disks](screenshots/oracle65-3disks.jpg)
 
 ### Verbose output
 
