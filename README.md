@@ -82,6 +82,7 @@ Example of the import of the machine with 3 disks.
 
 ![oracle65-3disks](/vagrant/screenshots/oracle65-3disks.jpg)
 
+![oracle65-3disks](/vagrant/screenshots/oracle65-3disks.jpg?raw=true)
 
 ###Customization of the `Vagrantfile`
 
