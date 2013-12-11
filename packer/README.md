@@ -105,8 +105,3 @@ todo
 		* as result of this, a box file will be created.
 
 
-
-## Files
-
-![files](<script src="https://gist.github.com/kikitux/7904763.js"></script>)
-
