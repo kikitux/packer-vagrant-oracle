@@ -1,14 +1,13 @@
 #packer-vagrant-oracle
-==============
 
 A list of Packer and Vagrant files for oracle products.
 
 This is work in progress, and I will be updating this page.
 
 
-## Why YAPOV page?
+## Why this project?
 
-This is a Yet Abother Packer or Vagrant page.
+This is a Yet Another Packer or Vagrant page.
 
 After checking around what's available, just found examples and machines related to other EL or debian/ubuntu linux.
 
@@ -78,11 +77,9 @@ After the vagrant box have been imported and initialized, you will have a workin
 
 Example of the import of the machine with 3 disks.
 
-![oracle65-3disks](https://github.com/kikitux/packer-vagrant-oracle/raw/master/vagrant/screenshots/oracle65-3disks.jpg)
 
 ![oracle65-3disks](/vagrant/screenshots/oracle65-3disks.jpg)
 
-![oracle65-3disks](/vagrant/screenshots/oracle65-3disks.jpg?raw=true)
 
 ###Customization of the `Vagrantfile`
 
