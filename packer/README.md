@@ -1,6 +1,6 @@
-# Packer files
+## Packer files
 
-## A template to create a oracle linux 6.5, using virtualbox, btrfs as root filesystem and kernel UEK3.
+### A template to create a oracle linux 6.5, using virtualbox, btrfs as root filesystem and kernel UEK3.
 
 On the following path `vagrant-oracle65-btrfs-uek3/` you will find 2 files.
 
@@ -9,7 +9,7 @@ These 2 files are basic component of a packer template
 		oracle65.json
 		oracle65_http/ks.cfg
 
-## Basics of packer
+### Basics of packer
 
 I will explain the basic of packer.
 
@@ -30,7 +30,7 @@ As post-installation (os perspective), some task will be performed
 All this done automatically from packer with just 1 command
 
 
-## Basics of vagrant
+### Basics of vagrant
 
 Once the box have been created by packer, or you have just got a box file from any source, you can:
 
@@ -39,10 +39,14 @@ Once the box have been created by packer, or you have just got a box file from a
 * repackage the box template
 * package a virtual guest
 
-# A working example
 
 ##This is a detailed step by step play, of what will be done using these 2 small files in this project:
 
+### Kickstart file explanation
+
+todo
+
+### json template file
 
 ###Variables defined:
 
@@ -51,7 +55,7 @@ Once the box have been created by packer, or you have just got a box file from a
 * Swap size of 6000MB (6G)
 * Root Filesystem (/) with btrfs
 
-###Template jason file, main body:
+###Template json file, main body:
 
 * A Yum repository will be used during the installation, so the installer will fetch updated RPMs from here.
 * Virtualbox will be used as builder (in packer concepts)
@@ -100,107 +104,9 @@ Once the box have been created by packer, or you have just got a box file from a
 
 		* as result of this, a box file will be created.
 
-### json template file
-
-todo
 
 
-## Kickstart file explanation
+## Files
 
-todo
+![files](<script src="https://gist.github.com/kikitux/7904763.js"></script>)
 
-install
-cdrom
-lang en_US.UTF-8
-keyboard us
-firewall --disabled
-firstboot --disable
-network --onboot yes --device eth0 --bootproto dhcp --noipv6
-authconfig --enableshadow --passalgo=sha512
-rootpw root
-selinux --disabled
-bootloader --location=mbr --driveorder=sda --append="crashkernel=auto rhgb quiet"
-timezone --utc Pacific/Auckland
-reboot
-# The following is the partition information you requested
-# Note that any partitions you deleted are not expressed
-# here so unless you clear all partitions first, this is
-# not guaranteed to work
-zerombr yes
-clearpart --drives=sda --all --initlabel 
-ignoredisk --only-use=sda
-
-part /boot --fstype=ext4 --size=500
-
-%include /tmp/hostname.ks
-%include /tmp/repo.ks
-%include /tmp/swapsize.ks
-%include /tmp/rootfs.ks
-
-%pre
-#!/bin/sh
-for x in `cat /proc/cmdline`; do
-        case $x in HOSTNAME*)
-	        eval $x
-		echo "network --device eth0 --bootproto dhcp --hostname ${HOSTNAME}" > /tmp/hostname.ks
-		echo "${HOSTNAME}" >> /tmp/variables
-                ;;
-	esac;
-        case $x in SWAPSIZE*)
-	        eval $x
-		if [ $x ]; then
-                  echo "part swap --size=${SWAPSIZE}" > /tmp/swapsize.ks
-		  echo "${SWAPSIZE}" >> /tmp/variables
-		else
-                  echo "part swap --size=16000" > /tmp/swapsize.ks
-		fi
-                ;;
-	esac;
-        case $x in ROOTFS*)
-	        eval $x
-		if [ $x ]; then
-                  echo "part / --fstype=${ROOTFS} --grow --size=200" > /tmp/rootfs.ks
-		  echo "${ROOTFS}" >> /tmp/variables
-		else
-                  echo "part / --fstype=ext4 --grow --size=200" > /tmp/rootfs.ks
-		fi
-                ;;
-	esac;
-        case $x in YUM*)
-	        eval $x
-		if [ $x ]; then
-		  echo "repo --name=\"ol6_latest\"  --baseurl=${YUM} --cost=1000" > /tmp/repo.ks
-		  printf "[ol6_latest]\nname=\"ol6_latest\"\nbaseurl=${YUM}\nenabled=1\ngpgcheck=0\n" >> /tmp/ol6.repo
-		  echo "${YUM}" >> /tmp/variables
-		fi
-                ;;
-	esac;
-done
-touch /tmp/hostname.ks
-touch /tmp/swapsize.ks
-touch /tmp/rootfs.ks
-touch /tmp/repo.ks
-touch /tmp/ol6.repo
-touch /tmp/variables
-%end
-%post --nochroot
-#!/bin/sh
-[ -f /tmp/ol6.repo ] && cp /tmp/ol6.repo /mnt/sysimage/etc/yum.repos.d/local-yum-ol6.repo
-[ -f /mnt/sysimage/etc/yum.repos.d/public-yum-ol6.repo ] && > /mnt/sysimage/etc/yum.repos.d/public-yum-ol6.repo
-%end
-
-%packages --nobase
-@core
-@server-policy
-man
-yum-plugin-fs-snapshot
-yum-plugin-security
-openssh-clients
-make
-gcc
-btrfs-progs
-wget
-unzip
-kernel-uek-devel
-kernel-uek-headers
-%end
