@@ -72,6 +72,12 @@ For the impatient one, please skip to Vagrant section to get a environment up an
 
 - Ready to use
 
+After the vagrant box have been imported and initialized, you will have a working virtual machine.
+
+Example of the import of the machine with 3 disks.
+
+!(oracle65-3disks)[https://github.com/kikitux/packer-vagrant-oracle/raw/master/vagrant/screenshots/oracle65-3disks.jpg]
+
 
 ###Customization the `Vagrantfile`
 
