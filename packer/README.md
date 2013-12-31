@@ -1,5 +1,20 @@
 ## Packer files
 
+###
+
+These packer files require 2 Oracle Linux isos to be downloaded and should be on the same folder of these files
+
+To download the isos, I suggest check the mirror on the [Oracle Linux Wiki](https://wikis.oracle.com/display/oraclelinux/Downloading+Oracle+Linux)
+
+		x86_64-boot-uek.iso
+		OracleLinux-R6-U5-Server-x86_64-dvd.iso
+
+The first iso `x86_64-boot-uek.iso` is a modified boot.iso that include the `install.img` file that allow install the root filesystem `/` as btrfs.
+
+The second iso `OracleLinux-R6-U5-Server-x86_64-dvd.iso` is the standard Oracle Linux 6.5 x86_64 iso.
+
+
+
 ### Basics of packer
 
 I will explain the basic of packer.
