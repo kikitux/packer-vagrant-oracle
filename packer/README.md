@@ -1,5 +1,3 @@
-## Packer files
-
 ###
 
 These packer files require 2 Oracle Linux isos to be downloaded and should be on the same folder of these files
@@ -17,10 +15,8 @@ The second iso `OracleLinux-R6-U5-Server-x86_64-dvd.iso` is the standard Oracle 
 
 ### Basics of packer
 
-I will explain the basic of packer.
-
 * a json template is created
-* packer is invoqued to build a machine with all the information included in the json template file
+* packer is called to build a machine with all the information included in the json template file
 
 As part of the build, as we are using Oracle Linux (same apply for other EL linux), we will be using a kickstart file that be used to automate the installation
 
@@ -44,16 +40,17 @@ Once the box have been created by packer, or you have just got a box file from a
 * repackage the box template
 * package a virtual guest
 
-### vagrant-oracle65-btrfs-uek3 
+### Packer files
 
-A template to create a oracle linux 6.5 guest, using virtualbox, btrfs as root filesystem and kernel UEK3.
+		packer-oracle65-btrfs.json
+		packer-vagrant-oracle65-btrfs-4disk.json
+		packer-vagrant-oracle65-btrfs.json
 
-On the following path `vagrant-oracle65-btrfs-uek3/` you will find 2 files.
+A packer template file to create a oracle linux 6.5 guest, using virtualbox, btrfs as root filesystem and kernel UEK3.
 
-These 2 files are basic component of a packer template
-
-		oracle65.json
-		oracle65_http/ks.cfg
+`packer-oracle65-btrfs.json`			Packer file, that will create a guest without vagrant integration.
+`packer-vagrant-oracle65-btrfs-4disk.json`	Packer file, that will create a guest, with vagrant integration and 4 disks in total.
+`packer-vagrant-oracle65-btrfs.json`		Packer file, that will create a guest, with vagrant integration and 2 disks in total.
 
 ##This is a detailed step by step play, of what will be done using these 2 small files in this project:
 
@@ -65,10 +62,21 @@ todo
 
 ###Variables defined:
 
-* User root, password root
-* Hostname will be vagrant-oracle65
-* Swap size of 6000MB (6G)
-* Root Filesystem (/) with btrfs
+$ head -n 17 packer/packer-vagrant-oracle65-btrfs.json
+{
+    "variables": {
+        "ssh_name": "root",
+        "ssh_pass": "root",
+        "hostname": "vagrant-oracle65",
+        "outputfile": "oracle65.box",
+        "rootfs"  : "btrfs",
+        "swapsize": "6000",
+        "harddisk2_size": "32000",
+        "yumurl"     : "http://192.168.56.1/stage/repo/OracleLinux/OL6/latest/x86_64",
+        "repofile"   : "http://192.168.56.1/stage/vbox-yum-ol6.repo",
+        "compression" : 6,
+        "vagrantfile": "Vagrantfile"
+    },
 
 ###Template json file, main body:
 
@@ -79,16 +87,15 @@ todo
 * Vbox Manage will be used to perform some tasks on the virtual machine
 
 		* Video RAM will be adjusted to 32MB
-		* Memory of the Virtual Guest will be adjusted to 2GB
-		* A 2nd hard disk will be created, 32GB
+		* Memory of the Virtual Guest will be adjusted
+		* A 2nd hard disk will be created
 		* The 2nd hard disk will be connected to the virual machine
-		* A 3rd hard disk will be created, 20GB
+		* A 3rd hard disk will be created
 		* The 3rd hard disk will be connected to the virual machine
 
 * The main disk will be created
 
 		* Using a SATA interface
-		* With a size of 16GB
 
 * Headless won't be enforced (a virtualbox console will show up to monitor the installation)
 * Oracle Linux iso will be used from a given local path (versus a web url)
