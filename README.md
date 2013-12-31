@@ -51,35 +51,6 @@ For the impatient one, please skip to Vagrant section to get a environment up an
 
 ## Vagrant
 
-### Short version, quick start
-
-In order to have a quick environment, I have share some [vagrant files in dropbox]
-
-- Download any of the <name>.box
-
-- Add the box into vagrant with 
-
-		$ vagrant box add oracle65 </path/to/the/downloaded/file>
-
-- Verify the machine was imported correctly
-
-		$ vagrant box list
-
-- In a new directory, intialize the image
-
-		$ vagrant init oracle65
-
-- Run `vagrant up` from the base directory of this project. It takes a while..
-
-- Ready to use
-
-After the vagrant box have been imported and initialized, you will have a working virtual machine.
-
-Example of the import of the machine with 3 disks.
-
-
-![oracle65-3disks](/vagrant/screenshots/oracle65-3disks.jpg)
-
 
 ###Customization of the `Vagrantfile`
 
@@ -103,6 +74,5 @@ Example of the import of the machine with 3 disks.
 [ol iso in dropbox]: https://www.dropbox.com/sh/jsb3y18z4ebbowa/Z3qVA6JDC-
 
 [Text]: http://link/
-
 
 [project]: https://github.com/kikitux/packer-vagrant-oracle/archive/master.zip
