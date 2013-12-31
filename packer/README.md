@@ -52,31 +52,29 @@ A packer template file to create a oracle linux 6.5 guest, using virtualbox, btr
 `packer-vagrant-oracle65-btrfs-4disk.json`	Packer file, that will create a guest, with vagrant integration and 4 disks in total.
 `packer-vagrant-oracle65-btrfs.json`		Packer file, that will create a guest, with vagrant integration and 2 disks in total.
 
-##This is a detailed step by step play, of what will be done using these 2 small files in this project:
-
 ### Kickstart file explanation
 
 todo
 
 ### json template file
 
-###Variables defined:
+Variables defined:
 
-$ head -n 17 packer/packer-vagrant-oracle65-btrfs.json
-{
-    "variables": {
-        "ssh_name": "root",
-        "ssh_pass": "root",
-        "hostname": "vagrant-oracle65",
-        "outputfile": "oracle65.box",
-        "rootfs"  : "btrfs",
-        "swapsize": "6000",
-        "harddisk2_size": "32000",
-        "yumurl"     : "http://192.168.56.1/stage/repo/OracleLinux/OL6/latest/x86_64",
-        "repofile"   : "http://192.168.56.1/stage/vbox-yum-ol6.repo",
-        "compression" : 6,
-        "vagrantfile": "Vagrantfile"
-    },
+		$ head -n 17 packer/packer-vagrant-oracle65-btrfs.json
+		{
+		    "variables": {
+		        "ssh_name": "root",
+		        "ssh_pass": "root",
+		        "hostname": "vagrant-oracle65",
+		        "outputfile": "oracle65.box",
+		        "rootfs"  : "btrfs",
+		        "swapsize": "6000",
+		        "harddisk2_size": "32000",
+		        "yumurl"     : "http://192.168.56.1/stage/repo/OracleLinux/OL6/latest/x86_64",
+		        "repofile"   : "http://192.168.56.1/stage/vbox-yum-ol6.repo",
+		        "compression" : 6,
+		        "vagrantfile": "Vagrantfile"
+		    },
 
 ###Template json file, main body:
 
