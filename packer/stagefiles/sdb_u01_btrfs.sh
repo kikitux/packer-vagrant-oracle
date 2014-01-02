@@ -1,5 +1,10 @@
 #initialize and mount the 2nd disk only if there is no partitions
 
+# Author    :   Alvaro Miranda
+# Email     :   kikitux@gmail.com
+# Web       :   http://kikitux.net
+
+
 blkid /dev/sdb*
 if [ $? -ne 0 ]; then
   mkfs.btrfs /dev/sdb

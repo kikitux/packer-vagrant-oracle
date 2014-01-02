@@ -1,5 +1,10 @@
 #initialize and mount the 3rd disk only if there is no partitions
 
+# Author    :   Alvaro Miranda
+# Email     :   kikitux@gmail.com
+# Web       :   http://kikitux.net
+
+
 rpm -q ocfs2-tools > /dev/null
 if [ $? -ne 0 ];then
   yum -y install ocfs2-tools > /dev/null
