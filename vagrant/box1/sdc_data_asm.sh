@@ -1,3 +1,6 @@
+#install required packages
+yum install -y oracleasm-support.x86_64 parted.x86_64
+
 #configure oracleasm
 service oracleasm configure << EOF
 grid
