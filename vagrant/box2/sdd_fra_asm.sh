@@ -1,3 +1,12 @@
+#install required packages
+
+# Author    :   Alvaro Miranda
+# Email     :   kikitux@gmail.com
+# Web       :   http://kikitux.net
+
+
+yum install -y oracleasm-support.x86_64 parted.x86_64
+
 #configure oracleasm
 if [ -d /dev/oracleasm/disks ]; then
   echo "oracleasm configured"
