@@ -102,6 +102,11 @@
   {
     "type": 		"shell",
     "execute_command":	"sh ''{{ .Path }}", 
+    "script":		"stagefiles/preinstall_crs_db.sh"
+  }
+  {
+    "type": 		"shell",
+    "execute_command":	"sh ''{{ .Path }}", 
     "script":		"stagefiles/sdb_u01_btrfs.sh"
   }],
 
