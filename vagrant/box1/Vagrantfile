@@ -1,6 +1,12 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
+
+# Author    :   Alvaro Miranda
+# Email     :   kikitux@gmail.com
+# Web       :   http://kikitux.net
+
+
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
 
@@ -35,7 +41,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # information on available options.
 
     config.vm.provision :shell, :inline => "cd /etc/yum.repos.d ; > public-yum-ol6.repo ; wget http://mini.home.kikitux.net/stage/mini-yum-ol6.repo"
-    config.vm.provision :shell, :inline => "yum install -y oracle-rdbms-server-12cR1-preinstall"
+    config.vm.provision :shell, :path   => "preinstall_crs_db.sh"
     config.vm.provision :shell, :path => "sdc_u02_ocfs2.sh"
     config.vm.provision :shell, :path => "sdd_u03_ocfs2.sh"
 end
