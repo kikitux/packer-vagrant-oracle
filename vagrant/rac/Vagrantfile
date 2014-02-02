@@ -1,0 +1,168 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+# Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
+VAGRANTFILE_API_VERSION = "2"
+
+$etc_hosts_script = <<SCRIPT
+#!/bin/bash
+
+echo "overwriting /etc/hosts"
+
+cat > /etc/hosts <<EOF
+127.0.0.1     localhost.localdomain    localhost
+::1           localhost6.localdomain6  localhost6
+
+192.168.56.10 scan
+192.168.56.11 node1
+192.168.56.12 node2
+192.168.56.21 node1-vip
+192.168.56.22 node2-vip
+192.168.66.11 node1-priv1
+192.168.66.12 node2-priv1
+192.168.76.11 node1-priv2
+192.168.76.12 node2-priv2
+
+EOF
+
+SCRIPT
+
+Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+
+  # All Vagrant configuration is done here. The most common configuration
+  # options are documented and commented below. For a complete reference,
+  # please see the online documentation at vagrantup.com.
+
+  # Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "oracle65-2disk"
+
+  # The url from where the 'config.vm.box' box will be fetched
+  config.vm.box_url = "https://dl.dropbox.com/s/1929lt83h5z89dd/oracle65-2disk.box"
+
+  # stagefiles came from http://github.com/kikitux/stagefiles
+  # download the zip file and unzip
+  # or use  git clone http://github.com/kikitux/stagefiles
+
+  if File.directory?("stagefiles")
+    # our shared folder for scripts and source files
+    config.vm.synced_folder "stagefiles", "/media/stagefiles", :mount_options => ["dmode=555","fmode=444"]
+
+    #setup /etc/hosts
+    config.vm.provision :shell, :inline => $etc_hosts_script
+    #run some scripts
+    config.vm.provision :shell, :inline => "sh /media/stagefiles/os/set_repo.sh"
+    config.vm.provision :shell, :inline => "sh /media/stagefiles/os/sdb_u01_btrfs.sh"
+    config.vm.provision :shell, :inline => "sh /media/stagefiles/os/sdc_data_asm.sh"
+    config.vm.provision :shell, :inline => "sh /media/stagefiles/os/sdd_fra_asm.sh"
+    config.vm.provision :shell, :inline => "sh /media/stagefiles/db/preinstall_crs_db.sh rac"
+  end
+
+  ## Virtualbox modifications
+  ## we first setup memory and cpu
+  ## we create shared disks if they don't exists
+  ## we later attach the disk to the vms
+  ## we attach to each vm, as in the future we may want to have say 2db + 2app cluster
+  ## we can attach 2 shared disk for db to the db nodes only
+  ## and 2 other shared disks for the app
+
+  file_to_dbdisk1 = "shared1.vdi" 
+  size_file_to_dbdisk1 = 15 * 1024
+
+  file_to_dbdisk2 = "shared2.vdi"
+  size_file_to_dbdisk2 = 15 * 1024
+
+  config.vm.provider :virtualbox do |vb|
+  #   # Don't boot with headless mode
+  # vb.gui = true
+  #
+  #   # Use VBoxManage to customize the VM. For example to change memory:
+    vb.customize ["modifyvm", :id, "--memory", "5000"]
+    vb.customize ["modifyvm", :id, "--cpus", "2"]
+
+    unless File.exist?(file_to_dbdisk1)
+      vb.customize ['createhd', '--filename', file_to_dbdisk1, '--size', size_file_to_dbdisk1, '--variant', 'fixed']
+      vb.customize ['modifyhd', file_to_dbdisk1, '--type', 'shareable']
+    end
+
+    unless File.exist?(file_to_dbdisk2)
+      vb.customize ['createhd', '--filename', file_to_dbdisk2, '--size', size_file_to_dbdisk2, '--variant', 'fixed']
+      vb.customize ['modifyhd', file_to_dbdisk2, '--type', 'shareable']
+    end
+
+  end
+
+  ## IMPORTANT
+  ## node1 and node2 after this
+  ## vagrant work up to down, so node 2 goes first
+  ## so when node 1 is ready, we can configure rac and both nodes will be up
+
+  config.vm.define :node2 do |node2|
+    # Create a private network, which allows host-only access to the machine
+    # using a specific IP.
+    node2.vm.hostname = "node2"
+    node2.vm.network :private_network, ip: "192.168.56.12"
+    node2.vm.network :private_network, ip: "192.168.66.12"
+    node2.vm.network :private_network, ip: "192.168.76.12"
+    node2.vm.provider :virtualbox do |vb|
+      vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', file_to_dbdisk1]
+      vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 3, '--device', 0, '--type', 'hdd', '--medium', file_to_dbdisk2]
+    end
+  end
+
+  config.vm.define :node1 do |node1|
+    # Create a private network, which allows host-only access to the machine
+    # using a specific IP.
+    node1.vm.hostname = "node1"
+    node1.vm.network :private_network, ip: "192.168.56.11"
+    node1.vm.network :private_network, ip: "192.168.66.11"
+    node1.vm.network :private_network, ip: "192.168.76.11"
+    node1.vm.provider :virtualbox do |vb|
+      vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 2, '--device', 0, '--type', 'hdd', '--medium', file_to_dbdisk1]
+      vb.customize ['storageattach', :id, '--storagectl', 'SATA Controller', '--port', 3, '--device', 0, '--type', 'hdd', '--medium', file_to_dbdisk2]
+    end
+
+    #remove the comments if you want a full automated install of rac
+    if File.directory?("stagefiles")
+      #node1.vm.provision :shell, :inline => "sh /media/stagefiles/db/unzip.sh"
+      #node1.vm.provision :shell, :inline => "sh /media/stagefiles/db/install_crs_db.sh rac"
+    end
+
+  end
+
+  ## IMPORTANT
+  ## node1 and node2 before this
+  
+  # This will be the 5th nic, so will become eth4 in the system
+  # This network is optional, that's why is at the end
+  # so eth0 to eth3 are always the same
+
+  # If a fixed ip is required, add the line into each vm block, as:
+
+  #node1.vm.network :public_network
+  #node2.vm.network :public_network
+
+  # Create a public network, which generally matched to bridged network.
+  #default will ask what network to bridge
+  #config.vm.network :public_network
+
+
+  # OSX
+  # 1) en1: Wi-Fi (AirPort)
+  # 2) en0: Ethernet
+
+  # Windows
+
+  # Linux laptop
+  # 1) wlan0
+  # 2) eth0
+  # 3) lxcbr0
+
+  # Linux Desktop
+  # 1) eth0
+  # 2) eth1
+
+
+  # on OSX to the wifi
+  #config.vm.network :public_network, :bridge => 'en1: Wi-Fi (AirPort)'
+
+end

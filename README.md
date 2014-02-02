@@ -4,6 +4,23 @@ A list of Packer and Vagrant files for oracle products.
 
 This is work in progress, and I will be updating this page.
 
+## What's new??
+
+Feb-2014, added oracle rac made easy with Vagrant !
+
+
+Stop the cluster:
+
+	time vagrant halt
+	[node2] Attempting graceful shutdown of VM...
+	[node2] Forcing shutdown of VM...
+	[node1] Attempting graceful shutdown of VM...
+	[node1] Forcing shutdown of VM...
+
+	real	2m16.176s
+	user	0m9.571s
+	sys	0m7.766s
+
 
 ## Why this project?
 
