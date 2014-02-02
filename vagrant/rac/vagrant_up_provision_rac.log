@@ -1,414 +1,40 @@
-Bringing machine 'node2' up with 'virtualbox' provider...
-Bringing machine 'node1' up with 'virtualbox' provider...
-[node2] Importing base box 'oracle65-2disk'...
-Progress: 10%Progress: 50%Progress: 90%[node2] Matching MAC address for NAT networking...
-[node2] Setting the name of the VM...
-[node2] Clearing any previously set forwarded ports...
-[node2] Clearing any previously set network interfaces...
-[node2] Preparing network interfaces based on configuration...
-[node2] Forwarding ports...
-[node2] -- 22 => 2222 (adapter 1)
-[node2] Running 'pre-boot' VM customizations...
-[node2] Booting VM...
-[node2] Waiting for machine to boot. This may take a few minutes...
-[node2] Machine booted and ready!
-[node2] Setting hostname...
-[node2] Configuring and enabling network interfaces...
-[node2] Mounting shared folders...
-[node2] -- /vagrant
-[node2] -- /media/stagefiles
 [node2] Running provisioner: shell...
 [node2] Running: inline script
 overwriting /etc/hosts
 [node2] Running provisioner: shell...
 [node2] Running: inline script
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0101  4068  101  4068    0     0  29795      0 --:--:-- --:--:-- --:--:-- 30133
 [node2] Running provisioner: shell...
 [node2] Running: inline script
-
-WARNING! - Btrfs v0.20-rc1 IS EXPERIMENTAL
-WARNING! - see http://btrfs.wiki.kernel.org before using
-
-fs created label (null) on /dev/sdb
-	nodesize 4096 leafsize 4096 sectorsize 4096 size 31.25GB
-Btrfs v0.20-rc1
-[node2] Running provisioner: shell...
-[node2] Running: inline script
-id: grid: No such user
-user grid is required
-executing /media/stagefiles//os/grid_oracle_user.sh
-Checking groups for grid and oracle user
-verifying grid user
-id: grid: No such user
-verifying oracle user
-id: oracle: No such user
-Changing password for user oracle.
-passwd: all authentication tokens updated successfully.
-Changing password for user grid.
-passwd: all authentication tokens updated successfully.
-Loaded plugins: security
-Setting up Install Process
-Resolving Dependencies
---> Running transaction check
----> Package oracleasm-support.x86_64 0:2.1.8-1.el6 will be installed
----> Package parted.x86_64 0:2.1-21.el6 will be installed
---> Processing Dependency: libdevmapper.so.1.02(Base)(64bit) for package: parted-2.1-21.el6.x86_64
---> Processing Dependency: libdevmapper.so.1.02()(64bit) for package: parted-2.1-21.el6.x86_64
---> Running transaction check
----> Package device-mapper-libs.x86_64 0:1.02.79-8.el6 will be installed
---> Processing Dependency: device-mapper = 1.02.79-8.el6 for package: device-mapper-libs-1.02.79-8.el6.x86_64
---> Running transaction check
----> Package device-mapper.x86_64 0:1.02.79-8.el6 will be installed
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package                 Arch        Version              Repository       Size
-================================================================================
-Installing:
- oracleasm-support       x86_64      2.1.8-1.el6          ol6_latest       73 k
- parted                  x86_64      2.1-21.el6           ol6_latest      606 k
-Installing for dependencies:
- device-mapper           x86_64      1.02.79-8.el6        ol6_latest      164 k
- device-mapper-libs      x86_64      1.02.79-8.el6        ol6_latest      195 k
-
-Transaction Summary
-================================================================================
-Install       4 Package(s)
-
-Total download size: 1.0 M
-Installed size: 2.8 M
-Downloading Packages:
---------------------------------------------------------------------------------
-Total                                           3.1 MB/s | 1.0 MB     00:00     
-warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID ec551f03: NOKEY
-Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
-Importing GPG key 0xEC551F03:
- Userid : Oracle OSS group (Open Source Software group) <build@oss.oracle.com>
- Package: 6:oraclelinux-release-6Server-5.0.2.x86_64 (@anaconda-OracleLinuxServer-201311261449.x86_64/6.5)
- From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
-Running rpm_check_debug
-Running Transaction Test
-Transaction Test Succeeded
-Running Transaction
-  Installing : device-mapper-libs-1.02.79-8.el6.x86_64                      1/4 
-  Installing : device-mapper-1.02.79-8.el6.x86_64                           2/4 
-  Installing : parted-2.1-21.el6.x86_64                                     3/4 
-  Installing : oracleasm-support-2.1.8-1.el6.x86_64                         4/4 
-  Verifying  : device-mapper-1.02.79-8.el6.x86_64                           1/4 
-  Verifying  : device-mapper-libs-1.02.79-8.el6.x86_64                      2/4 
-  Verifying  : parted-2.1-21.el6.x86_64                                     3/4 
-  Verifying  : oracleasm-support-2.1.8-1.el6.x86_64                         4/4 
-
-Installed:
-  oracleasm-support.x86_64 0:2.1.8-1.el6       parted.x86_64 0:2.1-21.el6      
-
-Dependency Installed:
-  device-mapper.x86_64 0:1.02.79-8.el6                                          
-  device-mapper-libs.x86_64 0:1.02.79-8.el6                                     
-
-Complete!
-Configuring the Oracle ASM library driver.
-
-This will configure the on-boot properties of the Oracle ASM library
-driver.  The following questions will determine whether the driver is
-loaded on boot and what permissions it will have.  The current values
-will be shown in brackets ('[]').  Hitting <ENTER> without typing an
-answer will keep that current value.  Ctrl-C will abort.
-
-Default user to own the driver interface []: Default group to own the driver interface []: Start Oracle ASM library driver on boot (y/n) [n]: Scan for Oracle ASM disks on boot (y/n) [y]: Writing Oracle ASM library driver configuration: done
-Initializing the Oracle ASMLib driver: [  OK  ]
-Scanning the system for Oracle ASMLib disks: [  OK  ]
-ok: no partition on /dev/sdc
-Marking disk "data" as an ASM disk: [  OK  ]
+/dev/sdb: UUID="1f09c6f7-17d6-4d19-be0b-c9d9c4f2f621" UUID_SUB="8cf669c7-654d-4d80-aa3f-2ee0a986811b" TYPE="btrfs" 
+filesystem metadata found on sdb, ignoring
 [node2] Running provisioner: shell...
 [node2] Running: inline script
 oracleasm configured
-ok: no partition on /dev/sdd
-Marking disk "fra" as an ASM disk: [  OK  ]
+/dev/sdc1: LABEL="DATA" TYPE="oracleasm" 
+filesystem metadata found on sdc, ignoring
+[node2] Running provisioner: shell...
+[node2] Running: inline script
+oracleasm configured
+/dev/sdd1: LABEL="FRA" TYPE="oracleasm" 
+filesystem metadata found on sdd, ignoring
 [node2] Running provisioner: shell...
 [node2] Running: inline script
 installing oracle-rdbms-server-12cR1-preinstall
-package oracle-rdbms-server-12cR1-preinstall is not installed
+oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
 perl-5.10.1-136.el6.x86_64
-package yum-plugin-fs-snapshot is not installed
+yum-plugin-fs-snapshot-1.1.30-14.0.1.el6.noarch
 ocfs2-tools-1.8.0-11.el6.x86_64
-package reflink is not installed
+reflink-0.1.0-3.el6.x86_64
 btrfs-progs-0.20-1.5.git7854c8b.el6.x86_64
 parted-2.1-21.el6.x86_64
 oracleasm-support-2.1.8-1.el6.x86_64
 unzip-6.0-1.el6.x86_64
 sudo-1.8.6p3-12.el6.x86_64
-Loaded plugins: security
-Cleaning repos: ol6_UEKR3_latest ol6_UEK_latest ol6_addons ol6_latest
-Cleaning up Everything
-Loaded plugins: security
-Setting up Install Process
-Package 4:perl-5.10.1-136.el6.x86_64 already installed and latest version
-Package ocfs2-tools-1.8.0-11.el6.x86_64 already installed and latest version
-Package btrfs-progs-0.20-1.5.git7854c8b.el6.x86_64 already installed and latest version
-Package parted-2.1-21.el6.x86_64 already installed and latest version
-Package oracleasm-support-2.1.8-1.el6.x86_64 already installed and latest version
-Package unzip-6.0-1.el6.x86_64 already installed and latest version
-Package sudo-1.8.6p3-12.el6.x86_64 already installed and latest version
-Resolving Dependencies
---> Running transaction check
----> Package oracle-rdbms-server-12cR1-preinstall.x86_64 0:1.0-11.el6 will be installed
---> Processing Dependency: xorg-x11-xauth for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: xorg-x11-utils for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: sysstat for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: smartmontools for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: nfs-utils for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: libstdc++-devel for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: libaio-devel for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: libaio for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: ksh for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: gcc-c++ for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: compat-libstdc++-33 for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: compat-libcap1 for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: bind-utils for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
----> Package reflink.x86_64 0:0.1.0-3.el6 will be installed
----> Package yum-plugin-fs-snapshot.noarch 0:1.1.30-14.0.1.el6 will be installed
---> Running transaction check
----> Package bind-utils.x86_64 32:9.8.2-0.23.rc1.el6_5.1 will be installed
---> Processing Dependency: bind-libs = 32:9.8.2-0.23.rc1.el6_5.1 for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: liblwres.so.80()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: libisccfg.so.82()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: libisccc.so.80()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: libisc.so.83()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: libdns.so.81()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: libbind9.so.80()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
----> Package compat-libcap1.x86_64 0:1.10-1 will be installed
----> Package compat-libstdc++-33.x86_64 0:3.2.3-69.el6 will be installed
----> Package gcc-c++.x86_64 0:4.4.7-4.el6 will be installed
----> Package ksh.x86_64 0:20120801-10.el6 will be installed
----> Package libaio.x86_64 0:0.3.107-10.el6 will be installed
----> Package libaio-devel.x86_64 0:0.3.107-10.el6 will be installed
----> Package libstdc++-devel.x86_64 0:4.4.7-4.el6 will be installed
----> Package nfs-utils.x86_64 1:1.2.3-39.el6 will be installed
---> Processing Dependency: nfs-utils-lib >= 1.1.0-3 for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: keyutils >= 1.4-4 for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: rpcbind for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libtirpc for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libgssglue.so.1(libgssapi_CITI_2)(64bit) for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libgssglue for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libevent for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libtirpc.so.1()(64bit) for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libnfsidmap.so.0()(64bit) for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libgssglue.so.1()(64bit) for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libevent-1.4.so.2()(64bit) for package: 1:nfs-utils-1.2.3-39.el6.x86_64
----> Package smartmontools.x86_64 1:5.43-1.el6 will be installed
----> Package sysstat.x86_64 0:9.0.4-22.el6 will be installed
----> Package xorg-x11-utils.x86_64 0:7.5-6.el6 will be installed
---> Processing Dependency: libdmx.so.1()(64bit) for package: xorg-x11-utils-7.5-6.el6.x86_64
---> Processing Dependency: libXxf86misc.so.1()(64bit) for package: xorg-x11-utils-7.5-6.el6.x86_64
---> Processing Dependency: libXxf86dga.so.1()(64bit) for package: xorg-x11-utils-7.5-6.el6.x86_64
----> Package xorg-x11-xauth.x86_64 1:1.0.2-7.1.el6 will be installed
---> Processing Dependency: libXmuu.so.1()(64bit) for package: 1:xorg-x11-xauth-1.0.2-7.1.el6.x86_64
---> Running transaction check
----> Package bind-libs.x86_64 32:9.8.2-0.23.rc1.el6_5.1 will be installed
----> Package keyutils.x86_64 0:1.4-4.el6 will be installed
----> Package libXmu.x86_64 0:1.1.1-2.el6 will be installed
----> Package libXxf86dga.x86_64 0:1.1.3-2.el6 will be installed
----> Package libXxf86misc.x86_64 0:1.0.3-4.el6 will be installed
----> Package libdmx.x86_64 0:1.1.2-2.el6 will be installed
----> Package libevent.x86_64 0:1.4.13-4.el6 will be installed
----> Package libgssglue.x86_64 0:0.1-11.el6 will be installed
----> Package libtirpc.x86_64 0:0.2.1-6.el6_4 will be installed
----> Package nfs-utils-lib.x86_64 0:1.1.5-6.el6 will be installed
----> Package rpcbind.x86_64 0:0.2.0-11.el6 will be installed
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package                      Arch   Version                   Repository  Size
-================================================================================
-Installing:
- oracle-rdbms-server-12cR1-preinstall
-                              x86_64 1.0-11.el6                ol6_latest  15 k
- reflink                      x86_64 0.1.0-3.el6               ol6_latest  23 k
- yum-plugin-fs-snapshot       noarch 1.1.30-14.0.1.el6         ol6_latest  26 k
-Installing for dependencies:
- bind-libs                    x86_64 32:9.8.2-0.23.rc1.el6_5.1 ol6_latest 878 k
- bind-utils                   x86_64 32:9.8.2-0.23.rc1.el6_5.1 ol6_latest 182 k
- compat-libcap1               x86_64 1.10-1                    ol6_latest  17 k
- compat-libstdc++-33          x86_64 3.2.3-69.el6              ol6_latest 183 k
- gcc-c++                      x86_64 4.4.7-4.el6               ol6_latest 4.7 M
- keyutils                     x86_64 1.4-4.el6                 ol6_latest  38 k
- ksh                          x86_64 20120801-10.el6           ol6_latest 755 k
- libXmu                       x86_64 1.1.1-2.el6               ol6_latest  65 k
- libXxf86dga                  x86_64 1.1.3-2.el6               ol6_latest  24 k
- libXxf86misc                 x86_64 1.0.3-4.el6               ol6_latest  17 k
- libaio                       x86_64 0.3.107-10.el6            ol6_latest  21 k
- libaio-devel                 x86_64 0.3.107-10.el6            ol6_latest  13 k
- libdmx                       x86_64 1.1.2-2.el6               ol6_latest  20 k
- libevent                     x86_64 1.4.13-4.el6              ol6_latest  65 k
- libgssglue                   x86_64 0.1-11.el6                ol6_latest  22 k
- libstdc++-devel              x86_64 4.4.7-4.el6               ol6_latest 1.6 M
- libtirpc                     x86_64 0.2.1-6.el6_4             ol6_latest  78 k
- nfs-utils                    x86_64 1:1.2.3-39.el6            ol6_latest 320 k
- nfs-utils-lib                x86_64 1.1.5-6.el6               ol6_latest  67 k
- rpcbind                      x86_64 0.2.0-11.el6              ol6_latest  51 k
- smartmontools                x86_64 1:5.43-1.el6              ol6_latest 439 k
- sysstat                      x86_64 9.0.4-22.el6              ol6_latest 230 k
- xorg-x11-utils               x86_64 7.5-6.el6                 ol6_latest  94 k
- xorg-x11-xauth               x86_64 1:1.0.2-7.1.el6           ol6_latest  34 k
-
-Transaction Summary
-================================================================================
-Install      27 Package(s)
-
-Total download size: 9.9 M
-Installed size: 30 M
-Downloading Packages:
---------------------------------------------------------------------------------
-Total                                           9.7 MB/s | 9.9 MB     00:01     
-Running rpm_check_debug
-Running Transaction Test
-Transaction Test Succeeded
-Running Transaction
-  Installing : libgssglue-0.1-11.el6.x86_64                                1/27 
-  Installing : libtirpc-0.2.1-6.el6_4.x86_64                               2/27 
-  Installing : libaio-0.3.107-10.el6.x86_64                                3/27 
-  Installing : libstdc++-devel-4.4.7-4.el6.x86_64                          4/27 
-  Installing : gcc-c++-4.4.7-4.el6.x86_64                                  5/27 
-  Installing : libaio-devel-0.3.107-10.el6.x86_64                          6/27 
-  Installing : rpcbind-0.2.0-11.el6.x86_64                                 7/27 
-  Installing : libXmu-1.1.1-2.el6.x86_64                                   8/27 
-  Installing : 1:xorg-x11-xauth-1.0.2-7.1.el6.x86_64                       9/27 
-  Installing : libdmx-1.1.2-2.el6.x86_64                                  10/27 
-  Installing : libXxf86dga-1.1.3-2.el6.x86_64                             11/27 
-  Installing : keyutils-1.4-4.el6.x86_64                                  12/27 
-  Installing : sysstat-9.0.4-22.el6.x86_64                                13/27 
-  Installing : 1:smartmontools-5.43-1.el6.x86_64                          14/27 
-  Installing : ksh-20120801-10.el6.x86_64                                 15/27 
-  Installing : compat-libstdc++-33-3.2.3-69.el6.x86_64                    16/27 
-  Installing : 32:bind-libs-9.8.2-0.23.rc1.el6_5.1.x86_64                 17/27 
-  Installing : 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64                18/27 
-  Installing : libXxf86misc-1.0.3-4.el6.x86_64                            19/27 
-  Installing : xorg-x11-utils-7.5-6.el6.x86_64                            20/27 
-  Installing : libevent-1.4.13-4.el6.x86_64                               21/27 
-  Installing : nfs-utils-lib-1.1.5-6.el6.x86_64                           22/27 
-  Installing : 1:nfs-utils-1.2.3-39.el6.x86_64                            23/27 
-  Installing : compat-libcap1-1.10-1.x86_64                               24/27 
-  Installing : oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64     25/27 
-  Installing : reflink-0.1.0-3.el6.x86_64                                 26/27 
-  Installing : yum-plugin-fs-snapshot-1.1.30-14.0.1.el6.noarch            27/27 
-  Verifying  : 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64                 1/27 
-  Verifying  : libaio-devel-0.3.107-10.el6.x86_64                          2/27 
-  Verifying  : yum-plugin-fs-snapshot-1.1.30-14.0.1.el6.noarch             3/27 
-  Verifying  : libtirpc-0.2.1-6.el6_4.x86_64                               4/27 
-  Verifying  : compat-libcap1-1.10-1.x86_64                                5/27 
-  Verifying  : libstdc++-devel-4.4.7-4.el6.x86_64                          6/27 
-  Verifying  : xorg-x11-utils-7.5-6.el6.x86_64                             7/27 
-  Verifying  : libevent-1.4.13-4.el6.x86_64                                8/27 
-  Verifying  : libXxf86misc-1.0.3-4.el6.x86_64                             9/27 
-  Verifying  : 32:bind-libs-9.8.2-0.23.rc1.el6_5.1.x86_64                 10/27 
-  Verifying  : compat-libstdc++-33-3.2.3-69.el6.x86_64                    11/27 
-  Verifying  : nfs-utils-lib-1.1.5-6.el6.x86_64                           12/27 
-  Verifying  : 1:xorg-x11-xauth-1.0.2-7.1.el6.x86_64                      13/27 
-  Verifying  : ksh-20120801-10.el6.x86_64                                 14/27 
-  Verifying  : gcc-c++-4.4.7-4.el6.x86_64                                 15/27 
-  Verifying  : rpcbind-0.2.0-11.el6.x86_64                                16/27 
-  Verifying  : oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64     17/27 
-  Verifying  : 1:smartmontools-5.43-1.el6.x86_64                          18/27 
-  Verifying  : sysstat-9.0.4-22.el6.x86_64                                19/27 
-  Verifying  : keyutils-1.4-4.el6.x86_64                                  20/27 
-  Verifying  : reflink-0.1.0-3.el6.x86_64                                 21/27 
-  Verifying  : libaio-0.3.107-10.el6.x86_64                               22/27 
-  Verifying  : libXxf86dga-1.1.3-2.el6.x86_64                             23/27 
-  Verifying  : libgssglue-0.1-11.el6.x86_64                               24/27 
-  Verifying  : 1:nfs-utils-1.2.3-39.el6.x86_64                            25/27 
-  Verifying  : libdmx-1.1.2-2.el6.x86_64                                  26/27 
-  Verifying  : libXmu-1.1.1-2.el6.x86_64                                  27/27 
-
-Installed:
-  oracle-rdbms-server-12cR1-preinstall.x86_64 0:1.0-11.el6                      
-  reflink.x86_64 0:0.1.0-3.el6                                                  
-  yum-plugin-fs-snapshot.noarch 0:1.1.30-14.0.1.el6                             
-
-Dependency Installed:
-  bind-libs.x86_64 32:9.8.2-0.23.rc1.el6_5.1                                    
-  bind-utils.x86_64 32:9.8.2-0.23.rc1.el6_5.1                                   
-  compat-libcap1.x86_64 0:1.10-1                                                
-  compat-libstdc++-33.x86_64 0:3.2.3-69.el6                                     
-  gcc-c++.x86_64 0:4.4.7-4.el6                                                  
-  keyutils.x86_64 0:1.4-4.el6                                                   
-  ksh.x86_64 0:20120801-10.el6                                                  
-  libXmu.x86_64 0:1.1.1-2.el6                                                   
-  libXxf86dga.x86_64 0:1.1.3-2.el6                                              
-  libXxf86misc.x86_64 0:1.0.3-4.el6                                             
-  libaio.x86_64 0:0.3.107-10.el6                                                
-  libaio-devel.x86_64 0:0.3.107-10.el6                                          
-  libdmx.x86_64 0:1.1.2-2.el6                                                   
-  libevent.x86_64 0:1.4.13-4.el6                                                
-  libgssglue.x86_64 0:0.1-11.el6                                                
-  libstdc++-devel.x86_64 0:4.4.7-4.el6                                          
-  libtirpc.x86_64 0:0.2.1-6.el6_4                                               
-  nfs-utils.x86_64 1:1.2.3-39.el6                                               
-  nfs-utils-lib.x86_64 0:1.1.5-6.el6                                            
-  rpcbind.x86_64 0:0.2.0-11.el6                                                 
-  smartmontools.x86_64 1:5.43-1.el6                                             
-  sysstat.x86_64 0:9.0.4-22.el6                                                 
-  xorg-x11-utils.x86_64 0:7.5-6.el6                                             
-  xorg-x11-xauth.x86_64 1:1.0.2-7.1.el6                                         
-
-Complete!
+seems this part was already executed
 Changing password for user oracle.
 passwd: all authentication tokens updated successfully.
 Changing password for user grid.
 passwd: all authentication tokens updated successfully.
-Loaded plugins: fs-snapshot, security
-Setting up Install Process
-Resolving Dependencies
---> Running transaction check
----> Package expect.x86_64 0:5.44.1.15-5.el6_4 will be installed
---> Processing Dependency: libtcl8.5.so()(64bit) for package: expect-5.44.1.15-5.el6_4.x86_64
---> Running transaction check
----> Package tcl.x86_64 1:8.5.7-6.el6 will be installed
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package       Arch          Version                    Repository         Size
-================================================================================
-Installing:
- expect        x86_64        5.44.1.15-5.el6_4          ol6_latest        256 k
-Installing for dependencies:
- tcl           x86_64        1:8.5.7-6.el6              ol6_latest        1.9 M
-
-Transaction Summary
-================================================================================
-Install       2 Package(s)
-
-Total download size: 2.2 M
-Installed size: 4.9 M
-Downloading Packages:
---------------------------------------------------------------------------------
-Total                                           6.6 MB/s | 2.2 MB     00:00     
-Running rpm_check_debug
-Running Transaction Test
-Transaction Test Succeeded
-Running Transaction
-fs-snapshot: snapshotting /: /yum_20140202223513
-fs-snapshot: snapshotting /u01/: /u01/yum_20140202223513
-  Installing : 1:tcl-8.5.7-6.el6.x86_64                                     1/2 
-  Installing : expect-5.44.1.15-5.el6_4.x86_64                              2/2 
-  Verifying  : expect-5.44.1.15-5.el6_4.x86_64                              1/2 
-  Verifying  : 1:tcl-8.5.7-6.el6.x86_64                                     2/2 
-
-Installed:
-  expect.x86_64 0:5.44.1.15-5.el6_4                                             
-
-Dependency Installed:
-  tcl.x86_64 1:8.5.7-6.el6                                                      
-
-Complete!
 Starting udev: [  OK  ]
 Archive:  /media/stagefiles/db/zip/linuxamd64_12c_grid_1of2.zip
   inflating: /u01/stage/grid/rpm/cvuqdisk-1.0.9-1.rpm  
@@ -417,41 +43,13 @@ Archive:  /media/stagefiles/db/zip/linuxamd64_12c_grid_1of2.zip
 Loaded plugins: fs-snapshot, security
 Setting up Install Process
 Examining /u01/stage/grid/rpm/cvuqdisk-1.0.9-1.rpm: cvuqdisk-1.0.9-1.x86_64
-Marking /u01/stage/grid/rpm/cvuqdisk-1.0.9-1.rpm to be installed
-Resolving Dependencies
---> Running transaction check
----> Package cvuqdisk.x86_64 0:1.0.9-1 will be installed
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package         Arch          Version           Repository                Size
-================================================================================
-Installing:
- cvuqdisk        x86_64        1.0.9-1           /cvuqdisk-1.0.9-1         12 k
-
-Transaction Summary
-================================================================================
-Install       1 Package(s)
-
-Total size: 12 k
-Installed size: 12 k
-Downloading Packages:
-Running rpm_check_debug
-Running Transaction Test
-Transaction Test Succeeded
-Running Transaction
-fs-snapshot: snapshotting /: /yum_20140202223517
-fs-snapshot: snapshotting /u01/: /u01/yum_20140202223517
-  Installing : cvuqdisk-1.0.9-1.x86_64                                      1/1 
-Using default group oinstall to install package
-  Verifying  : cvuqdisk-1.0.9-1.x86_64                                      1/1 
-
-Installed:
-  cvuqdisk.x86_64 0:1.0.9-1                                                     
-
-Complete!
+/u01/stage/grid/rpm/cvuqdisk-1.0.9-1.rpm: does not update installed package.
+Error: Nothing to do
+net.ipv4.conf.eth2.rp_filter=2
+net.ipv4.conf.eth3.rp_filter=2
+error: "net.bridge.bridge-nf-call-ip6tables" is an unknown key
+error: "net.bridge.bridge-nf-call-iptables" is an unknown key
+error: "net.bridge.bridge-nf-call-arptables" is an unknown key
 net.ipv4.ip_forward = 0
 net.ipv4.conf.default.rp_filter = 1
 net.ipv4.conf.default.accept_source_route = 0
@@ -473,132 +71,18 @@ fs.aio-max-nr = 1048576
 net.ipv4.ip_local_port_range = 9000 65500
 net.ipv4.conf.eth2.rp_filter = 2
 net.ipv4.conf.eth3.rp_filter = 2
-error: "net.bridge.bridge-nf-call-ip6tables" is an unknown key
-error: "net.bridge.bridge-nf-call-iptables" is an unknown key
-error: "net.bridge.bridge-nf-call-arptables" is an unknown key
-[node1] Importing base box 'oracle65-2disk'...
-Progress: 10%Progress: 50%Progress: 90%[node1] Matching MAC address for NAT networking...
-[node1] Setting the name of the VM...
-[node1] Clearing any previously set forwarded ports...
-[node1] Fixed port collision for 22 => 2222. Now on port 2200.
-[node1] Clearing any previously set network interfaces...
-[node1] Preparing network interfaces based on configuration...
-[node1] Forwarding ports...
-[node1] -- 22 => 2200 (adapter 1)
-[node1] Running 'pre-boot' VM customizations...
-[node1] Booting VM...
-[node1] Waiting for machine to boot. This may take a few minutes...
-[node1] Machine booted and ready!
-[node1] Setting hostname...
-[node1] Configuring and enabling network interfaces...
-[node1] Mounting shared folders...
-[node1] -- /vagrant
-[node1] -- /media/stagefiles
 [node1] Running provisioner: shell...
 [node1] Running: inline script
 overwriting /etc/hosts
 [node1] Running provisioner: shell...
 [node1] Running: inline script
-  % Total    % Received % Xferd  Average Speed   Time    Time     Time  Current
-                                 Dload  Upload   Total   Spent    Left  Speed
-  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0101  4068  101  4068    0     0  1078k      0 --:--:-- --:--:-- --:--:-- 1986k
 [node1] Running provisioner: shell...
 [node1] Running: inline script
-
-WARNING! - Btrfs v0.20-rc1 IS EXPERIMENTAL
-WARNING! - see http://btrfs.wiki.kernel.org before using
-
-fs created label (null) on /dev/sdb
-	nodesize 4096 leafsize 4096 sectorsize 4096 size 31.25GB
-Btrfs v0.20-rc1
+/dev/sdb: UUID="10df8908-e439-47dd-86b2-d6087119343a" UUID_SUB="1c31a331-055f-4487-b5e6-f951778fe8b4" TYPE="btrfs" 
+filesystem metadata found on sdb, ignoring
 [node1] Running provisioner: shell...
 [node1] Running: inline script
-id: grid: No such user
-user grid is required
-executing /media/stagefiles//os/grid_oracle_user.sh
-Checking groups for grid and oracle user
-verifying grid user
-id: grid: No such user
-verifying oracle user
-id: oracle: No such user
-Changing password for user oracle.
-passwd: all authentication tokens updated successfully.
-Changing password for user grid.
-passwd: all authentication tokens updated successfully.
-Loaded plugins: security
-Setting up Install Process
-Resolving Dependencies
---> Running transaction check
----> Package oracleasm-support.x86_64 0:2.1.8-1.el6 will be installed
----> Package parted.x86_64 0:2.1-21.el6 will be installed
---> Processing Dependency: libdevmapper.so.1.02(Base)(64bit) for package: parted-2.1-21.el6.x86_64
---> Processing Dependency: libdevmapper.so.1.02()(64bit) for package: parted-2.1-21.el6.x86_64
---> Running transaction check
----> Package device-mapper-libs.x86_64 0:1.02.79-8.el6 will be installed
---> Processing Dependency: device-mapper = 1.02.79-8.el6 for package: device-mapper-libs-1.02.79-8.el6.x86_64
---> Running transaction check
----> Package device-mapper.x86_64 0:1.02.79-8.el6 will be installed
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package                 Arch        Version              Repository       Size
-================================================================================
-Installing:
- oracleasm-support       x86_64      2.1.8-1.el6          ol6_latest       73 k
- parted                  x86_64      2.1-21.el6           ol6_latest      606 k
-Installing for dependencies:
- device-mapper           x86_64      1.02.79-8.el6        ol6_latest      164 k
- device-mapper-libs      x86_64      1.02.79-8.el6        ol6_latest      195 k
-
-Transaction Summary
-================================================================================
-Install       4 Package(s)
-
-Total download size: 1.0 M
-Installed size: 2.8 M
-Downloading Packages:
---------------------------------------------------------------------------------
-Total                                            19 MB/s | 1.0 MB     00:00     
-warning: rpmts_HdrFromFdno: Header V3 RSA/SHA256 Signature, key ID ec551f03: NOKEY
-Retrieving key from file:///etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
-Importing GPG key 0xEC551F03:
- Userid : Oracle OSS group (Open Source Software group) <build@oss.oracle.com>
- Package: 6:oraclelinux-release-6Server-5.0.2.x86_64 (@anaconda-OracleLinuxServer-201311261449.x86_64/6.5)
- From   : /etc/pki/rpm-gpg/RPM-GPG-KEY-oracle
-Running rpm_check_debug
-Running Transaction Test
-Transaction Test Succeeded
-Running Transaction
-  Installing : device-mapper-libs-1.02.79-8.el6.x86_64                      1/4 
-  Installing : device-mapper-1.02.79-8.el6.x86_64                           2/4 
-  Installing : parted-2.1-21.el6.x86_64                                     3/4 
-  Installing : oracleasm-support-2.1.8-1.el6.x86_64                         4/4 
-  Verifying  : device-mapper-1.02.79-8.el6.x86_64                           1/4 
-  Verifying  : device-mapper-libs-1.02.79-8.el6.x86_64                      2/4 
-  Verifying  : parted-2.1-21.el6.x86_64                                     3/4 
-  Verifying  : oracleasm-support-2.1.8-1.el6.x86_64                         4/4 
-
-Installed:
-  oracleasm-support.x86_64 0:2.1.8-1.el6       parted.x86_64 0:2.1-21.el6      
-
-Dependency Installed:
-  device-mapper.x86_64 0:1.02.79-8.el6                                          
-  device-mapper-libs.x86_64 0:1.02.79-8.el6                                     
-
-Complete!
-Configuring the Oracle ASM library driver.
-
-This will configure the on-boot properties of the Oracle ASM library
-driver.  The following questions will determine whether the driver is
-loaded on boot and what permissions it will have.  The current values
-will be shown in brackets ('[]').  Hitting <ENTER> without typing an
-answer will keep that current value.  Ctrl-C will abort.
-
-Default user to own the driver interface []: Default group to own the driver interface []: Start Oracle ASM library driver on boot (y/n) [n]: Scan for Oracle ASM disks on boot (y/n) [y]: Writing Oracle ASM library driver configuration: done
-Initializing the Oracle ASMLib driver: [  OK  ]
-Scanning the system for Oracle ASMLib disks: [  OK  ]
+oracleasm configured
 /dev/sdc1: LABEL="DATA" TYPE="oracleasm" 
 filesystem metadata found on sdc, ignoring
 [node1] Running provisioner: shell...
@@ -609,283 +93,21 @@ filesystem metadata found on sdd, ignoring
 [node1] Running provisioner: shell...
 [node1] Running: inline script
 installing oracle-rdbms-server-12cR1-preinstall
-package oracle-rdbms-server-12cR1-preinstall is not installed
+oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
 perl-5.10.1-136.el6.x86_64
-package yum-plugin-fs-snapshot is not installed
+yum-plugin-fs-snapshot-1.1.30-14.0.1.el6.noarch
 ocfs2-tools-1.8.0-11.el6.x86_64
-package reflink is not installed
+reflink-0.1.0-3.el6.x86_64
 btrfs-progs-0.20-1.5.git7854c8b.el6.x86_64
 parted-2.1-21.el6.x86_64
 oracleasm-support-2.1.8-1.el6.x86_64
 unzip-6.0-1.el6.x86_64
 sudo-1.8.6p3-12.el6.x86_64
-Loaded plugins: security
-Cleaning repos: ol6_UEKR3_latest ol6_UEK_latest ol6_addons ol6_latest
-Cleaning up Everything
-Loaded plugins: security
-Setting up Install Process
-Package 4:perl-5.10.1-136.el6.x86_64 already installed and latest version
-Package ocfs2-tools-1.8.0-11.el6.x86_64 already installed and latest version
-Package btrfs-progs-0.20-1.5.git7854c8b.el6.x86_64 already installed and latest version
-Package parted-2.1-21.el6.x86_64 already installed and latest version
-Package oracleasm-support-2.1.8-1.el6.x86_64 already installed and latest version
-Package unzip-6.0-1.el6.x86_64 already installed and latest version
-Package sudo-1.8.6p3-12.el6.x86_64 already installed and latest version
-Resolving Dependencies
---> Running transaction check
----> Package oracle-rdbms-server-12cR1-preinstall.x86_64 0:1.0-11.el6 will be installed
---> Processing Dependency: xorg-x11-xauth for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: xorg-x11-utils for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: sysstat for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: smartmontools for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: nfs-utils for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: libstdc++-devel for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: libaio-devel for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: libaio for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: ksh for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: gcc-c++ for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: compat-libstdc++-33 for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: compat-libcap1 for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
---> Processing Dependency: bind-utils for package: oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64
----> Package reflink.x86_64 0:0.1.0-3.el6 will be installed
----> Package yum-plugin-fs-snapshot.noarch 0:1.1.30-14.0.1.el6 will be installed
---> Running transaction check
----> Package bind-utils.x86_64 32:9.8.2-0.23.rc1.el6_5.1 will be installed
---> Processing Dependency: bind-libs = 32:9.8.2-0.23.rc1.el6_5.1 for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: liblwres.so.80()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: libisccfg.so.82()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: libisccc.so.80()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: libisc.so.83()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: libdns.so.81()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
---> Processing Dependency: libbind9.so.80()(64bit) for package: 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64
----> Package compat-libcap1.x86_64 0:1.10-1 will be installed
----> Package compat-libstdc++-33.x86_64 0:3.2.3-69.el6 will be installed
----> Package gcc-c++.x86_64 0:4.4.7-4.el6 will be installed
----> Package ksh.x86_64 0:20120801-10.el6 will be installed
----> Package libaio.x86_64 0:0.3.107-10.el6 will be installed
----> Package libaio-devel.x86_64 0:0.3.107-10.el6 will be installed
----> Package libstdc++-devel.x86_64 0:4.4.7-4.el6 will be installed
----> Package nfs-utils.x86_64 1:1.2.3-39.el6 will be installed
---> Processing Dependency: nfs-utils-lib >= 1.1.0-3 for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: keyutils >= 1.4-4 for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: rpcbind for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libtirpc for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libgssglue.so.1(libgssapi_CITI_2)(64bit) for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libgssglue for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libevent for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libtirpc.so.1()(64bit) for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libnfsidmap.so.0()(64bit) for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libgssglue.so.1()(64bit) for package: 1:nfs-utils-1.2.3-39.el6.x86_64
---> Processing Dependency: libevent-1.4.so.2()(64bit) for package: 1:nfs-utils-1.2.3-39.el6.x86_64
----> Package smartmontools.x86_64 1:5.43-1.el6 will be installed
----> Package sysstat.x86_64 0:9.0.4-22.el6 will be installed
----> Package xorg-x11-utils.x86_64 0:7.5-6.el6 will be installed
---> Processing Dependency: libdmx.so.1()(64bit) for package: xorg-x11-utils-7.5-6.el6.x86_64
---> Processing Dependency: libXxf86misc.so.1()(64bit) for package: xorg-x11-utils-7.5-6.el6.x86_64
---> Processing Dependency: libXxf86dga.so.1()(64bit) for package: xorg-x11-utils-7.5-6.el6.x86_64
----> Package xorg-x11-xauth.x86_64 1:1.0.2-7.1.el6 will be installed
---> Processing Dependency: libXmuu.so.1()(64bit) for package: 1:xorg-x11-xauth-1.0.2-7.1.el6.x86_64
---> Running transaction check
----> Package bind-libs.x86_64 32:9.8.2-0.23.rc1.el6_5.1 will be installed
----> Package keyutils.x86_64 0:1.4-4.el6 will be installed
----> Package libXmu.x86_64 0:1.1.1-2.el6 will be installed
----> Package libXxf86dga.x86_64 0:1.1.3-2.el6 will be installed
----> Package libXxf86misc.x86_64 0:1.0.3-4.el6 will be installed
----> Package libdmx.x86_64 0:1.1.2-2.el6 will be installed
----> Package libevent.x86_64 0:1.4.13-4.el6 will be installed
----> Package libgssglue.x86_64 0:0.1-11.el6 will be installed
----> Package libtirpc.x86_64 0:0.2.1-6.el6_4 will be installed
----> Package nfs-utils-lib.x86_64 0:1.1.5-6.el6 will be installed
----> Package rpcbind.x86_64 0:0.2.0-11.el6 will be installed
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package                      Arch   Version                   Repository  Size
-================================================================================
-Installing:
- oracle-rdbms-server-12cR1-preinstall
-                              x86_64 1.0-11.el6                ol6_latest  15 k
- reflink                      x86_64 0.1.0-3.el6               ol6_latest  23 k
- yum-plugin-fs-snapshot       noarch 1.1.30-14.0.1.el6         ol6_latest  26 k
-Installing for dependencies:
- bind-libs                    x86_64 32:9.8.2-0.23.rc1.el6_5.1 ol6_latest 878 k
- bind-utils                   x86_64 32:9.8.2-0.23.rc1.el6_5.1 ol6_latest 182 k
- compat-libcap1               x86_64 1.10-1                    ol6_latest  17 k
- compat-libstdc++-33          x86_64 3.2.3-69.el6              ol6_latest 183 k
- gcc-c++                      x86_64 4.4.7-4.el6               ol6_latest 4.7 M
- keyutils                     x86_64 1.4-4.el6                 ol6_latest  38 k
- ksh                          x86_64 20120801-10.el6           ol6_latest 755 k
- libXmu                       x86_64 1.1.1-2.el6               ol6_latest  65 k
- libXxf86dga                  x86_64 1.1.3-2.el6               ol6_latest  24 k
- libXxf86misc                 x86_64 1.0.3-4.el6               ol6_latest  17 k
- libaio                       x86_64 0.3.107-10.el6            ol6_latest  21 k
- libaio-devel                 x86_64 0.3.107-10.el6            ol6_latest  13 k
- libdmx                       x86_64 1.1.2-2.el6               ol6_latest  20 k
- libevent                     x86_64 1.4.13-4.el6              ol6_latest  65 k
- libgssglue                   x86_64 0.1-11.el6                ol6_latest  22 k
- libstdc++-devel              x86_64 4.4.7-4.el6               ol6_latest 1.6 M
- libtirpc                     x86_64 0.2.1-6.el6_4             ol6_latest  78 k
- nfs-utils                    x86_64 1:1.2.3-39.el6            ol6_latest 320 k
- nfs-utils-lib                x86_64 1.1.5-6.el6               ol6_latest  67 k
- rpcbind                      x86_64 0.2.0-11.el6              ol6_latest  51 k
- smartmontools                x86_64 1:5.43-1.el6              ol6_latest 439 k
- sysstat                      x86_64 9.0.4-22.el6              ol6_latest 230 k
- xorg-x11-utils               x86_64 7.5-6.el6                 ol6_latest  94 k
- xorg-x11-xauth               x86_64 1:1.0.2-7.1.el6           ol6_latest  34 k
-
-Transaction Summary
-================================================================================
-Install      27 Package(s)
-
-Total download size: 9.9 M
-Installed size: 30 M
-Downloading Packages:
---------------------------------------------------------------------------------
-Total                                            34 MB/s | 9.9 MB     00:00     
-Running rpm_check_debug
-Running Transaction Test
-Transaction Test Succeeded
-Running Transaction
-  Installing : libgssglue-0.1-11.el6.x86_64                                1/27 
-  Installing : libtirpc-0.2.1-6.el6_4.x86_64                               2/27 
-  Installing : libaio-0.3.107-10.el6.x86_64                                3/27 
-  Installing : libstdc++-devel-4.4.7-4.el6.x86_64                          4/27 
-  Installing : gcc-c++-4.4.7-4.el6.x86_64                                  5/27 
-  Installing : libaio-devel-0.3.107-10.el6.x86_64                          6/27 
-  Installing : rpcbind-0.2.0-11.el6.x86_64                                 7/27 
-  Installing : libXmu-1.1.1-2.el6.x86_64                                   8/27 
-  Installing : 1:xorg-x11-xauth-1.0.2-7.1.el6.x86_64                       9/27 
-  Installing : libdmx-1.1.2-2.el6.x86_64                                  10/27 
-  Installing : libXxf86dga-1.1.3-2.el6.x86_64                             11/27 
-  Installing : keyutils-1.4-4.el6.x86_64                                  12/27 
-  Installing : sysstat-9.0.4-22.el6.x86_64                                13/27 
-  Installing : 1:smartmontools-5.43-1.el6.x86_64                          14/27 
-  Installing : ksh-20120801-10.el6.x86_64                                 15/27 
-  Installing : compat-libstdc++-33-3.2.3-69.el6.x86_64                    16/27 
-  Installing : 32:bind-libs-9.8.2-0.23.rc1.el6_5.1.x86_64                 17/27 
-  Installing : 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64                18/27 
-  Installing : libXxf86misc-1.0.3-4.el6.x86_64                            19/27 
-  Installing : xorg-x11-utils-7.5-6.el6.x86_64                            20/27 
-  Installing : libevent-1.4.13-4.el6.x86_64                               21/27 
-  Installing : nfs-utils-lib-1.1.5-6.el6.x86_64                           22/27 
-  Installing : 1:nfs-utils-1.2.3-39.el6.x86_64                            23/27 
-  Installing : compat-libcap1-1.10-1.x86_64                               24/27 
-  Installing : oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64     25/27 
-  Installing : reflink-0.1.0-3.el6.x86_64                                 26/27 
-  Installing : yum-plugin-fs-snapshot-1.1.30-14.0.1.el6.noarch            27/27 
-  Verifying  : 32:bind-utils-9.8.2-0.23.rc1.el6_5.1.x86_64                 1/27 
-  Verifying  : libaio-devel-0.3.107-10.el6.x86_64                          2/27 
-  Verifying  : yum-plugin-fs-snapshot-1.1.30-14.0.1.el6.noarch             3/27 
-  Verifying  : libtirpc-0.2.1-6.el6_4.x86_64                               4/27 
-  Verifying  : compat-libcap1-1.10-1.x86_64                                5/27 
-  Verifying  : libstdc++-devel-4.4.7-4.el6.x86_64                          6/27 
-  Verifying  : xorg-x11-utils-7.5-6.el6.x86_64                             7/27 
-  Verifying  : libevent-1.4.13-4.el6.x86_64                                8/27 
-  Verifying  : libXxf86misc-1.0.3-4.el6.x86_64                             9/27 
-  Verifying  : 32:bind-libs-9.8.2-0.23.rc1.el6_5.1.x86_64                 10/27 
-  Verifying  : compat-libstdc++-33-3.2.3-69.el6.x86_64                    11/27 
-  Verifying  : nfs-utils-lib-1.1.5-6.el6.x86_64                           12/27 
-  Verifying  : 1:xorg-x11-xauth-1.0.2-7.1.el6.x86_64                      13/27 
-  Verifying  : ksh-20120801-10.el6.x86_64                                 14/27 
-  Verifying  : gcc-c++-4.4.7-4.el6.x86_64                                 15/27 
-  Verifying  : rpcbind-0.2.0-11.el6.x86_64                                16/27 
-  Verifying  : oracle-rdbms-server-12cR1-preinstall-1.0-11.el6.x86_64     17/27 
-  Verifying  : 1:smartmontools-5.43-1.el6.x86_64                          18/27 
-  Verifying  : sysstat-9.0.4-22.el6.x86_64                                19/27 
-  Verifying  : keyutils-1.4-4.el6.x86_64                                  20/27 
-  Verifying  : reflink-0.1.0-3.el6.x86_64                                 21/27 
-  Verifying  : libaio-0.3.107-10.el6.x86_64                               22/27 
-  Verifying  : libXxf86dga-1.1.3-2.el6.x86_64                             23/27 
-  Verifying  : libgssglue-0.1-11.el6.x86_64                               24/27 
-  Verifying  : 1:nfs-utils-1.2.3-39.el6.x86_64                            25/27 
-  Verifying  : libdmx-1.1.2-2.el6.x86_64                                  26/27 
-  Verifying  : libXmu-1.1.1-2.el6.x86_64                                  27/27 
-
-Installed:
-  oracle-rdbms-server-12cR1-preinstall.x86_64 0:1.0-11.el6                      
-  reflink.x86_64 0:0.1.0-3.el6                                                  
-  yum-plugin-fs-snapshot.noarch 0:1.1.30-14.0.1.el6                             
-
-Dependency Installed:
-  bind-libs.x86_64 32:9.8.2-0.23.rc1.el6_5.1                                    
-  bind-utils.x86_64 32:9.8.2-0.23.rc1.el6_5.1                                   
-  compat-libcap1.x86_64 0:1.10-1                                                
-  compat-libstdc++-33.x86_64 0:3.2.3-69.el6                                     
-  gcc-c++.x86_64 0:4.4.7-4.el6                                                  
-  keyutils.x86_64 0:1.4-4.el6                                                   
-  ksh.x86_64 0:20120801-10.el6                                                  
-  libXmu.x86_64 0:1.1.1-2.el6                                                   
-  libXxf86dga.x86_64 0:1.1.3-2.el6                                              
-  libXxf86misc.x86_64 0:1.0.3-4.el6                                             
-  libaio.x86_64 0:0.3.107-10.el6                                                
-  libaio-devel.x86_64 0:0.3.107-10.el6                                          
-  libdmx.x86_64 0:1.1.2-2.el6                                                   
-  libevent.x86_64 0:1.4.13-4.el6                                                
-  libgssglue.x86_64 0:0.1-11.el6                                                
-  libstdc++-devel.x86_64 0:4.4.7-4.el6                                          
-  libtirpc.x86_64 0:0.2.1-6.el6_4                                               
-  nfs-utils.x86_64 1:1.2.3-39.el6                                               
-  nfs-utils-lib.x86_64 0:1.1.5-6.el6                                            
-  rpcbind.x86_64 0:0.2.0-11.el6                                                 
-  smartmontools.x86_64 1:5.43-1.el6                                             
-  sysstat.x86_64 0:9.0.4-22.el6                                                 
-  xorg-x11-utils.x86_64 0:7.5-6.el6                                             
-  xorg-x11-xauth.x86_64 1:1.0.2-7.1.el6                                         
-
-Complete!
+seems this part was already executed
 Changing password for user oracle.
 passwd: all authentication tokens updated successfully.
 Changing password for user grid.
 passwd: all authentication tokens updated successfully.
-Loaded plugins: fs-snapshot, security
-Setting up Install Process
-Resolving Dependencies
---> Running transaction check
----> Package expect.x86_64 0:5.44.1.15-5.el6_4 will be installed
---> Processing Dependency: libtcl8.5.so()(64bit) for package: expect-5.44.1.15-5.el6_4.x86_64
---> Running transaction check
----> Package tcl.x86_64 1:8.5.7-6.el6 will be installed
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package       Arch          Version                    Repository         Size
-================================================================================
-Installing:
- expect        x86_64        5.44.1.15-5.el6_4          ol6_latest        256 k
-Installing for dependencies:
- tcl           x86_64        1:8.5.7-6.el6              ol6_latest        1.9 M
-
-Transaction Summary
-================================================================================
-Install       2 Package(s)
-
-Total download size: 2.2 M
-Installed size: 4.9 M
-Downloading Packages:
---------------------------------------------------------------------------------
-Total                                            30 MB/s | 2.2 MB     00:00     
-Running rpm_check_debug
-Running Transaction Test
-Transaction Test Succeeded
-Running Transaction
-fs-snapshot: snapshotting /: /yum_20140202223704
-fs-snapshot: snapshotting /u01/: /u01/yum_20140202223704
-  Installing : 1:tcl-8.5.7-6.el6.x86_64                                     1/2 
-  Installing : expect-5.44.1.15-5.el6_4.x86_64                              2/2 
-  Verifying  : expect-5.44.1.15-5.el6_4.x86_64                              1/2 
-  Verifying  : 1:tcl-8.5.7-6.el6.x86_64                                     2/2 
-
-Installed:
-  expect.x86_64 0:5.44.1.15-5.el6_4                                             
-
-Dependency Installed:
-  tcl.x86_64 1:8.5.7-6.el6                                                      
-
-Complete!
 Starting udev: [  OK  ]
 Archive:  /media/stagefiles/db/zip/linuxamd64_12c_grid_1of2.zip
   inflating: /u01/stage/grid/rpm/cvuqdisk-1.0.9-1.rpm  
@@ -894,41 +116,10 @@ Archive:  /media/stagefiles/db/zip/linuxamd64_12c_grid_1of2.zip
 Loaded plugins: fs-snapshot, security
 Setting up Install Process
 Examining /u01/stage/grid/rpm/cvuqdisk-1.0.9-1.rpm: cvuqdisk-1.0.9-1.x86_64
-Marking /u01/stage/grid/rpm/cvuqdisk-1.0.9-1.rpm to be installed
-Resolving Dependencies
---> Running transaction check
----> Package cvuqdisk.x86_64 0:1.0.9-1 will be installed
---> Finished Dependency Resolution
-
-Dependencies Resolved
-
-================================================================================
- Package         Arch          Version           Repository                Size
-================================================================================
-Installing:
- cvuqdisk        x86_64        1.0.9-1           /cvuqdisk-1.0.9-1         12 k
-
-Transaction Summary
-================================================================================
-Install       1 Package(s)
-
-Total size: 12 k
-Installed size: 12 k
-Downloading Packages:
-Running rpm_check_debug
-Running Transaction Test
-Transaction Test Succeeded
-Running Transaction
-fs-snapshot: snapshotting /: /yum_20140202223707
-fs-snapshot: snapshotting /u01/: /u01/yum_20140202223707
-  Installing : cvuqdisk-1.0.9-1.x86_64                                      1/1 
-Using default group oinstall to install package
-  Verifying  : cvuqdisk-1.0.9-1.x86_64                                      1/1 
-
-Installed:
-  cvuqdisk.x86_64 0:1.0.9-1                                                     
-
-Complete!
+/u01/stage/grid/rpm/cvuqdisk-1.0.9-1.rpm: does not update installed package.
+Error: Nothing to do
+net.ipv4.conf.eth2.rp_filter=2
+net.ipv4.conf.eth3.rp_filter=2
 error: "net.bridge.bridge-nf-call-ip6tables" is an unknown key
 error: "net.bridge.bridge-nf-call-iptables" is an unknown key
 error: "net.bridge.bridge-nf-call-arptables" is an unknown key
@@ -973,31 +164,31 @@ oraInventory in /u01/app/oraInventory
 Oracle Base for grid is /u01/app/grid 
 Oracle Home for grid is /u01/app/12.1.0.1/grid 
 spawn /u01/stage/grid/sshsetup/sshUserSetup.sh -user root -hosts node1 node2 -noPromptPassphrase -advanced
-The output of this script is also logged into /tmp/sshUserSetup_2014-02-02-22-40-10.log
+The output of this script is also logged into /tmp/sshUserSetup_2014-02-03-06-29-40.log
 Hosts are node1 node2
 user is root
 Platform:- Linux 
 Checking if the remote hosts are reachable
 PING node1 (192.168.56.11) 56(84) bytes of data.
-64 bytes from node1 (192.168.56.11): icmp_seq=1 ttl=64 time=0.100 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=2 ttl=64 time=0.085 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=3 ttl=64 time=0.035 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=4 ttl=64 time=0.049 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=5 ttl=64 time=0.043 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=1 ttl=64 time=0.036 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=2 ttl=64 time=0.038 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=3 ttl=64 time=0.055 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=4 ttl=64 time=0.046 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=5 ttl=64 time=0.048 ms
 
 --- node1 ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 4005ms
-rtt min/avg/max/mdev = 0.035/0.062/0.100/0.026 ms
+5 packets transmitted, 5 received, 0% packet loss, time 4004ms
+rtt min/avg/max/mdev = 0.036/0.044/0.055/0.010 ms
 PING node2 (192.168.56.12) 56(84) bytes of data.
-64 bytes from node2 (192.168.56.12): icmp_seq=1 ttl=64 time=1.17 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=2 ttl=64 time=0.439 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=3 ttl=64 time=0.401 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=4 ttl=64 time=0.400 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=5 ttl=64 time=0.419 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=1 ttl=64 time=0.822 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=2 ttl=64 time=0.371 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=3 ttl=64 time=0.413 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=4 ttl=64 time=0.366 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=5 ttl=64 time=0.627 ms
 
 --- node2 ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 4008ms
-rtt min/avg/max/mdev = 0.400/0.567/1.178/0.306 ms
+rtt min/avg/max/mdev = 0.366/0.519/0.822/0.181 ms
 Remote host reachability check succeeded.
 The following hosts are reachable: node1 node2.
 The following hosts are not reachable: .
@@ -1020,8 +211,8 @@ AS PER SSH REQUIREMENTS, THIS SCRIPT WILL SECURE THE USER HOME DIRECTORY
 AND THE .ssh DIRECTORY BY REVOKING GROUP AND WORLD WRITE PRIVILEDGES TO THESE
 directories.
 
-Do you want to continue and let the script make the above mentioned changes (yes/no)?
-yes
+Do you want to continue and let the script make the above mentioned changes (yes/no)?yes
+
 
 The user chose yes
 User chose to skip passphrase related questions.
@@ -1038,18 +229,18 @@ Generating public/private rsa key pair.
 Your identification has been saved in /root/.ssh/id_rsa.
 Your public key has been saved in /root/.ssh/id_rsa.pub.
 The key fingerprint is:
-63:86:f4:76:b6:50:a3:42:a4:26:9e:c1:b2:21:50:36 root@node1
+8e:1a:01:f3:b8:22:18:ee:c6:a6:42:94:6d:03:f5:7d root@node1
 The key's randomart image is:
 +--[ RSA 1024]----+
-|..E   .          |
-|.o . o           |
-|+ + o o   o      |
-|.= = o o o .     |
-|. o   o S o      |
-|       = = .     |
-|          .      |
-|                 |
-|                 |
+|  ..             |
+| .  . .          |
+|  *  . . E       |
+| o O    .        |
+|o o +   S        |
+|oo . . o         |
+|*.. . . .        |
+|+=   o           |
+|*.  .            |
 +-----------------+
 Creating .ssh directory and setting permissions on remote host node1
 THE SCRIPT WOULD ALSO BE REVOKING WRITE PERMISSIONS FOR group AND others ON THE HOME DIRECTORY FOR root. THIS IS AN SSH REQUIREMENT.
@@ -1080,18 +271,18 @@ Generating public/private rsa key pair.
 Your identification has been saved in .ssh/id_rsa.
 Your public key has been saved in .ssh/id_rsa.pub.
 The key fingerprint is:
-86:5f:b0:98:ec:e7:04:f2:60:33:6f:d0:f8:a1:75:4c root@node2
+41:05:cd:a5:db:34:35:3c:f8:c9:8b:55:6e:c9:34:11 root@node2
 The key's randomart image is:
 +--[ RSA 1024]----+
+|        o=...ooEo|
+|       .  o...o+.|
+|        . . ooo=o|
+|         . + .=oo|
+|        S . .o o |
+|            . .  |
 |                 |
 |                 |
-|        E        |
-|     + * o       |
-|    O X S .      |
-|   . & * .       |
-|    . * +        |
-|     . +         |
-|        .        |
+|                 |
 +-----------------+
 Updating authorized_keys file on remote host node1
 Updating known_hosts file on remote host node1
@@ -1125,52 +316,52 @@ additional text to the <OMS HOME>/sysman/prov/resources/ignoreMessages.txt file.
 --node1:--
 Running /usr/bin/ssh -x -l root node1 date to verify SSH connectivity has been setup from local host to node1.
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL. Please note that being prompted for a passphrase may be OK but being prompted for a password is ERROR.
-Sun Feb  2 22:40:21 NZDT 2014
+Mon Feb  3 06:29:50 NZDT 2014
 ------------------------------------------------------------------------
 --node2:--
 Running /usr/bin/ssh -x -l root node2 date to verify SSH connectivity has been setup from local host to node2.
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL. Please note that being prompted for a passphrase may be OK but being prompted for a password is ERROR.
-Sun Feb  2 22:40:21 NZDT 2014
+Mon Feb  3 06:29:50 NZDT 2014
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 Verifying SSH connectivity has been setup from node1 to node1
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL.
-Sun Feb  2 22:40:21 NZDT 2014
+Mon Feb  3 06:29:50 NZDT 2014
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 Verifying SSH connectivity has been setup from node1 to node2
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL.
-Sun Feb  2 22:40:22 NZDT 2014
+Mon Feb  3 06:29:50 NZDT 2014
 ------------------------------------------------------------------------
 -Verification from complete-
 SSH verification complete.
 finished
 spawn /u01/stage/grid/sshsetup/sshUserSetup.sh -user grid -hosts node1 node2 -noPromptPassphrase -advanced
-The output of this script is also logged into /tmp/sshUserSetup_2014-02-02-22-40-21.log
+The output of this script is also logged into /tmp/sshUserSetup_2014-02-03-06-29-50.log
 Hosts are node1 node2
 user is grid
 Platform:- Linux 
 Checking if the remote hosts are reachable
 PING node1 (192.168.56.11) 56(84) bytes of data.
-64 bytes from node1 (192.168.56.11): icmp_seq=1 ttl=64 time=0.036 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=2 ttl=64 time=0.044 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=3 ttl=64 time=0.046 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=4 ttl=64 time=0.460 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=5 ttl=64 time=0.128 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=1 ttl=64 time=0.041 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=2 ttl=64 time=0.055 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=3 ttl=64 time=0.044 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=4 ttl=64 time=0.040 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=5 ttl=64 time=0.042 ms
 
 --- node1 ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 4003ms
-rtt min/avg/max/mdev = 0.036/0.142/0.460/0.162 ms
+5 packets transmitted, 5 received, 0% packet loss, time 4000ms
+rtt min/avg/max/mdev = 0.040/0.044/0.055/0.008 ms
 PING node2 (192.168.56.12) 56(84) bytes of data.
-64 bytes from node2 (192.168.56.12): icmp_seq=1 ttl=64 time=0.832 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=2 ttl=64 time=0.380 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=3 ttl=64 time=0.333 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=4 ttl=64 time=0.589 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=5 ttl=64 time=0.388 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=1 ttl=64 time=0.518 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=2 ttl=64 time=0.603 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=3 ttl=64 time=0.612 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=4 ttl=64 time=0.738 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=5 ttl=64 time=0.427 ms
 
 --- node2 ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 4005ms
-rtt min/avg/max/mdev = 0.333/0.504/0.832/0.187 ms
+5 packets transmitted, 5 received, 0% packet loss, time 4008ms
+rtt min/avg/max/mdev = 0.427/0.579/0.738/0.107 ms
 Remote host reachability check succeeded.
 The following hosts are reachable: node1 node2.
 The following hosts are not reachable: .
@@ -1211,18 +402,18 @@ Generating public/private rsa key pair.
 Your identification has been saved in /home/grid/.ssh/id_rsa.
 Your public key has been saved in /home/grid/.ssh/id_rsa.pub.
 The key fingerprint is:
-59:1c:e2:68:85:d8:e3:bb:67:94:8f:8d:25:bb:db:05 grid@node1
+7c:62:55:a6:7b:7d:7d:c5:f3:c4:58:a1:76:c7:6f:09 grid@node1
 The key's randomart image is:
 +--[ RSA 1024]----+
-|     o .o .      |
-|    . ++ o .     |
-|     .o.. o      |
-|     ..  o       |
-|       .S.E      |
-|      . + ..     |
-|       o O  .    |
-|      . *.o.     |
-|       ooo.      |
+|            o  .o|
+|           +  .* |
+|          o  E.oB|
+|       . . ...o.O|
+|        S o . ..B|
+|       . o .   o.|
+|                 |
+|                 |
+|                 |
 +-----------------+
 Creating .ssh directory and setting permissions on remote host node1
 THE SCRIPT WOULD ALSO BE REVOKING WRITE PERMISSIONS FOR group AND others ON THE HOME DIRECTORY FOR grid. THIS IS AN SSH REQUIREMENT.
@@ -1253,18 +444,18 @@ Generating public/private rsa key pair.
 Your identification has been saved in .ssh/id_rsa.
 Your public key has been saved in .ssh/id_rsa.pub.
 The key fingerprint is:
-9e:f6:a5:6f:7e:85:3a:da:49:43:0c:ba:bf:0d:c9:a9 grid@node2
+f5:10:b9:99:32:01:f0:00:ea:eb:ac:3d:b4:37:cf:27 grid@node2
 The key's randomart image is:
 +--[ RSA 1024]----+
-|                 |
-|                 |
-|          .      |
-|         . o     |
-|        S   o  . |
-|       . + +  . .|
-|        = = +. . |
-|       . + B+o.  |
-|        E ***o   |
+|  ..o...  ..     |
+| .   o  . ..     |
+|.     .  .o+     |
+|.       o.+o     |
+| .      So  .    |
+|  o              |
+| o .             |
+|o.o o.E .        |
+|oo.o ooo         |
 +-----------------+
 Updating authorized_keys file on remote host node1
 Updating known_hosts file on remote host node1
@@ -1298,34 +489,34 @@ additional text to the <OMS HOME>/sysman/prov/resources/ignoreMessages.txt file.
 --node1:--
 Running /usr/bin/ssh -x -l grid node1 date to verify SSH connectivity has been setup from local host to node1.
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL. Please note that being prompted for a passphrase may be OK but being prompted for a password is ERROR.
-Sun Feb  2 22:40:32 NZDT 2014
+Mon Feb  3 06:30:00 NZDT 2014
 ------------------------------------------------------------------------
 --node2:--
 Running /usr/bin/ssh -x -l grid node2 date to verify SSH connectivity has been setup from local host to node2.
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL. Please note that being prompted for a passphrase may be OK but being prompted for a password is ERROR.
-Sun Feb  2 22:40:32 NZDT 2014
+Mon Feb  3 06:30:00 NZDT 2014
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 Verifying SSH connectivity has been setup from node1 to node1
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL.
-Sun Feb  2 22:40:32 NZDT 2014
+Mon Feb  3 06:30:01 NZDT 2014
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 Verifying SSH connectivity has been setup from node1 to node2
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL.
-Sun Feb  2 22:40:33 NZDT 2014
+Mon Feb  3 06:30:01 NZDT 2014
 ------------------------------------------------------------------------
 -Verification from complete-
 SSH verification complete.
 finished
 Starting Oracle Universal Installer...
 
-Checking Temp space: must be greater than 120 MB.   Actual 26008 MB    Passed
+Checking Temp space: must be greater than 120 MB.   Actual 26006 MB    Passed
 Checking swap space: must be greater than 150 MB.   Actual 5999 MB    Passed
-Preparing to launch Oracle Universal Installer from /tmp/OraInstall2014-02-02_10-40-32PM. Please wait ...You can find the log of this install session at:
- /u01/app/oraInventory/logs/installActions2014-02-02_10-40-32PM.log
+Preparing to launch Oracle Universal Installer from /tmp/OraInstall2014-02-03_06-30-01AM. Please wait ...You can find the log of this install session at:
+ /u01/app/oraInventory/logs/installActions2014-02-03_06-30-01AM.log
 The installation of Oracle Grid Infrastructure 12c was successful.
-Please check '/u01/app/oraInventory/logs/silentInstall2014-02-02_10-40-32PM.log' for more details.
+Please check '/u01/app/oraInventory/logs/silentInstall2014-02-03_06-30-01AM.log' for more details.
 
 As a root user, execute the following script(s):
 	1. /u01/app/oraInventory/orainstRoot.sh
@@ -1359,360 +550,360 @@ Removing read,write,execute permissions for world.
 
 Changing groupname of /u01/app/oraInventory to oinstall.
 The execution of the script is complete.
-Check /u01/app/12.1.0.1/grid/install/root_node1_2014-02-02_22-53-25.log for the output of root script
-Check /u01/app/12.1.0.1/grid/install/root_node2_2014-02-02_23-01-03.log for the output of root script
+Check /u01/app/12.1.0.1/grid/install/root_node1_2014-02-03_06-41-07.log for the output of root script
+Check /u01/app/12.1.0.1/grid/install/root_node2_2014-02-03_06-48-25.log for the output of root script
 Setting the invPtrLoc to /u01/app/12.1.0.1/grid/oraInst.loc
 
 perform - mode is starting for action: configure
 
-Feb 2, 2014 11:06:02 PM oracle.install.driver.oui.UpdateNodelistJob call
+Feb 3, 2014 6:53:14 AM oracle.install.driver.oui.UpdateNodelistJob call
 INFO: UpdateNodelist data:
-Feb 2, 2014 11:06:02 PM oracle.install.driver.oui.UpdateNodelistJob call
+Feb 3, 2014 6:53:14 AM oracle.install.driver.oui.UpdateNodelistJob call
 INFO: oracle.installer.oui_loc:/u01/app/12.1.0.1/grid/oui
-Feb 2, 2014 11:06:02 PM oracle.install.driver.oui.UpdateNodelistJob call
+Feb 3, 2014 6:53:14 AM oracle.install.driver.oui.UpdateNodelistJob call
 INFO: oracle.installer.jre_loc:/u01/app/12.1.0.1/grid/jdk/jre
-Feb 2, 2014 11:06:02 PM oracle.install.driver.oui.UpdateNodelistJob call
+Feb 3, 2014 6:53:14 AM oracle.install.driver.oui.UpdateNodelistJob call
 INFO: oracle.installer.doNotUpdateNodeList:true
-Feb 2, 2014 11:06:02 PM oracle.install.driver.oui.UpdateNodelistJob call
+Feb 3, 2014 6:53:14 AM oracle.install.driver.oui.UpdateNodelistJob call
 INFO: OracleHomeToUpdate:/u01/app/12.1.0.1/grid;isCRS:true;isCFS:false;isLocal:false
-Feb 2, 2014 11:06:02 PM oracle.install.driver.oui.UpdateNodelistJob call
+Feb 3, 2014 6:53:14 AM oracle.install.driver.oui.UpdateNodelistJob call
 INFO: From map: Hosts:[node1, node2] => Nodelist:[node1, node2]
-Feb 2, 2014 11:06:02 PM oracle.install.driver.oui.UpdateNodelistJob call
+Feb 3, 2014 6:53:14 AM oracle.install.driver.oui.UpdateNodelistJob call
 INFO: Before calling api: Hosts:[node1, node2] => Nodelist:[node1, node2], update localnode? true
-Feb 2, 2014 11:06:55 PM oracle.install.config.common.NetCAInternalPlugIn invoke
+Feb 3, 2014 6:54:07 AM oracle.install.config.common.NetCAInternalPlugIn invoke
 INFO: NetCAInternalPlugIn: ... adding </ouiinternal>
-Feb 2, 2014 11:06:55 PM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
+Feb 3, 2014 6:54:07 AM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
 INFO: Executing NETCA
-Feb 2, 2014 11:06:55 PM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
+Feb 3, 2014 6:54:07 AM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
 INFO: Command /u01/app/12.1.0.1/grid/bin/netca /orahome /u01/app/12.1.0.1/grid /orahnam OraGI12Home1 /instype typical /inscomp client,oraclenet,javavm,server,ano /insprtcl tcp /cfg local /authadp NO_VALUE /responseFile /u01/app/12.1.0.1/grid/network/install/netca_typ.rsp /silent  /silent   /ouiinternal 
-Feb 2, 2014 11:06:55 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:07 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn.handleProcess() entered.
-Feb 2, 2014 11:06:55 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:07 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn: getting configAssistantParmas.
-Feb 2, 2014 11:06:55 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:07 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn: checking secretArguments.
-Feb 2, 2014 11:06:55 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:07 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: No arguments to pass to stdin
-Feb 2, 2014 11:06:55 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:07 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn: starting read loop.
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: End of argument passing to stdin
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Parsing command line arguments:
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Parsing command line arguments:
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "orahome" = /u01/app/12.1.0.1/grid
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "orahome" = /u01/app/12.1.0.1/grid
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "orahnam" = OraGI12Home1
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "orahnam" = OraGI12Home1
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "instype" = typical
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "instype" = typical
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "inscomp" = client,oraclenet,javavm,server,ano
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "inscomp" = client,oraclenet,javavm,server,ano
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "insprtcl" = tcp
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "insprtcl" = tcp
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "cfg" = local
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "cfg" = local
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "authadp" = NO_VALUE
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "authadp" = NO_VALUE
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "responsefile" = /u01/app/12.1.0.1/grid/network/install/netca_typ.rsp
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "responsefile" = /u01/app/12.1.0.1/grid/network/install/netca_typ.rsp
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "silent" = true
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "silent" = true
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "silent" = true
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "silent" = true
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read:     Parameter "ouiinternal" = true
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line:     Parameter "ouiinternal" = true
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Done parsing command line arguments.
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Done parsing command line arguments.
-Feb 2, 2014 11:06:57 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:09 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:06:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:12 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Oracle Net Services Configuration:
-Feb 2, 2014 11:06:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:12 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Oracle Net Services Configuration:
-Feb 2, 2014 11:06:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:12 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:13 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Profile configuration complete.
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:13 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Profile configuration complete.
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:13 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Profile configuration complete.
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Profile configuration complete.
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Listener "LISTENER" already exists.
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Listener "LISTENER" already exists.
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Oracle Net Services configuration successful. The exit code is 0
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Oracle Net Services configuration successful. The exit code is 0
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
 INFO: Executing ASMCA
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
 INFO: Command /u01/app/12.1.0.1/grid/bin/asmca -silent -postConfigureASM -oui_internal  
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn.handleProcess() entered.
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn: getting configAssistantParmas.
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn: checking secretArguments.
-Feb 2, 2014 11:07:01 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:14 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn: starting read loop.
-Feb 2, 2014 11:07:06 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:19 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: SYS_PASSWORD_PROMPT
-Feb 2, 2014 11:07:06 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:19 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Processing: SYS_PASSWORD_PROMPT for argument tag -sysAsmPassword
-Feb 2, 2014 11:07:06 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:19 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: ASMSNMP_PASSWORD_PROMPT
-Feb 2, 2014 11:07:06 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:19 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Processing: ASMSNMP_PASSWORD_PROMPT for argument tag -asmMonitorPassword
-Feb 2, 2014 11:07:06 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:19 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: End of argument passing to stdin
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:21 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:21 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:21 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:3 Total args:2
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:21 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: PostConfiguration completed successfully
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:21 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: PostConfiguration completed successfully
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:21 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:3 Total args:2
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:21 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:21 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:21 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:3 Total args:2
-Feb 2, 2014 11:07:09 PM oracle.install.config.crs.MgmtDBInternalPlugIn invoke
+Feb 3, 2014 6:54:22 AM oracle.install.config.crs.MgmtDBInternalPlugIn invoke
 INFO: MgmtDBInternalPlugIn: ... adding </oui_internal>
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
+Feb 3, 2014 6:54:22 AM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
 INFO: Executing MGMTDB
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
+Feb 3, 2014 6:54:22 AM oracle.install.driver.oui.config.GenericInternalPlugIn invoke
 INFO: Command /u01/app/12.1.0.1/grid/bin/dbca  -silent -createDatabase -templateName MGMTSeed_Database.dbc -sid -MGMTDB -gdbName _mgmtdb -storageType ASM -diskGroupName DATA -datafileJarLocation /u01/app/12.1.0.1/grid/assistants/dbca/templates -characterset AL32UTF8 -autoGeneratePasswords   -oui_internal 
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:22 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn.handleProcess() entered.
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:22 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn: getting configAssistantParmas.
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:22 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn: checking secretArguments.
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:22 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: No arguments to pass to stdin
-Feb 2, 2014 11:07:09 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:22 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: ... GenericInternalPlugIn: starting read loop.
-Feb 2, 2014 11:07:16 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:28 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Copying database files
-Feb 2, 2014 11:07:16 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:28 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Copying database files
-Feb 2, 2014 11:07:16 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:28 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: End of argument passing to stdin
-Feb 2, 2014 11:07:16 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:28 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 1% complete
-Feb 2, 2014 11:07:16 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:28 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 1% complete
-Feb 2, 2014 11:07:16 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:28 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:07:29 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:41 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 3% complete
-Feb 2, 2014 11:07:29 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:41 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 3% complete
-Feb 2, 2014 11:07:29 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:41 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:07:29 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:41 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 10% complete
-Feb 2, 2014 11:07:29 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:41 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 10% complete
-Feb 2, 2014 11:07:29 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:41 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:07:39 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:51 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 17% complete
-Feb 2, 2014 11:07:39 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:51 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 17% complete
-Feb 2, 2014 11:07:39 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:54:51 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:07:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:55:11 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 24% complete
-Feb 2, 2014 11:07:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:55:11 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 24% complete
-Feb 2, 2014 11:07:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:55:11 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:08:39 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:55:51 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 31% complete
-Feb 2, 2014 11:08:39 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:55:51 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 31% complete
-Feb 2, 2014 11:08:39 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:55:51 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:08:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:00 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 35% complete
-Feb 2, 2014 11:08:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:00 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 35% complete
-Feb 2, 2014 11:08:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:00 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:08:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:00 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Creating and starting Oracle instance
-Feb 2, 2014 11:08:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:00 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Creating and starting Oracle instance
-Feb 2, 2014 11:08:59 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:00 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:18 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:22 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 37% complete
-Feb 2, 2014 11:09:18 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:22 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 37% complete
-Feb 2, 2014 11:09:18 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:22 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:32 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:36 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 42% complete
-Feb 2, 2014 11:09:32 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:36 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 42% complete
-Feb 2, 2014 11:09:32 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:36 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:40 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:44 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 47% complete
-Feb 2, 2014 11:09:40 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:44 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 47% complete
-Feb 2, 2014 11:09:40 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:44 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:42 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:46 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 52% complete
-Feb 2, 2014 11:09:42 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:46 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 52% complete
-Feb 2, 2014 11:09:42 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:46 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 53% complete
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 53% complete
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 56% complete
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 56% complete
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 58% complete
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 58% complete
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Registering database with Oracle Grid Infrastructure
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Registering database with Oracle Grid Infrastructure
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:57 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:58 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 64% complete
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:58 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 64% complete
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:58 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:58 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Completing Database Creation
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:58 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Completing Database Creation
-Feb 2, 2014 11:09:54 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:58 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:09:55 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:58 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 68% complete
-Feb 2, 2014 11:09:55 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:58 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 68% complete
-Feb 2, 2014 11:09:55 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:56:58 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:10:18 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:57:11 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 78% complete
-Feb 2, 2014 11:10:18 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:57:11 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 78% complete
-Feb 2, 2014 11:10:18 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:57:11 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:12:25 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:59:08 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 89% complete
-Feb 2, 2014 11:12:25 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:59:08 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 89% complete
-Feb 2, 2014 11:12:25 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:59:08 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:12:25 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:59:08 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: 100% complete
-Feb 2, 2014 11:12:25 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:59:08 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: 100% complete
-Feb 2, 2014 11:12:25 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:59:08 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
-Feb 2, 2014 11:12:25 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:59:08 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Read: Look at the log file "/u01/app/grid/cfgtoollogs/dbca/_mgmtdb/_mgmtdb.log" for further details.
-Feb 2, 2014 11:12:25 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:59:08 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 WARNING: Skipping line: Look at the log file "/u01/app/grid/cfgtoollogs/dbca/_mgmtdb/_mgmtdb.log" for further details.
-Feb 2, 2014 11:12:25 PM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
+Feb 3, 2014 6:59:08 AM oracle.install.driver.oui.config.GenericInternalPlugIn handleProcess
 INFO: Exceeded the number of arguments passed to stdin. CurrentCount:1 Total args:0
 
 perform - mode finished for action: configure
 
-You can see the log file: /u01/app/12.1.0.1/grid/cfgtoollogs/oui/configActions2014-02-02_11-06-01-PM.log
+You can see the log file: /u01/app/12.1.0.1/grid/cfgtoollogs/oui/configActions2014-02-03_06-53-13-AM.log
 
 Disk Group FRA created successfully.
 
@@ -1851,7 +1042,7 @@ OPatchauto version : 12.1.0.1.2
 OUI version        : 12.1.0.1.0
 Running from       : /u01/app/12.1.0.1/grid
 
-opatchauto log file: /u01/app/12.1.0.1/grid/cfgtoollogs/opatchauto/17735306/opatch_gi_2014-02-02_23-16-30_deploy.log
+opatchauto log file: /u01/app/12.1.0.1/grid/cfgtoollogs/opatchauto/17735306/opatch_gi_2014-02-03_07-03-04_deploy.log
 
 Parameter Validation: Successful
 
@@ -1887,7 +1078,7 @@ OPatchauto version : 12.1.0.1.2
 OUI version        : 12.1.0.1.0
 Running from       : /u01/app/12.1.0.1/grid
 
-opatchauto log file: /u01/app/12.1.0.1/grid/cfgtoollogs/opatchauto/17735306/opatch_gi_2014-02-02_23-29-44_deploy.log
+opatchauto log file: /u01/app/12.1.0.1/grid/cfgtoollogs/opatchauto/17735306/opatch_gi_2014-02-03_07-17-11_deploy.log
 
 Parameter Validation: Successful
 
@@ -1917,31 +1108,31 @@ GI Home: /u01/app/12.1.0.1/grid: 17077442, 17303297, 17552800
 
 opatchauto succeeded.
 spawn /u01/stage/grid/sshsetup/sshUserSetup.sh -user oracle -hosts node1 node2 -noPromptPassphrase -advanced
-The output of this script is also logged into /tmp/sshUserSetup_2014-02-02-23-41-37.log
+The output of this script is also logged into /tmp/sshUserSetup_2014-02-03-07-30-41.log
 Hosts are node1 node2
 user is oracle
 Platform:- Linux 
 Checking if the remote hosts are reachable
 PING node1 (192.168.56.11) 56(84) bytes of data.
-64 bytes from node1 (192.168.56.11): icmp_seq=1 ttl=64 time=0.041 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=2 ttl=64 time=0.041 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=3 ttl=64 time=0.050 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=4 ttl=64 time=0.036 ms
-64 bytes from node1 (192.168.56.11): icmp_seq=5 ttl=64 time=0.035 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=1 ttl=64 time=0.040 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=2 ttl=64 time=0.043 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=3 ttl=64 time=0.046 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=4 ttl=64 time=0.038 ms
+64 bytes from node1 (192.168.56.11): icmp_seq=5 ttl=64 time=0.034 ms
 
 --- node1 ping statistics ---
-5 packets transmitted, 5 received, 0% packet loss, time 4000ms
-rtt min/avg/max/mdev = 0.035/0.040/0.050/0.008 ms
+5 packets transmitted, 5 received, 0% packet loss, time 4001ms
+rtt min/avg/max/mdev = 0.034/0.040/0.046/0.005 ms
 PING node2 (192.168.56.12) 56(84) bytes of data.
-64 bytes from node2 (192.168.56.12): icmp_seq=1 ttl=64 time=1.00 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=2 ttl=64 time=0.551 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=3 ttl=64 time=0.410 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=4 ttl=64 time=0.292 ms
-64 bytes from node2 (192.168.56.12): icmp_seq=5 ttl=64 time=0.408 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=1 ttl=64 time=0.507 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=2 ttl=64 time=0.332 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=3 ttl=64 time=0.487 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=4 ttl=64 time=0.352 ms
+64 bytes from node2 (192.168.56.12): icmp_seq=5 ttl=64 time=0.597 ms
 
 --- node2 ping statistics ---
 5 packets transmitted, 5 received, 0% packet loss, time 4003ms
-rtt min/avg/max/mdev = 0.292/0.533/1.004/0.249 ms
+rtt min/avg/max/mdev = 0.332/0.455/0.597/0.099 ms
 Remote host reachability check succeeded.
 The following hosts are reachable: node1 node2.
 The following hosts are not reachable: .
@@ -1982,18 +1173,18 @@ Generating public/private rsa key pair.
 Your identification has been saved in /home/oracle/.ssh/id_rsa.
 Your public key has been saved in /home/oracle/.ssh/id_rsa.pub.
 The key fingerprint is:
-42:bb:f3:d8:cf:71:ee:e8:40:7b:f1:ce:6d:74:42:6e oracle@node1
+1d:b8:e5:84:0b:83:2a:c5:6a:e2:28:09:dd:dd:79:00 oracle@node1
 The key's randomart image is:
 +--[ RSA 1024]----+
+|      E          |
+| .   . . o       |
+|  o . o + +      |
+| + o . + X .     |
+|=.o . . S +      |
+|*o       .       |
+|+.               |
+|.                |
 |                 |
-|                 |
-|      .          |
-|     . .      .  |
-|      o S .  o   |
-|       + . o  E .|
-|      o o o oo o |
-|       = + B ..  |
-|      . oo=.=..  |
 +-----------------+
 Creating .ssh directory and setting permissions on remote host node1
 THE SCRIPT WOULD ALSO BE REVOKING WRITE PERMISSIONS FOR group AND others ON THE HOME DIRECTORY FOR oracle. THIS IS AN SSH REQUIREMENT.
@@ -2024,18 +1215,18 @@ Generating public/private rsa key pair.
 Your identification has been saved in .ssh/id_rsa.
 Your public key has been saved in .ssh/id_rsa.pub.
 The key fingerprint is:
-b1:5a:ab:8f:1a:17:04:52:5c:c2:6a:cc:ab:ab:4b:a1 oracle@node2
+cd:e0:62:90:19:86:d0:41:f1:34:9e:12:69:a7:59:23 oracle@node2
 The key's randomart image is:
 +--[ RSA 1024]----+
-|  .++..          |
-|   .oo           |
-| o .  . .        |
-|  =  .   o       |
-| o .  . S        |
-|. o    + .       |
-|Eo  . o .        |
-|o    o o         |
-|=o  ..o..        |
+|.+===            |
+|  E*+*           |
+| ..*B.  .        |
+|  o. . . +       |
+|      o S o      |
+|     . .         |
+|                 |
+|                 |
+|                 |
 +-----------------+
 Updating authorized_keys file on remote host node1
 Updating known_hosts file on remote host node1
@@ -2069,22 +1260,22 @@ additional text to the <OMS HOME>/sysman/prov/resources/ignoreMessages.txt file.
 --node1:--
 Running /usr/bin/ssh -x -l oracle node1 date to verify SSH connectivity has been setup from local host to node1.
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL. Please note that being prompted for a passphrase may be OK but being prompted for a password is ERROR.
-Sun Feb  2 23:41:48 NZDT 2014
+Mon Feb  3 07:30:52 NZDT 2014
 ------------------------------------------------------------------------
 --node2:--
 Running /usr/bin/ssh -x -l oracle node2 date to verify SSH connectivity has been setup from local host to node2.
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL. Please note that being prompted for a passphrase may be OK but being prompted for a password is ERROR.
-Sun Feb  2 23:41:48 NZDT 2014
+Mon Feb  3 07:30:52 NZDT 2014
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 Verifying SSH connectivity has been setup from node1 to node1
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL.
-Sun Feb  2 23:41:48 NZDT 2014
+Mon Feb  3 07:30:52 NZDT 2014
 ------------------------------------------------------------------------
 ------------------------------------------------------------------------
 Verifying SSH connectivity has been setup from node1 to node2
 IF YOU SEE ANY OTHER OUTPUT BESIDES THE OUTPUT OF THE DATE COMMAND OR IF YOU ARE PROMPTED FOR A PASSWORD HERE, IT MEANS SSH SETUP HAS NOT BEEN SUCCESSFUL.
-Sun Feb  2 23:41:48 NZDT 2014
+Mon Feb  3 07:30:52 NZDT 2014
 ------------------------------------------------------------------------
 -Verification from complete-
 SSH verification complete.
@@ -2093,10 +1284,10 @@ Starting Oracle Universal Installer...
 
 Checking Temp space: must be greater than 500 MB.   Actual 25987 MB    Passed
 Checking swap space: must be greater than 150 MB.   Actual 5997 MB    Passed
-Preparing to launch Oracle Universal Installer from /tmp/OraInstall2014-02-02_11-41-48PM. Please wait ...You can find the log of this install session at:
- /u01/app/oraInventory/logs/installActions2014-02-02_11-41-48PM.log
+Preparing to launch Oracle Universal Installer from /tmp/OraInstall2014-02-03_07-30-52AM. Please wait ...You can find the log of this install session at:
+ /u01/app/oraInventory/logs/installActions2014-02-03_07-30-52AM.log
 The installation of Oracle Database 12c was successful.
-Please check '/u01/app/oraInventory/logs/silentInstall2014-02-02_11-41-48PM.log' for more details.
+Please check '/u01/app/oraInventory/logs/silentInstall2014-02-03_07-30-52AM.log' for more details.
 
 As a root user, execute the following script(s):
 	1. /u01/app/oracle/product/12.1.0.1/dbhome_1/root.sh
@@ -2105,20 +1296,146 @@ Execute /u01/app/oracle/product/12.1.0.1/dbhome_1/root.sh on the following nodes
 [node1, node2]
 
 Successfully Setup Software.
-Check /u01/app/oracle/product/12.1.0.1/dbhome_1/install/root_node1_2014-02-02_23-53-56.log for the output of root script
-Check /u01/app/oracle/product/12.1.0.1/dbhome_1/install/root_node2_2014-02-02_23-53-56.log for the output of root script
+Check /u01/app/oracle/product/12.1.0.1/dbhome_1/install/root_node1_2014-02-03_07-45-31.log for the output of root script
+Check /u01/app/oracle/product/12.1.0.1/dbhome_1/install/root_node2_2014-02-03_07-45-32.log for the output of root script
 Archive:  /u01/stage/p6880880_121010_Linux-x86-64.zip
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchauto  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/jlib/oracle.opatch.classpath.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/jlib/oracle.opatch.classpath.windows.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/jlib/opatch.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/jlib/opatchsdk.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/jlib/oracle.opatch.classpath.unix.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/oplan.bat  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/oplan.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/osysmodel-utils.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/patchsdk.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/JMXDrivers.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/Validation.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/bundle.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/oracle.oplan.classpath.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/OuiDriver.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/automation.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/jaxb/jaxb-impl.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/jaxb/activation.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/jaxb/jaxb-api.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/jaxb/jsr173_1.0_api.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/EMrepoDrivers.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/CRSProductDriver.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/ValidationRules.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/apache-commons/commons-cli-1.0.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/OsysModel.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/oplan  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/README.txt  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/README.html  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchprereqs/prerequisite.properties  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchprereqs/opatch/opatch_prereq.xml  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchprereqs/opatch/runtime_prereq.xml  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchprereqs/opatch/rulemap.xml  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchprereqs/oui/knowledgesrc.xml  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/emdpatch.pl  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatch.pl  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatch  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatch.bat  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/README.txt  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/datapatch.bat  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/docs/Prereq_Users_Guide.txt  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/docs/Users_Guide.txt  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/docs/FAQ  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/ocm_platforms.txt  
+ extracting: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/ocm.zip  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/emocmclnt.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/emocmclnt-14.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/http_client.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/osdt_jce.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/jnet.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/emocmcommon.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/xmlparserv2.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/log4j-core.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/jcert.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/jsse.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/osdt_core3.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/regexp.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/bin/emocmrsp  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/operr_readme.txt  
+ extracting: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/version.txt  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/operr.bat  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatch.ini  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/datapatch  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/operr  
 Archive:  /u01/stage/p6880880_121010_Linux-x86-64.zip
-Oracle Interim Patch Installer version 12.1.0.1.0
-Copyright (c) 2012, Oracle Corporation.  All rights reserved.
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchauto  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/jlib/oracle.opatch.classpath.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/jlib/oracle.opatch.classpath.windows.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/jlib/opatch.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/jlib/opatchsdk.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/jlib/oracle.opatch.classpath.unix.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/oplan.bat  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/oplan.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/osysmodel-utils.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/patchsdk.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/JMXDrivers.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/Validation.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/bundle.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/oracle.oplan.classpath.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/OuiDriver.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/automation.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/jaxb/jaxb-impl.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/jaxb/activation.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/jaxb/jaxb-api.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/jaxb/jsr173_1.0_api.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/EMrepoDrivers.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/CRSProductDriver.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/ValidationRules.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/apache-commons/commons-cli-1.0.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/jlib/OsysModel.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/oplan  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/README.txt  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/oplan/README.html  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchprereqs/prerequisite.properties  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchprereqs/opatch/opatch_prereq.xml  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchprereqs/opatch/runtime_prereq.xml  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchprereqs/opatch/rulemap.xml  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatchprereqs/oui/knowledgesrc.xml  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/emdpatch.pl  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatch.pl  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatch  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatch.bat  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/README.txt  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/datapatch.bat  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/docs/Prereq_Users_Guide.txt  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/docs/Users_Guide.txt  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/docs/FAQ  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/ocm_platforms.txt  
+ extracting: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/ocm.zip  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/emocmclnt.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/emocmclnt-14.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/http_client.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/osdt_jce.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/jnet.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/emocmcommon.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/xmlparserv2.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/log4j-core.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/jcert.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/jsse.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/osdt_core3.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/lib/regexp.jar  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/ocm/bin/emocmrsp  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/operr_readme.txt  
+ extracting: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/version.txt  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/operr.bat  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/opatch.ini  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/datapatch  
+  inflating: /u01/app/oracle/product/12.1.0.1/dbhome_1/OPatch/operr  
+Oracle Interim Patch Installer version 12.1.0.1.2
+Copyright (c) 2013, Oracle Corporation.  All rights reserved.
 
 
 Oracle Home       : /u01/app/oracle/product/12.1.0.1/dbhome_1
 Central Inventory : /u01/app/oraInventory
    from           : /u01/app/oracle/product/12.1.0.1/dbhome_1/oraInst.loc
-OPatch version    : 12.1.0.1.0
+OPatch version    : 12.1.0.1.2
 OUI version       : 12.1.0.1.0
-Log file location : /u01/app/oracle/product/12.1.0.1/dbhome_1/cfgtoollogs/opatch/17552800_Feb_02_2014_23_54_01/apply2014-02-02_23-54-00PM_1.log
+Log file location : /u01/app/oracle/product/12.1.0.1/dbhome_1/cfgtoollogs/opatch/17552800_Feb_03_2014_07_45_37/apply2014-02-03_07-45-37AM_1.log
 
 Applying interim patch '17552800' to OH '/u01/app/oracle/product/12.1.0.1/dbhome_1'
 Verifying environment and performing prerequisite checks...
@@ -2218,12 +1535,11 @@ cd /u01/app/oracle/product/12.1.0.1/dbhome_1/rdbms/lib; /usr/bin/make -f ins_rdb
 '
 
 Patch 17552800 successfully applied
-Log file location: /u01/app/oracle/product/12.1.0.1/dbhome_1/cfgtoollogs/opatch/17552800_Feb_02_2014_23_54_01/apply2014-02-02_23-54-00PM_1.log
+Log file location: /u01/app/oracle/product/12.1.0.1/dbhome_1/cfgtoollogs/opatch/17552800_Feb_03_2014_07_45_37/apply2014-02-03_07-45-37AM_1.log
 
 OPatch succeeded.
+============
+============
+all task finished
 well done, oracle grid and database installed
 system ready to create a database
-
-oreal	87m1.275s
-user	0m23.195s
-sys	0m17.962s
