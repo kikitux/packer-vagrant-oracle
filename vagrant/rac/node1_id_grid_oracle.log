@@ -1,0 +1,3 @@
+uid=54320(grid) gid=54321(oinstall) groups=54321(oinstall),54318(asmdba),54319(asmoper),54320(asmadmin),54322(dba)
+uid=54321(oracle) gid=54321(oinstall) groups=54321(oinstall),54318(asmdba),54322(dba),54323(backupdba),54324(oper),54325(dgdba),54326(kmdba)
+Connection to 127.0.0.1 closed.

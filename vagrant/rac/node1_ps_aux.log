@@ -1,0 +1,218 @@
+Warning: bad syntax, perhaps a bogus '-'? See /usr/share/doc/procps-3.2.8/FAQ
+USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
+root         1  0.0  0.0  19284  1168 ?        Ss   06:18   0:01 /sbin/init
+root         2  0.0  0.0      0     0 ?        S    06:18   0:00 [kthreadd]
+root         3  0.0  0.0      0     0 ?        S    06:18   0:03 [ksoftirqd/0]
+root         5  0.0  0.0      0     0 ?        S<   06:18   0:00 [kworker/0:0H]
+root         7  0.0  0.0      0     0 ?        S<   06:18   0:00 [kworker/u:0H]
+root         8  0.0  0.0      0     0 ?        S    06:18   0:01 [migration/0]
+root         9  0.0  0.0      0     0 ?        S    06:18   0:00 [rcu_bh]
+root        10  0.7  0.0      0     0 ?        S    06:18   1:24 [rcu_sched]
+root        11  0.0  0.0      0     0 ?        S    06:18   0:00 [watchdog/0]
+root        12  0.0  0.0      0     0 ?        S    06:18   0:00 [watchdog/1]
+root        13  0.0  0.0      0     0 ?        S    06:18   0:04 [ksoftirqd/1]
+root        14  0.0  0.0      0     0 ?        S    06:18   0:01 [migration/1]
+root        16  0.0  0.0      0     0 ?        S<   06:18   0:00 [kworker/1:0H]
+root        17  0.0  0.0      0     0 ?        S<   06:18   0:00 [cpuset]
+root        18  0.0  0.0      0     0 ?        S<   06:18   0:00 [khelper]
+root        19  0.0  0.0      0     0 ?        S    06:18   0:00 [kdevtmpfs]
+root        20  0.0  0.0      0     0 ?        S<   06:18   0:00 [netns]
+root        21  0.0  0.0      0     0 ?        S    06:18   0:00 [bdi-default]
+root        22  0.0  0.0      0     0 ?        S<   06:18   0:00 [kintegrityd]
+root        23  0.0  0.0      0     0 ?        S<   06:18   0:00 [kblockd]
+root        24  0.0  0.0      0     0 ?        S<   06:18   0:00 [xenbus_frontend]
+root        25  0.0  0.0      0     0 ?        S<   06:18   0:00 [ata_sff]
+root        26  0.0  0.0      0     0 ?        S    06:18   0:00 [khubd]
+root        27  0.0  0.0      0     0 ?        S<   06:18   0:00 [md]
+root        30  0.0  0.0      0     0 ?        S    06:18   0:00 [khungtaskd]
+root        31  0.3  0.0      0     0 ?        S    06:18   0:35 [kswapd0]
+root        32  0.0  0.0      0     0 ?        SN   06:18   0:00 [ksmd]
+root        33  0.0  0.0      0     0 ?        S    06:18   0:00 [fsnotify_mark]
+root        34  0.0  0.0      0     0 ?        S<   06:18   0:00 [crypto]
+root        43  0.0  0.0      0     0 ?        S<   06:18   0:00 [kthrotld]
+root        45  0.0  0.0      0     0 ?        S<   06:18   0:00 [kpsmoused]
+root        46  0.0  0.0      0     0 ?        S<   06:18   0:00 [deferwq]
+root       140  0.0  0.0      0     0 ?        S    06:18   0:00 [scsi_eh_0]
+root       141  0.0  0.0      0     0 ?        S    06:18   0:00 [scsi_eh_1]
+root       142  0.0  0.0      0     0 ?        S    06:18   0:00 [kworker/u:2]
+root       143  0.0  0.0      0     0 ?        S    06:18   0:00 [kworker/u:3]
+root       155  0.0  0.0      0     0 ?        S    06:18   0:00 [scsi_eh_2]
+root       156  0.0  0.0      0     0 ?        S    06:18   0:00 [scsi_eh_3]
+root       157  0.0  0.0      0     0 ?        S    06:18   0:00 [scsi_eh_4]
+root       158  0.0  0.0      0     0 ?        S    06:18   0:00 [scsi_eh_5]
+root       212  0.0  0.0      0     0 ?        S<   06:18   0:04 [kworker/0:1H]
+root       229  0.0  0.0      0     0 ?        S<   06:18   0:00 [kworker/1:1H]
+root       249  0.0  0.0      0     0 ?        S    06:18   0:00 [btrfs-genwork-1]
+root       250  0.0  0.0      0     0 ?        S    06:18   0:01 [btrfs-submit-1]
+root       251  0.0  0.0      0     0 ?        S    06:18   0:00 [btrfs-delalloc-]
+root       252  0.0  0.0      0     0 ?        S    06:18   0:00 [btrfs-fixup-1]
+root       255  0.0  0.0      0     0 ?        S    06:18   0:00 [btrfs-endio-met]
+root       257  0.0  0.0      0     0 ?        S    06:18   0:00 [btrfs-freespace]
+root       259  0.0  0.0      0     0 ?        S    06:18   0:00 [btrfs-cache-1]
+root       260  0.0  0.0      0     0 ?        S    06:18   0:00 [btrfs-readahead]
+root       261  0.0  0.0      0     0 ?        S    06:18   0:00 [btrfs-flush_del]
+root       262  0.0  0.0      0     0 ?        S    06:18   0:00 [btrfs-cleaner]
+root       263  0.0  0.0      0     0 ?        S    06:18   0:01 [btrfs-transacti]
+root       375  0.0  0.0      0     0 ?        S<   06:18   0:00 [iprt]
+root       693  0.0  0.0      0     0 ?        S    06:18   0:00 [jbd2/sda1-8]
+root       694  0.0  0.0      0     0 ?        S<   06:18   0:00 [ext4-dio-unwrit]
+root       727  0.0  0.0      0     0 ?        S    06:18   0:00 [kauditd]
+root       875  0.0  0.0      0     0 ?        S    06:18   0:01 [flush-btrfs-1]
+root       944  0.0  0.0  25668   480 ?        S<sl 06:18   0:02 auditd
+root       969  0.0  0.0 249324   752 ?        Ssl  06:18   0:00 /sbin/rsyslogd -i /var/run/sy
+dbus       981  0.0  0.0  21456   472 ?        Ss   06:18   0:00 dbus-daemon --system
+root       996  0.0  0.0 189384   764 ?        Ss   06:18   0:00 cupsd -C /etc/cups/cupsd.conf
+root      1085  0.0  0.0 315752   644 ?        Sl   06:18   0:04 /usr/sbin/VBoxService
+root      1104  0.0  0.0  66656   564 ?        Ss   06:18   0:00 /usr/sbin/sshd
+root      1180  0.0  0.0  81324  1180 ?        Ss   06:18   0:00 /usr/libexec/postfix/master
+postfix   1189  0.0  0.0  81576  1068 ?        S    06:18   0:00 qmgr -l -t fifo -u
+root      1190  0.0  0.0 117336   692 ?        Ss   06:18   0:00 crond
+root      1201  0.0  0.0  21592   196 ?        Ss   06:18   0:00 /usr/sbin/atd
+root      1219  0.0  0.0   4116   476 tty1     Ss+  06:18   0:00 /sbin/mingetty /dev/tty1
+root      1221  0.0  0.0   4116   476 tty2     Ss+  06:18   0:00 /sbin/mingetty /dev/tty2
+root      1223  0.0  0.0   4116   476 tty3     Ss+  06:18   0:00 /sbin/mingetty /dev/tty3
+root      1225  0.0  0.0   4116   476 tty4     Ss+  06:18   0:00 /sbin/mingetty /dev/tty4
+root      1228  0.0  0.0   4116   476 tty5     Ss+  06:18   0:00 /sbin/mingetty /dev/tty5
+root      1230  0.0  0.0   4116   476 tty6     Ss+  06:18   0:00 /sbin/mingetty /dev/tty6
+root      2109  0.0  0.0   9172    36 ?        Ss   06:19   0:00 /sbin/dhclient -H node1 -1 -q
+root      2328  1.6  0.7 1215788 37372 ?       Ssl  07:13   2:05 /u01/app/12.1.0.1/grid/bin/oh
+grid      2423  0.4  0.6 1176384 31924 ?       Ssl  07:13   0:32 /u01/app/12.1.0.1/grid/bin/or
+grid      2436  0.8  0.6 681304 31404 ?        Ssl  07:13   1:05 /u01/app/12.1.0.1/grid/bin/ev
+grid      2439  0.0  0.4 193404 19840 ?        Ssl  07:13   0:00 /u01/app/12.1.0.1/grid/bin/md
+grid      2455  0.0  0.6 539764 29780 ?        Ssl  07:13   0:03 /u01/app/12.1.0.1/grid/bin/gp
+grid      2467  0.0  0.2 190096 14564 ?        S    07:13   0:00 /u01/app/12.1.0.1/grid/bin/ev
+grid      2472  2.8  0.7 560104 38016 ?        Sl   07:13   3:37 /u01/app/12.1.0.1/grid/bin/gi
+root      2490  0.0  2.2 1008316 111324 ?      SLl  07:14   0:06 /u01/app/12.1.0.1/grid/bin/cs
+root      2504  0.0  2.2 1008820 112420 ?      SLl  07:14   0:06 /u01/app/12.1.0.1/grid/bin/cs
+grid      2528  1.0  3.0 1165572 152784 ?      SLl  07:14   1:18 /u01/app/12.1.0.1/grid/bin/oc
+root      2586  0.2  0.9 1181036 47912 ?       Ssl  07:14   0:18 /u01/app/12.1.0.1/grid/bin/or
+root      2599  0.8  0.5 745024 28720 ?        Sl   07:14   1:02 /u01/app/12.1.0.1/grid/bin/oc
+grid      2626  0.0  0.4 1400500 21404 ?       Ss   07:14   0:01 asm_pmon_+ASM1
+grid      2628  0.0  0.3 1400500 16856 ?       Ss   07:14   0:04 asm_psp0_+ASM1
+grid      2630  7.4  0.3 1400500 16616 ?       Ss   07:14   9:34 asm_vktm_+ASM1
+grid      2634  0.0  0.4 1401576 20900 ?       Ss   07:14   0:00 asm_gen0_+ASM1
+grid      2636  0.0  0.3 1400500 16616 ?       Ss   07:14   0:00 asm_mman_+ASM1
+grid      2640  0.1  0.5 1406796 25012 ?       Ss   07:14   0:10 asm_diag_+ASM1
+grid      2642  0.0  0.3 1400500 17172 ?       Ss   07:14   0:02 asm_ping_+ASM1
+grid      2646  0.3  0.8 1417792 40008 ?       Ss   07:14   0:29 asm_lmon_+ASM1
+grid      2648  0.3  0.6 1415604 30372 ?       Ss   07:14   0:29 asm_lmd0_+ASM1
+grid      2650  0.8  0.6 1415348 33452 ?       Ss   07:14   1:08 asm_lms0_+ASM1
+grid      2654  0.0  0.4 1402440 21264 ?       Ss   07:14   0:02 asm_lmhb_+ASM1
+grid      2656  0.0  0.3 1400500 17444 ?       Ss   07:14   0:00 asm_lck1_+ASM1
+grid      2658  0.0  0.4 1405704 24748 ?       Ss   07:14   0:00 asm_dbw0_+ASM1
+grid      2660  0.0  0.4 1402128 21868 ?       Ss   07:14   0:00 asm_lgwr_+ASM1
+grid      2662  0.0  0.4 1400500 20672 ?       Ss   07:14   0:00 asm_ckpt_+ASM1
+grid      2664  0.0  0.3 1400500 16724 ?       Ss   07:14   0:00 asm_smon_+ASM1
+grid      2666  0.0  0.3 1404152 17948 ?       Ss   07:14   0:00 asm_lreg_+ASM1
+grid      2668  0.0  0.5 1403372 26404 ?       Ss   07:14   0:06 asm_rbal_+ASM1
+grid      2670  0.0  0.4 1403188 23596 ?       Ss   07:14   0:03 asm_gmon_+ASM1
+grid      2672  0.0  0.3 1400500 18492 ?       Ss   07:14   0:00 asm_mmon_+ASM1
+grid      2674  0.0  0.3 1400500 19080 ?       Ss   07:14   0:02 asm_mmnl_+ASM1
+grid      2676  0.0  0.4 1401740 21296 ?       Ss   07:14   0:02 asm_lck0_+ASM1
+grid      2680  0.0  0.5 1403392 24944 ?       Ss   07:14   0:00 oracle+ASM1 (DESCRIPTION=(LOC
+grid      2682  0.0  0.3 1400496 16596 ?       Ss   07:14   0:00 asm_gcr0_+ASM1
+root      2698  1.7  2.0 807968 104044 ?       SLl  07:14   2:16 /u01/app/12.1.0.1/grid/bin/os
+root      2707  1.1  1.3 1258444 65240 ?       Ssl  07:14   1:25 /u01/app/12.1.0.1/grid/bin/cr
+grid      2724  0.0  0.4 1403532 21548 ?       Ss   07:14   0:00 asm_asmb_+ASM1
+grid      2727  0.0  0.4 1405120 24652 ?       Ss   07:14   0:01 oracle+ASM1_asmb_+asm1 (DESCR
+grid      2791  0.6  1.2 1195876 61884 ?       Ssl  07:15   0:52 /u01/app/12.1.0.1/grid/bin/or
+root      2795  1.0  0.5 834780 26188 ?        Ssl  07:15   1:20 /u01/app/12.1.0.1/grid/bin/or
+grid      2824  0.0  0.4 1403268 23584 ?       Ss   07:15   0:00 oracle+ASM1 (DESCRIPTION=(LOC
+grid      2834  0.0  0.0  79324  2832 ?        Ss   07:15   0:00 /u01/app/12.1.0.1/grid/opmn/b
+grid      2835  0.0  0.1 1075476 9040 ?        Sl   07:15   0:01 /u01/app/12.1.0.1/grid/opmn/b
+grid      2852  0.0  0.2 178928 14072 ?        Ssl  07:15   0:00 /u01/app/12.1.0.1/grid/bin/tn
+grid      3028  0.0  0.2 179056 14372 ?        Ssl  07:15   0:00 /u01/app/12.1.0.1/grid/bin/tn
+grid      3048  0.0  0.4 800436 23692 ?        Ss   07:16   0:01 mdb_pmon_-MGMTDB
+grid      3050  0.0  0.3 800436 16464 ?        Ss   07:16   0:04 mdb_psp0_-MGMTDB
+grid      3052  7.4  0.3 800436 15980 ?        Ss   07:16   9:28 mdb_vktm_-MGMTDB
+grid      3056  0.0  0.4 801808 20036 ?        Ss   07:16   0:00 mdb_gen0_-MGMTDB
+grid      3058  0.0  3.5 800436 177428 ?       Ss   07:16   0:00 mdb_mman_-MGMTDB
+grid      3062  0.0  0.3 800436 16036 ?        Ss   07:16   0:00 mdb_diag_-MGMTDB
+grid      3064  0.0  0.5 802288 28380 ?        Ss   07:16   0:00 mdb_dbrm_-MGMTDB
+grid      3066  0.0  0.4 801972 22360 ?        Ss   07:16   0:05 mdb_dia0_-MGMTDB
+grid      3068  0.0  2.0 810056 102968 ?       Ss   07:16   0:01 mdb_dbw0_-MGMTDB
+grid      3070  0.0  0.6 824268 31132 ?        Ss   07:16   0:03 mdb_lgwr_-MGMTDB
+grid      3072  0.0  0.6 802700 30652 ?        Ss   07:16   0:05 mdb_ckpt_-MGMTDB
+grid      3074  0.0  0.4 802696 24088 ?        Ss   07:16   0:00 mdb_lg00_-MGMTDB
+grid      3076  0.0  0.3 800432 15940 ?        Ss   07:16   0:00 mdb_lg01_-MGMTDB
+grid      3078  0.0  0.8 803336 39800 ?        Ss   07:16   0:00 mdb_smon_-MGMTDB
+grid      3080  0.0  0.3 804088 17828 ?        Ss   07:16   0:00 mdb_lreg_-MGMTDB
+grid      3082  0.0  0.3 801168 19756 ?        Ss   07:16   0:00 mdb_rbal_-MGMTDB
+grid      3084  0.0  0.4 804244 23720 ?        Ss   07:16   0:00 mdb_asmb_-MGMTDB
+grid      3086  0.1  1.9 809568 97696 ?        Ss   07:16   0:09 mdb_mmon_-MGMTDB
+grid      3088  0.0  0.8 803360 40472 ?        Ss   07:16   0:05 mdb_mmnl_-MGMTDB
+grid      3090  0.0  0.4 1404216 24000 ?       Ss   07:16   0:01 oracle+ASM1_asmb_-mgmtdb (DES
+grid      3092  0.0  0.3 807476 15872 ?        Ss   07:16   0:00 mdb_d000_-MGMTDB
+grid      3094  0.0  0.2 802548 14736 ?        Ss   07:16   0:00 mdb_s000_-MGMTDB
+grid      3096  0.0  1.5 860648 76228 ?        Ss   07:16   0:00 mdb_mark_-MGMTDB
+grid      3130  0.0  0.3 800436 16560 ?        Ss   07:16   0:00 mdb_tmon_-MGMTDB
+grid      3132  0.0  0.3 800432 15984 ?        Ss   07:16   0:00 mdb_tt00_-MGMTDB
+grid      3134  0.0  0.3 800436 16648 ?        Ss   07:16   0:00 mdb_smco_-MGMTDB
+grid      3136  0.0  0.7 804444 37604 ?        Ss   07:16   0:00 mdb_fbda_-MGMTDB
+grid      3139  0.0  0.5 802276 25488 ?        Ss   07:16   0:00 mdb_aqpc_-MGMTDB
+grid      3141  0.0  0.3 800436 18800 ?        Ss   07:16   0:00 mdb_cjq0_-MGMTDB
+grid      3194  0.0  0.2 800432 14616 ?        Ss   07:16   0:00 mdb_p000_-MGMTDB
+grid      3196  0.0  0.2 800432 14564 ?        Ss   07:16   0:00 mdb_p001_-MGMTDB
+grid      3198  0.0  0.2 800432 14620 ?        Ss   07:16   0:00 mdb_p002_-MGMTDB
+grid      3200  0.0  0.2 800432 14620 ?        Ss   07:16   0:00 mdb_p003_-MGMTDB
+grid      3202  0.0  0.2 800432 14652 ?        Ss   07:16   0:00 mdb_p004_-MGMTDB
+grid      3204  0.0  0.2 800432 14624 ?        Ss   07:16   0:00 mdb_p005_-MGMTDB
+grid      3206  0.0  0.2 800432 14644 ?        Ss   07:16   0:00 mdb_p006_-MGMTDB
+grid      3209  0.0  0.2 800432 14628 ?        Ss   07:16   0:00 mdb_p007_-MGMTDB
+grid      3321  0.0  0.5 802272 24916 ?        Ss   07:16   0:00 mdb_qm02_-MGMTDB
+grid      3325  0.0  0.7 803344 38632 ?        Ss   07:16   0:00 mdb_q002_-MGMTDB
+grid      3327  0.0  0.4 801268 23872 ?        Ss   07:16   0:00 mdb_q003_-MGMTDB
+root      3407  0.0  0.0      0     0 ?        S    07:16   0:02 [btrfs-endio-wri]
+root      4026  0.0  0.0      0     0 ?        S    06:19   0:00 [btrfs-genwork-1]
+root      4027  0.0  0.0      0     0 ?        S    06:19   0:06 [btrfs-submit-1]
+root      4028  0.0  0.0      0     0 ?        S    06:19   0:00 [btrfs-delalloc-]
+root      4029  0.0  0.0      0     0 ?        S    06:19   0:00 [btrfs-fixup-1]
+root      4032  0.0  0.0      0     0 ?        S    06:19   0:00 [btrfs-endio-met]
+root      4034  0.0  0.0      0     0 ?        S    06:19   0:00 [btrfs-freespace]
+root      4036  0.0  0.0      0     0 ?        S    06:19   0:00 [btrfs-cache-1]
+root      4037  0.0  0.0      0     0 ?        S    06:19   0:00 [btrfs-readahead]
+root      4039  0.0  0.0      0     0 ?        S    06:19   0:00 [btrfs-cleaner]
+root      4040  0.0  0.0      0     0 ?        S    06:19   0:02 [btrfs-transacti]
+grid      4404  0.0  0.2 178792 13964 ?        Ssl  07:17   0:00 /u01/app/12.1.0.1/grid/bin/tn
+grid      4416  0.0  0.4 685940 20964 ?        Ssl  07:18   0:02 /u01/app/12.1.0.1/grid/bin/sc
+grid      4446  0.8  2.8 1796716 141944 ?      Sl   07:18   1:04 /u01/app/12.1.0.1/grid/jdk/bi
+grid      5986  0.0  0.5 1405704 28224 ?       Ss   07:18   0:00 oracle+ASM1_ocr (DESCRIPTION=
+grid      6978  0.0  1.1 807644 57216 ?        Ss   07:19   0:00 oracle-MGMTDB (DESCRIPTION=(L
+root      8339  0.0  0.0  10824   252 ?        S<s  06:27   0:00 /sbin/udevd -d
+root      8382  0.0  0.0      0     0 ?        S    06:27   0:07 [kworker/1:1]
+root      8899  0.1  0.0      0     0 ?        S    06:27   0:11 [flush-btrfs-2]
+root      9431  0.7  3.2 805388 158736 ?       SLl  07:20   0:54 /u01/app/12.1.0.1/grid/bin/ol
+grid      9443  0.0  1.0 805484 50152 ?        Ss   07:20   0:00 oracle-MGMTDB (LOCAL=NO)
+grid      9445  0.0  0.6 804420 34516 ?        Ss   07:20   0:00 oracle-MGMTDB (LOCAL=NO)
+grid      9451  0.2  2.4 805532 123000 ?       Ss   07:20   0:17 oracle-MGMTDB (LOCAL=NO)
+root      9454  0.0  0.0      0     0 ?        S    07:20   0:03 [btrfs-endio-wri]
+root      9536  0.0  0.0      0     0 ?        S    07:24   0:01 [btrfs-endio-wri]
+root      9679  0.0  0.0      0     0 ?        S    07:29   0:02 [btrfs-endio-wri]
+root     10152  0.0  0.0      0     0 ?        S    07:30   0:00 [kworker/0:1]
+grid     10196  0.3  0.7 1411768 35400 ?       Ss   07:30   0:25 asm_dia0_+ASM1
+root     11434  0.0  0.0      0     0 ?        S    07:31   0:02 [btrfs-delayed-m]
+root     11454  0.0  0.0      0     0 ?        S    07:32   0:00 [btrfs-flush_del]
+grid     13736  0.0  1.5 811684 76768 ?        Ss   07:35   0:01 oracle-MGMTDB (LOCAL=NO)
+root     13775  0.0  0.0      0     0 ?        S    07:36   0:00 [btrfs-endio-met]
+root     14192  0.0  0.0      0     0 ?        S    07:43   0:00 [btrfs-worker-3]
+root     14400  0.0  0.0      0     0 ?        S    07:45   0:00 [btrfs-delayed-m]
+root     17833  0.0  0.0      0     0 ?        S    07:45   0:00 [btrfs-worker-2]
+root     18194  0.0  0.0  11352  1256 ?        Ss   06:42   0:00 /bin/sh /etc/init.d/init.ohas
+root     22895  0.0  0.0      0     0 ?        S    07:46   0:00 [btrfs-endio-met]
+root     24222  0.0  0.0      0     0 ?        S    07:46   0:00 [btrfs-endio-2]
+root     24810  0.0  0.0      0     0 ?        S    07:50   0:00 [kworker/1:2]
+postfix  24991  0.0  0.0  81404  3352 ?        S    07:58   0:00 pickup -l -t fifo -u
+grid     25403  0.3  0.3 802704 18432 ?        Ss   08:16   0:12 mdb_o000_-MGMTDB
+grid     25405  0.0  0.3 1402612 19316 ?       Ss   08:16   0:00 oracle+ASM1_o000_-mgmtdb (DES
+root     25851  0.0  0.0      0     0 ?        S    08:36   0:00 [kworker/0:2]
+grid     26286  0.0  0.6 803324 33528 ?        Ss   08:56   0:00 mdb_w000_-MGMTDB
+root     26356  0.0  0.0      0     0 ?        S    08:57   0:00 [btrfs-endio-wri]
+root     26489  0.0  0.0      0     0 ?        S    08:58   0:00 [btrfs-endio-2]
+grid     27180  0.0  0.6 802296 33568 ?        Ss   09:05   0:00 mdb_w001_-MGMTDB
+root     27555  0.0  0.0      0     0 ?        S    09:21   0:00 [kworker/1:0]
+root     27562  0.0  0.0      0     0 ?        S    09:21   0:00 [btrfs-endio-wri]
+root     27611  2.0  0.0  98332  3868 ?        Ss   09:22   0:00 sshd: vagrant [priv]
+vagrant  27613  4.0  0.0  98332  1968 ?        R    09:22   0:00 sshd: vagrant@pts/0
+root     27614  1.0  0.0 175556  2656 pts/0    Ss+  09:22   0:00 sudo ps -aux
+root     27633  6.0  0.0 110232  1180 pts/0    R+   09:22   0:00 ps -aux
+Connection to 127.0.0.1 closed.

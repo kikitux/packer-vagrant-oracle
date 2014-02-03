@@ -1,0 +1,8 @@
+Filesystem         Size  Used Avail Use% Mounted on
+/dev/sda3           29G  2.6G   25G  10% /
+tmpfs              2.4G  633M  1.8G  27% /dev/shm
+/dev/sda1          477M   49M  403M  11% /boot
+/vagrant           238G  230G  8.0G  97% /vagrant
+/media/stagefiles  238G  230G  8.0G  97% /media/stagefiles
+/dev/sdb            32G   18G   12G  60% /u01
+Connection to 127.0.0.1 closed.
