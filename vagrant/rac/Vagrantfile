@@ -50,7 +50,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     #setup /etc/hosts
     config.vm.provision :shell, :inline => $etc_hosts_script
     #run some scripts
-    config.vm.provision :shell, :inline => "sh /media/stagefiles/os/set_repo.sh"
+    #New machine pointing to public-yum.oracle.com
+    #To point to an internal repo, edit stagefiles/os/repo.env
+    #config.vm.provision :shell, :inline => "sh /media/stagefiles/os/set_repo.sh"
     config.vm.provision :shell, :inline => "sh /media/stagefiles/os/sdb_u01_btrfs.sh"
     config.vm.provision :shell, :inline => "sh /media/stagefiles/os/sdc_data_asm.sh"
     config.vm.provision :shell, :inline => "sh /media/stagefiles/os/sdd_fra_asm.sh"
