@@ -15,8 +15,18 @@ In the `Vagrantfile` is the url of the `oracle65-2disk.box`, at the moment is on
 
 In case you want to see the [vagrant files in dropbox] I am sharing, click on the link, and use the `Download` or `Copy to my Dropbox` option.
 
-1. Review stagefiles/Readme.md for information what files you need to populate (path, and list of Oracle binaries and patches)
-1. Review Vagrantfile, as is, the file will just create the boxes and setup all the needed for an sucesfull oracle rac installation.
+* Review stagefiles/Readme.md for information on what files you need to populate (path, and list of Oracle binaries and patches)
+
+	$ cat stagefiles/db/zip/required_files.txt
+		linuxamd64_12c_database_1of2.zip
+		linuxamd64_12c_database_2of2.zip
+		linuxamd64_12c_grid_1of2.zip
+		linuxamd64_12c_grid_2of2.zip
+		p6880880_121010_Linux-x86-64.zip
+		p17735306_121010_Linux-x86-64.zip
+			
+
+* Review Vagrantfile, as is, the file will just create the boxes and setup all the needed for an sucesfull oracle rac installation.
 
 Around the line 124, you will find:
 
