@@ -37,12 +37,9 @@ If you want a full hands free un-attended oracle rac instalaltion, remove the co
 
 Some log files are there for reference:
 
-	[vagrant_destroy_rac.log](vagrant_destroy_rac.log)
-	[vagrant_halt_rac.log
-	(vagrant_halt_rac.log
-	[vagrant_up_provision_os_prereq_only.log
-	(vagrant_up_provision_os_prereq_only.log
-	[vagrant_up_provision_rac.log
-	(vagrant_up_provision_rac.log
+[vagrant_destroy_rac.log](vagrant_destroy_rac.log)
+[vagrant_halt_rac.log](vagrant_halt_rac.log)
+[vagrant_up_provision_os_prereq_only.log](vagrant_up_provision_os_prereq_only.log)
+[vagrant_up_provision_rac.log](vagrant_up_provision_rac.log)
 
 [vagrant files in dropbox]: https://www.dropbox.com/sh/3ks3e34en9bbec9/zjtqkm71RD/vagrant 
