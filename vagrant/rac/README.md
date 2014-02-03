@@ -15,7 +15,10 @@ In the `Vagrantfile` is the url of the `oracle65-2disk.box`, at the moment is on
 
 In case you want to see the [vagrant files in dropbox] I am sharing, click on the link, and use the `Download` or `Copy to my Dropbox` option.
 
-* Review [stagefiles/README.md](https://github.com/kikitux/stagefiles/blob/master/README.md) for information on what files you need to populate (path, and list of Oracle binaries and patches)
+* Review [stagefiles/README.md](https://github.com/kikitux/stagefiles/blob/master/README.md) for information on what files you need to populate 
+
+(path, and list of Oracle binaries and patches)
+
 Note: At the moment of this writing, we are using 12.1.0.1, Opatch 12.1.0.1.2, Jan 2014 CPU/PSU for both Grid and Database.
 
 	$ cat stagefiles/db/zip/required_files.txt
@@ -56,7 +59,7 @@ If you want a full hands free un-attended oracle rac instalaltion, remove the co
 
 The stagefiles included here, are a zip file of other project that I have on github.
 
-This [stagefiles.zip](stagefiles.zip] have been created as today 2014/02/03, and won't be updated.
+This [stagefiles.zip](stagefiles.zip) have been created as today 2014/02/03, and won't be updated.
 
 If you will like to have a newer set of scripts, go to my github project [kikitux/stagefiles](http://github.com/kikitux/stagefiles) at the moment the scripts have no much description/documentation, but they have a name that should tell you what the intention is.
 
