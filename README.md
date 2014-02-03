@@ -8,7 +8,7 @@ This is work in progress, and I will be updating this page.
 
 Feb-2014, added oracle rac made easy with Vagrant !
 
-Check (vagrant/rac)[vagrant/rac]
+Check [vagrant/rac]
 
 ## Why this project?
 
@@ -79,5 +79,7 @@ For the impatient one, please skip to Vagrant section to get a environment up an
 [ol iso in dropbox]: https://www.dropbox.com/sh/jsb3y18z4ebbowa/Z3qVA6JDC-
 
 [Text]: http://link/
+
+[vagrant/rac]: https://github.com/kikitux/packer-vagrant-oracle/tree/master/vagrant/rac
 
 [project]: https://github.com/kikitux/packer-vagrant-oracle/archive/master.zip
