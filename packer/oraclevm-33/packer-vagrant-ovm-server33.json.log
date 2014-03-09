@@ -1,0 +1,64 @@
+[1;32mvirtualbox output will be in this color.[0m
+
+[1;32m==> virtualbox: Downloading or copying Guest additions checksums[0m
+[0;32m    virtualbox: Downloading or copying: http://download.virtualbox.org/virtualbox/4.3.6/SHA256SUMS[0m
+[1;32m==> virtualbox: Downloading or copying Guest additions[0m
+[0;32m    virtualbox: Downloading or copying: http://download.virtualbox.org/virtualbox/4.3.6/VBoxGuestAdditions_4.3.6.iso[0m
+[1;32m==> virtualbox: Downloading or copying ISO[0m
+[0;32m    virtualbox: Downloading or copying: file:///Volumes/1tb/Dropbox/am/stage_linux_x86-64/ovm33/OVS-3.3.1-trunk-776.1.iso[0m
+[1;32m==> virtualbox: Starting HTTP server on port 8081[0m
+[1;32m==> virtualbox: Creating virtual machine...[0m
+[1;32m==> virtualbox: Creating hard drive...[0m
+[1;32m==> virtualbox: Creating forwarded port mapping for SSH (host port 3213)[0m
+[1;32m==> virtualbox: Executing custom VBoxManage commands...[0m
+[0;32m    virtualbox: Executing: modifyvm packer-vagrant-ovm-server33 --vram 32[0m
+[0;32m    virtualbox: Executing: modifyvm packer-vagrant-ovm-server33 --memory 4096[0m
+[1;32m==> virtualbox: Starting the virtual machine...[0m
+[1;32m==> virtualbox: Waiting 5s for boot...[0m
+[1;32m==> virtualbox: Typing the boot command...[0m
+[1;32m==> virtualbox: Waiting for SSH to become available...[0m
+[1;32m==> virtualbox: Connected to SSH![0m
+[1;32m==> virtualbox: Uploading VirtualBox version info (4.3.6)[0m
+[1;32m==> virtualbox: Uploading VirtualBox guest additions ISO...[0m
+[1;32m==> virtualbox: Provisioning with shell script: /tmp/packer-shell530194880[0m
+[0;32m    virtualbox: Verifying archive integrity... All good.[0m
+[0;32m    virtualbox: Uncompressing VirtualBox 4.3.6 Guest Additions for Linux............[0m
+[0;32m    virtualbox: VirtualBox Guest Additions installer[0m
+[0;32m    virtualbox: Copying additional installer modules ...[0m
+[0;32m    virtualbox: Installing additional modules ...[0m
+[0;32m    virtualbox: WARNING: Deprecated config file /etc/modprobe.conf, all config files belong into /etc/modprobe.d/.[0m
+[0;32m    virtualbox: Removing existing VirtualBox non-DKMS kernel modules[60G[[0;32m  OK  [0;39m][0m
+[0;32m    virtualbox: Building the VirtualBox Guest Additions kernel modules[0m
+[0;32m    virtualbox: The gcc utility was not found. If the following module compilation fails then[0m
+[0;32m    virtualbox: this could be the reason and you should try installing it.[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: The headers for the current running kernel were not found. If the following[0m
+[0;32m    virtualbox: module compilation fails then this could be the reason.[0m
+[0;32m    virtualbox: The missing package can be probably installed with[0m
+[0;32m    virtualbox: yum install kernel-uek-devel-3.8.13-16.3.1.el6uek.x86_64[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Building the main Guest Additions module[60G[[0;31mFAILED[0;39m][0m
+[0;32m    virtualbox: (Look at /var/log/vboxadd-install.log to find out what went wrong)[0m
+[0;32m    virtualbox: Doing non-kernel setup of the Guest Additions[60G[[0;32m  OK  [0;39m][0m
+[0;32m    virtualbox: Installing the Window System drivers[60G[[0;31mFAILED[0;39m][0m
+[0;32m    virtualbox: (Could not find the X.Org or XFree86 Window System.)[0m
+[1;32m==> virtualbox: Gracefully halting virtual machine...[0m
+[1;32m==> virtualbox: Preparing to export machine...[0m
+[0;32m    virtualbox: Deleting forwarded port mapping for SSH (host port 3213)[0m
+[1;32m==> virtualbox: Exporting virtual machine...[0m
+[1;32m==> virtualbox: Unregistering and deleting virtual machine...[0m
+[1;32m==> virtualbox: Running post-processor: vagrant[0m
+[1;32m==> virtualbox (vagrant): Creating Vagrant box for 'virtualbox' provider[0m
+[0;32m    virtualbox (vagrant): Copying: output-vagrant-ovm-server33/packer-vagrant-ovm-server33-disk1.vmdk[0m
+[0;32m    virtualbox (vagrant): Copying: output-vagrant-ovm-server33/packer-vagrant-ovm-server33.ovf[0m
+[0;32m    virtualbox (vagrant): Renaming the OVF to box.ovf...[0m
+[0;32m    virtualbox (vagrant): Compressing box...[0m
+[0;32m    virtualbox (vagrant): Compressing: Vagrantfile[0m
+[0;32m    virtualbox (vagrant): Compressing: box.ovf[0m
+[0;32m    virtualbox (vagrant): Compressing: metadata.json[0m
+[0;32m    virtualbox (vagrant): Compressing: packer-vagrant-ovm-server33-disk1.vmdk[0m
+[1;32mBuild 'virtualbox' finished.[0m
+
+==> Builds finished. The artifacts of successful builds are:
+--> virtualbox: VM files in directory: output-vagrant-ovm-server33
+--> virtualbox: 'virtualbox' provider box: ovm-server33.box
