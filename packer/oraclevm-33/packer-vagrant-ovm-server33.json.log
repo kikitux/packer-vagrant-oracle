@@ -13,6 +13,8 @@
 [1;32m==> virtualbox: Executing custom VBoxManage commands...[0m
 [0;32m    virtualbox: Executing: modifyvm packer-vagrant-ovm-server33 --vram 32[0m
 [0;32m    virtualbox: Executing: modifyvm packer-vagrant-ovm-server33 --memory 4096[0m
+[0;32m    virtualbox: Executing: modifyvm packer-vagrant-ovm-server33 --nic2 nat[0m
+[0;32m    virtualbox: Executing: modifyvm packer-vagrant-ovm-server33 --cableconnected2 on[0m
 [1;32m==> virtualbox: Starting the virtual machine...[0m
 [1;32m==> virtualbox: Waiting 5s for boot...[0m
 [1;32m==> virtualbox: Typing the boot command...[0m
@@ -20,7 +22,124 @@
 [1;32m==> virtualbox: Connected to SSH![0m
 [1;32m==> virtualbox: Uploading VirtualBox version info (4.3.6)[0m
 [1;32m==> virtualbox: Uploading VirtualBox guest additions ISO...[0m
-[1;32m==> virtualbox: Provisioning with shell script: /tmp/packer-shell530194880[0m
+[1;32m==> virtualbox: Provisioning with shell script: /tmp/packer-shell750163241[0m
+[0;32m    virtualbox: Setting up Install Process[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-UxJBQi/kernel-uek-devel-3.8.13-16.3.1.el6uek.x86_64.rpm: kernel-uek-devel-3.8.13-16.3.1.el6uek.x86_64[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-UxJBQi/kernel-uek-devel-3.8.13-16.3.1.el6uek.x86_64.rpm to be installed[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-UxJBQi/kernel-uek-headers-3.8.13-16.3.1.el6uek.x86_64.rpm: kernel-uek-headers-3.8.13-16.3.1.el6uek.x86_64[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-UxJBQi/kernel-uek-headers-3.8.13-16.3.1.el6uek.x86_64.rpm to be installed[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-UxJBQi/libdtrace-ctf-0.4.1-1.x86_64.rpm: libdtrace-ctf-0.4.1-1.x86_64[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-UxJBQi/libdtrace-ctf-0.4.1-1.x86_64.rpm to be installed[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-UxJBQi/gcc-4.4.7-3.el6.x86_64.rpm: gcc-4.4.7-3.el6.x86_64[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-UxJBQi/gcc-4.4.7-3.el6.x86_64.rpm to be installed[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-UxJBQi/cpp-4.4.7-3.el6.x86_64.rpm: cpp-4.4.7-3.el6.x86_64[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-UxJBQi/cpp-4.4.7-3.el6.x86_64.rpm to be installed[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-UxJBQi/cloog-ppl-0.15.7-1.2.el6.x86_64.rpm: cloog-ppl-0.15.7-1.2.el6.x86_64[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-UxJBQi/cloog-ppl-0.15.7-1.2.el6.x86_64.rpm to be installed[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-UxJBQi/mpfr-2.4.1-6.el6.x86_64.rpm: mpfr-2.4.1-6.el6.x86_64[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-UxJBQi/mpfr-2.4.1-6.el6.x86_64.rpm to be installed[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-UxJBQi/glibc-devel-2.12-1.107.el6_4.4.x86_64.rpm: glibc-devel-2.12-1.107.el6_4.4.x86_64[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-UxJBQi/glibc-devel-2.12-1.107.el6_4.4.x86_64.rpm to be installed[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-UxJBQi/glibc-headers-2.12-1.107.el6_4.4.x86_64.rpm: glibc-headers-2.12-1.107.el6_4.4.x86_64[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-UxJBQi/glibc-headers-2.12-1.107.el6_4.4.x86_64.rpm to be installed[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-UxJBQi/ppl-0.10.2-11.el6.x86_64.rpm: ppl-0.10.2-11.el6.x86_64[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-UxJBQi/ppl-0.10.2-11.el6.x86_64.rpm to be installed[0m
+[0;32m    virtualbox: Resolving Dependencies[0m
+[0;32m    virtualbox: --> Running transaction check[0m
+[0;32m    virtualbox: ---> Package cloog-ppl.x86_64 0:0.15.7-1.2.el6 will be installed[0m
+[0;32m    virtualbox: ---> Package cpp.x86_64 0:4.4.7-3.el6 will be installed[0m
+[0;32m    virtualbox: ---> Package gcc.x86_64 0:4.4.7-3.el6 will be installed[0m
+[0;32m    virtualbox: ---> Package glibc-devel.x86_64 0:2.12-1.107.el6_4.4 will be installed[0m
+[0;32m    virtualbox: ---> Package glibc-headers.x86_64 0:2.12-1.107.el6_4.4 will be installed[0m
+[0;32m    virtualbox: ---> Package kernel-uek-devel.x86_64 0:3.8.13-16.3.1.el6uek will be installed[0m
+[0;32m    virtualbox: ---> Package kernel-uek-headers.x86_64 0:3.8.13-16.3.1.el6uek will be installed[0m
+[0;32m    virtualbox: ---> Package libdtrace-ctf.x86_64 0:0.4.1-1 will be installed[0m
+[0;32m    virtualbox: ---> Package mpfr.x86_64 0:2.4.1-6.el6 will be installed[0m
+[0;32m    virtualbox: ---> Package ppl.x86_64 0:0.10.2-11.el6 will be installed[0m
+[0;32m    virtualbox: --> Finished Dependency Resolution[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Dependencies Resolved[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: ========================================[0m
+[0;32m    virtualbox: Package[0m
+[0;32m    virtualbox: Arch   Version            Repository[0m
+[0;32m    virtualbox: Size[0m
+[0;32m    virtualbox: ========================================[0m
+[0;32m    virtualbox: Installing:[0m
+[0;32m    virtualbox: [1mcloog-ppl(B[m[0m
+[0;32m    virtualbox: x86_64 0.15.7-1.2.el6     /cloog-ppl-0.15.7-1.2.el6.x86_64[0m
+[0;32m    virtualbox: 181 k[0m
+[0;32m    virtualbox: [1mcpp (B[m x86_64 4.4.7-3.el6        /cpp-4.4.7-3.el6.x86_64[0m
+[0;32m    virtualbox: 9.5 M[0m
+[0;32m    virtualbox: [1mgcc (B[m x86_64 4.4.7-3.el6        /gcc-4.4.7-3.el6.x86_64[0m
+[0;32m    virtualbox: 19 M[0m
+[0;32m    virtualbox: [1mglibc-devel(B[m[0m
+[0;32m    virtualbox: x86_64 2.12-1.107.el6_4.4 /glibc-devel-2.12-1.107.el6_4.4.x86_64[0m
+[0;32m    virtualbox: 966 k[0m
+[0;32m    virtualbox: [1mglibc-headers(B[m[0m
+[0;32m    virtualbox: x86_64 2.12-1.107.el6_4.4 /glibc-headers-2.12-1.107.el6_4.4.x86_64[0m
+[0;32m    virtualbox: 2.0 M[0m
+[0;32m    virtualbox: [1mkernel-uek-devel(B[m[0m
+[0;32m    virtualbox: x86_64 3.8.13-16.3.1.el6uek[0m
+[0;32m    virtualbox: /kernel-uek-devel-3.8.13-16.3.1.el6uek.x86_64[0m
+[0;32m    virtualbox: 32 M[0m
+[0;32m    virtualbox: [1mkernel-uek-headers(B[m[0m
+[0;32m    virtualbox: x86_64 3.8.13-16.3.1.el6uek[0m
+[0;32m    virtualbox: /kernel-uek-headers-3.8.13-16.3.1.el6uek.x86_64[0m
+[0;32m    virtualbox: 2.7 M[0m
+[0;32m    virtualbox: [1mlibdtrace-ctf(B[m[0m
+[0;32m    virtualbox: x86_64 0.4.1-1            /libdtrace-ctf-0.4.1-1.x86_64[0m
+[0;32m    virtualbox: 53 k[0m
+[0;32m    virtualbox: [1mmpfr(B[m x86_64 2.4.1-6.el6        /mpfr-2.4.1-6.el6.x86_64[0m
+[0;32m    virtualbox: 369 k[0m
+[0;32m    virtualbox: [1mppl (B[m x86_64 0.10.2-11.el6      /ppl-0.10.2-11.el6.x86_64[0m
+[0;32m    virtualbox: 4.4 M[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Transaction Summary[0m
+[0;32m    virtualbox: ========================================[0m
+[0;32m    virtualbox: Install      10 Package(s)[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Total size: 70 M[0m
+[0;32m    virtualbox: Installed size: 70 M[0m
+[0;32m    virtualbox: Downloading Packages:[0m
+[0;32m    virtualbox: Running rpm_check_debug[0m
+[0;32m    virtualbox: Running Transaction Test[0m
+[0;32m    virtualbox: Transaction Test Succeeded[0m
+[0;32m    virtualbox: Running Transaction[0m
+[0;32m    virtualbox:   Installing : ppl-0.10.2-11.el    1/10[0m
+[0;32m    virtualbox:   Installing : cloog-ppl-0.15.7    2/10[0m
+[0;32m    virtualbox:   Installing : kernel-uek-heade    3/10[0m
+[0;32m    virtualbox:   Installing : glibc-headers-2.    4/10[0m
+[0;32m    virtualbox:   Installing : glibc-devel-2.12    5/10[0m
+[0;32m    virtualbox:   Installing : mpfr-2.4.1-6.el6    6/10[0m
+[0;32m    virtualbox:   Installing : cpp-4.4.7-3.el6.    7/10[0m
+[0;32m    virtualbox:   Installing : gcc-4.4.7-3.el6.    8/10[0m
+[0;32m    virtualbox:   Installing : libdtrace-ctf-0.    9/10[0m
+[0;32m    virtualbox:   Installing : kernel-uek-devel   10/10[0m
+[0;32m    virtualbox: Verifying  : kernel-uek-devel    1/10[0m
+[0;32m    virtualbox: Verifying  : glibc-headers-2.    2/10[0m
+[0;32m    virtualbox: Verifying  : libdtrace-ctf-0.    3/10[0m
+[0;32m    virtualbox: Verifying  : gcc-4.4.7-3.el6.    4/10[0m
+[0;32m    virtualbox: Verifying  : mpfr-2.4.1-6.el6    5/10[0m
+[0;32m    virtualbox: Verifying  : cpp-4.4.7-3.el6.    6/10[0m
+[0;32m    virtualbox: Verifying  : kernel-uek-heade    7/10[0m
+[0;32m    virtualbox: Verifying  : glibc-devel-2.12    8/10[0m
+[0;32m    virtualbox: Verifying  : ppl-0.10.2-11.el    9/10[0m
+[0;32m    virtualbox: Verifying  : cloog-ppl-0.15.7   10/10[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Installed:[0m
+[0;32m    virtualbox: cloog-ppl.x86_64 0:0.15.7-1.2.el6[0m
+[0;32m    virtualbox: cpp.x86_64 0:4.4.7-3.el6[0m
+[0;32m    virtualbox: gcc.x86_64 0:4.4.7-3.el6[0m
+[0;32m    virtualbox: glibc-devel.x86_64 0:2.12-1.107.el6_4.4[0m
+[0;32m    virtualbox: glibc-headers.x86_64 0:2.12-1.107.el6_4.4[0m
+[0;32m    virtualbox: kernel-uek-devel.x86_64 0:3.8.13-16.3.1.el6uek[0m
+[0;32m    virtualbox: kernel-uek-headers.x86_64 0:3.8.13-16.3.1.el6uek[0m
+[0;32m    virtualbox: libdtrace-ctf.x86_64 0:0.4.1-1[0m
+[0;32m    virtualbox: mpfr.x86_64 0:2.4.1-6.el6[0m
+[0;32m    virtualbox: ppl.x86_64 0:0.10.2-11.el6[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Complete![0m
 [0;32m    virtualbox: Verifying archive integrity... All good.[0m
 [0;32m    virtualbox: Uncompressing VirtualBox 4.3.6 Guest Additions for Linux............[0m
 [0;32m    virtualbox: VirtualBox Guest Additions installer[0m
@@ -29,17 +148,12 @@
 [0;32m    virtualbox: WARNING: Deprecated config file /etc/modprobe.conf, all config files belong into /etc/modprobe.d/.[0m
 [0;32m    virtualbox: Removing existing VirtualBox non-DKMS kernel modules[60G[[0;32m  OK  [0;39m][0m
 [0;32m    virtualbox: Building the VirtualBox Guest Additions kernel modules[0m
-[0;32m    virtualbox: The gcc utility was not found. If the following module compilation fails then[0m
-[0;32m    virtualbox: this could be the reason and you should try installing it.[0m
-[0;32m    virtualbox:[0m
-[0;32m    virtualbox: The headers for the current running kernel were not found. If the following[0m
-[0;32m    virtualbox: module compilation fails then this could be the reason.[0m
-[0;32m    virtualbox: The missing package can be probably installed with[0m
-[0;32m    virtualbox: yum install kernel-uek-devel-3.8.13-16.3.1.el6uek.x86_64[0m
-[0;32m    virtualbox:[0m
-[0;32m    virtualbox: Building the main Guest Additions module[60G[[0;31mFAILED[0;39m][0m
-[0;32m    virtualbox: (Look at /var/log/vboxadd-install.log to find out what went wrong)[0m
+[0;32m    virtualbox: Building the main Guest Additions module[60G[[0;32m  OK  [0;39m][0m
+[0;32m    virtualbox: Building the shared folder support module[60G[[0;32m  OK  [0;39m][0m
+[0;32m    virtualbox: Building the OpenGL support module[60G[[0;32m  OK  [0;39m][0m
 [0;32m    virtualbox: Doing non-kernel setup of the Guest Additions[60G[[0;32m  OK  [0;39m][0m
+[0;32m    virtualbox: Starting the VirtualBox Guest Additions [60G[[0;31mFAILED[0;39m][0m
+[0;32m    virtualbox: (modprobe vboxguest failed)[0m
 [0;32m    virtualbox: Installing the Window System drivers[60G[[0;31mFAILED[0;39m][0m
 [0;32m    virtualbox: (Could not find the X.Org or XFree86 Window System.)[0m
 [1;32m==> virtualbox: Gracefully halting virtual machine...[0m

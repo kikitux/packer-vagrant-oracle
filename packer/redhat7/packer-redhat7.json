@@ -2,15 +2,15 @@
     "variables": {
         "ssh_name": "root",
         "ssh_pass": "root",
-        "hostname": "vagrant-ovm-server33",
-	"outputfile": "ovm-server33.box",
+        "hostname": "vagrant-redhat7",
+	"outputfile": "redhat7.box",
 	"compression" : 6,
 	"vagrantfile": "Vagrantfile"
     },
 
     "builders": [{
         "type": "virtualbox",
-        "guest_os_type": "Oracle_64",
+        "guest_os_type": "RedHat_64",
         "guest_additions_url": "",
         "guest_additions_sha256": "",
         "guest_additions_path": "",
@@ -20,21 +20,20 @@
 
         "vboxmanage": [
            ["modifyvm", "{{.Name}}", "--vram", "32"],
-           ["modifyvm", "{{.Name}}", "--memory", "4096"],
-           ["modifyvm", "{{.Name}}", "--nic2", "nat"],
-           ["modifyvm", "{{.Name}}", "--cableconnected2", "on"] 
+           ["modifyvm", "{{.Name}}", "--memory", "4096"] ,
+           ["modifyvm", "{{.Name}}", "--cpus", "2"] 
 	],
 
 	"hard_drive_interface" : "sata",
-	"disk_size": 16000,
+	"disk_size": 36000,
 
-	"headless" : 0,
+         "headless" : 0,
 
-        "iso_url": "OVS-3.3.1-trunk-776.1.iso",
-        "iso_checksum": "6cbea1bf0b9e3151c539a70c97a64aa3",
+        "iso_url": "rhel-server-7.0-beta-1-x86_64-dvd.iso",
+        "iso_checksum": "154ad5a57e23e83602860723b37a33eb",
         "iso_checksum_type": "md5",
 
-        "http_directory" : "ovm-server33_http",
+        "http_directory" : "redhat7_http",
         "http_port_min" : 8080,
         "http_port_max" : 8082,
 
@@ -48,10 +47,7 @@
 	"boot_wait": "5s",
         "boot_command" : [
             "<tab>",
-            " mboot.c32",
-            " xen.gz",
-            " --- vmlinuz ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ksdevice=eth0 network bootproto=dhcp",
-            " --- initrd.img",
+            " text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
             "<enter>"
         ]
 
@@ -63,7 +59,6 @@
     "inline": [
       "mkdir -p /media/dvd",
       "mount -o loop VBoxGuestAdditions*.iso /media/dvd",
-      "yum install -y http://public-yum.oracle.com/repo/OracleLinux/OL6/UEKR3/latest/x86_64/getPackage/kernel-uek-{devel,headers}-$(uname -r).rpm http://public-yum.oracle.com/repo/OracleLinux/OL6/UEKR3/latest/x86_64/getPackage/libdtrace-ctf-0.4.1-1.x86_64.rpm http://public-yum.oracle.com/repo/OracleLinux/OL6/latest/x86_64/getPackage/{gcc,cpp}-$(rpm -q --queryformat '%{VERSION}-%{RELEASE}.%{ARCH}\n' libgcc).rpm http://public-yum.oracle.com/repo/OracleLinux/OL6/latest/x86_64/getPackage/cloog-ppl-0.15.7-1.2.el6.x86_64.rpm http://public-yum.oracle.com/repo/OracleLinux/OL6/latest/x86_64/getPackage/mpfr-2.4.1-6.el6.x86_64.rpm http://public-yum.oracle.com/repo/OracleLinux/OL6/latest/x86_64/getPackage/glibc-{devel,headers}-2.12-1.107.el6_4.4.x86_64.rpm http://public-yum.oracle.com/repo/OracleLinux/OL6/latest/x86_64/getPackage/ppl-0.10.2-11.el6.x86_64.rpm",
       "sh /media/dvd/VBoxLinuxAdditions.run --nox11",
       "umount /media/dvd",
       "rm VBoxGuestAdditions*.iso",
@@ -78,8 +73,7 @@
       "chown -R vagrant: ~vagrant/.ssh",
       "cp /etc/ssh/sshd_config /etc/ssh/sshd_config.ori",
       "sed -i -e '/#UseDNS yes/a UseDNS no' /etc/ssh/sshd_config",
-      "for nic in /etc/sysconfig/network-scripts/ifcfg-eth*; do sed -i /HWADDR/d $nic; done",
-      "rm /etc/udev/rules.d/70-persistent-net.rules"
+      "for nic in /etc/sysconfig/network-scripts/ifcfg-p*; do sed -i /HWADDR/d $nic; done"
        ]
   }],
 
