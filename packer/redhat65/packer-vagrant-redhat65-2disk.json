@@ -1,0 +1,101 @@
+{
+    "variables": {
+        "ssh_name": "root",
+        "ssh_pass": "root",
+        "hostname": "redhat65-2disk",
+	"outputfile": "redhat65-2disk.box",
+        "rootfs"  : "ext4",
+        "swapsize": "6000",
+	"harddisk2_size": "52000",
+        "yumurl"     : "",
+	"repofile"   : "",
+	"compression" : 6
+    },
+
+    "builders": [{
+        "type": "virtualbox-iso",
+        "guest_os_type": "Oracle",
+        "guest_additions_url": "",
+        "guest_additions_sha256": "",
+        "guest_additions_path": "",
+	"guest_additions_mode": "upload",
+	"output_directory": "output-{{user `hostname`}}",
+        "vm_name": "{{user `hostname`}}",
+
+        "vboxmanage": [
+           ["modifyvm", "{{.Name}}", "--vram", "32"],
+           ["modifyvm", "{{.Name}}", "--memory", "4096"] ,
+           ["createhd", "--filename", "output-{{user `hostname`}}/{{user `hostname`}}-disk2.vdi", "--size", "{{user `harddisk2_size`}}", "--format", "VDI", "--variant", "Standard"],
+           ["storageattach", "{{.Name}}", "--storagectl", "SATA Controller", "--port", "1", "--device", "0", "--type", "hdd", "--medium", "output-{{user `hostname`}}/{{user `hostname`}}-disk2.vdi"]
+	],
+
+	"hard_drive_interface" : "sata",
+	"disk_size": 36000,
+
+	"headless" : 0,
+
+        "iso_url": "rhel-server-6.5-i386-dvd.iso",
+        "iso_checksum": "04a1fa06a6b7e70cd586535eea83c0ef",
+        "iso_checksum_type": "md5",
+
+        "http_directory" : "redhat65_http",
+        "http_port_min" : 8080,
+        "http_port_max" : 8082,
+
+        "ssh_username": "{{user `ssh_name`}}",
+        "ssh_password": "{{user `ssh_pass`}}",
+        "ssh_wait_timeout": "40m",
+
+        "shutdown_command": "shutdown -h now",
+        "shutdown_timeout": "40m",
+
+	"boot_wait": "5s",
+        "boot_command" : [
+            "<tab>",
+            " text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/ks.cfg ",
+            "HOSTNAME={{user `hostname`}} ",
+            "SWAPSIZE={{user `swapsize`}} ",
+            "ROOTFS={{user `rootfs`}} ",
+            "YUM={{user `yumurl`}} ",
+            "REPOFILE={{user `repofile`}} ",
+            "<enter>"
+        ]
+
+    }],
+
+  "provisioners"             : [{
+    "type": "shell",
+    "execute_command": "sh '{{ .Path }}'",
+    "inline": [
+      "mkdir -p /media/dvd",
+      "mount -o loop VBoxGuestAdditions*.iso /media/dvd",
+      "sh /media/dvd/VBoxLinuxAdditions.run --nox11",
+      "umount /media/dvd",
+      "rm VBoxGuestAdditions*.iso",
+      "useradd vagrant",
+      "cp /etc/sudoers /etc/sudoers.orig",
+      "sed -i -e 's/Defaults\\s*requiretty$/#Defaults\trequiretty/' /etc/sudoers",
+      "sed -i -e '/# %wheel\tALL=(ALL)\tNOPASSWD: ALL/a %vagrant\tALL=(ALL)\tNOPASSWD: ALL' /etc/sudoers",
+      "mkdir ~vagrant/.ssh",
+      "chmod 700 ~vagrant/.ssh",
+      "echo 'ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEA6NF8iallvQVp22WDkTkyrtvp9eWW6A8YVr+kz4TjGYe7gHzIw+niNltGEFHzD8+v1I2YJ6oXevct1YeS0o9HZyN1Q9qgCgzUFtdOKLv6IedplqoPkcmF0aYet2PkEDo3MlTBckFXPITAMzF8dJSIFo9D8HfdOV0IAdx4O7PtixWKn5y2hMNG0zQPyUecp4pzC6kivAIhyfHilFR61RGL+GPXQ2MWZWFYbAGjyiYJnAmCP3NOTd0jMZEnDkbUvxhMmBYSdETk1rRgm+R4LOzFUGaHqHDLKLX+FIPKcF96hrucXzcWyLbIbEgE98OHlnVYCzRdK8jlqm8tehUc9c9WhQ== vagrant insecure public key' > ~vagrant/.ssh/authorized_keys",
+      "chmod 600 ~vagrant/.ssh/authorized_keys",
+      "chown -R vagrant: ~vagrant/.ssh",
+      "cp /etc/ssh/sshd_config /etc/ssh/sshd_config.ori",
+      "sed -i -e '/#UseDNS yes/a UseDNS no' /etc/ssh/sshd_config",
+      "for nic in /etc/sysconfig/network-scripts/ifcfg-eth*; do sed -i /HWADDR/d $nic; done",
+      "rm /etc/udev/rules.d/70-persistent-net.rules"
+       ]
+  }],
+
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "only": ["virtualbox-iso"],
+      "keep_input_artifact": false,
+      "output": "{{user `outputfile`}}",
+      "compression_level": "{{user `compression`}}"
+    }
+  ]
+}
+

@@ -1,0 +1,21 @@
+[1;32mvirtualbox-iso output will be in this color.[0m
+
+[1;32m==> virtualbox-iso: Downloading or copying Guest additions checksums[0m
+[0;32m    virtualbox-iso: Downloading or copying: http://download.virtualbox.org/virtualbox/4.3.8/SHA256SUMS[0m
+[1;32m==> virtualbox-iso: Downloading or copying Guest additions[0m
+[0;32m    virtualbox-iso: Downloading or copying: http://download.virtualbox.org/virtualbox/4.3.8/VBoxGuestAdditions_4.3.8.iso[0m
+[1;32m==> virtualbox-iso: Downloading or copying ISO[0m
+[0;32m    virtualbox-iso: Downloading or copying: file:///Volumes/1tb/Dropbox/am/rh/rhel-server-6.5-i386-dvd.iso[0m
+[1;32m==> virtualbox-iso: Starting HTTP server on port 8081[0m
+[1;32m==> virtualbox-iso: Creating virtual machine...[0m
+[1;32m==> virtualbox-iso: Creating hard drive...[0m
+[1;32m==> virtualbox-iso: Creating forwarded port mapping for SSH (host port 3213)[0m
+[1;32m==> virtualbox-iso: Executing custom VBoxManage commands...[0m
+[0;32m    virtualbox-iso: Executing: modifyvm redhat65-2disk --vram 32[0m
+[0;32m    virtualbox-iso: Executing: modifyvm redhat65-2disk --memory 4096[0m
+[0;32m    virtualbox-iso: Executing: createhd --filename output-redhat65-2disk/redhat65-2disk-disk2.vdi --size 52000 --format VDI --variant Standard[0m
+[0;32m    virtualbox-iso: Executing: storageattach redhat65-2disk --storagectl SATA Controller --port 1 --device 0 --type hdd --medium output-redhat65-2disk/redhat65-2disk-disk2.vdi[0m
+[1;32m==> virtualbox-iso: Starting the virtual machine...[0m
+[1;32m==> virtualbox-iso: Waiting 5s for boot...[0m
+[1;32m==> virtualbox-iso: Typing the boot command...[0m
+[1;32m==> virtualbox-iso: Waiting for SSH to become available...[0m
