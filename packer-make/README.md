@@ -2,6 +2,10 @@
 
 This is a packer workflow driven by make.
 
+This require [packer](http://packer.io) and one or both of the [provisioners](https://packer.io/docs/templates/provisioners.html)
+[virtualbox](http://virtualbox.org)
+[vmware workstation/fusion](http://vmware.com)
+
 ## Main goal:
 
 The goal behind this, is to leverage on make for what he does best, that is check dependencies and rebuild when needed.
