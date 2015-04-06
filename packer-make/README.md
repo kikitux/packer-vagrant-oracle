@@ -106,9 +106,9 @@ So far so good.
 On this example, I will be using Oracle Linux, you can modify this for any OS you want.
 
 In Oracle Linux, we have a `yum repo` for 
-[kernel](http://public-yum.oracle.com/repo/OracleLinux/OL7/UEKR3/x86_64/repodata)
+[kernel](http://public-yum.oracle.com/repo/OracleLinux/OL7/UEKR3/x86_64)
 , and a `yum repo` for 
-[packages](http://public-yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/repodata)
+[packages](http://public-yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64)
 , so you can use this to create a file that make will use as dependencie, if the dependencie gets updated, make will rebuild our vms.
 
 This may sound simple and trivial, but if you have a bunch of boxes in different levels ie `OL7/OL6/OL5` using diferent Oracle Linux Unbreakeable Kernel `uek/uek2/uek3/playground` plus some using the `redhat compatible one` and a bunch of different boxes for task like `minimal`, `nginx`, `docker`, etc.. you get the idea, a lot to track.
@@ -116,8 +116,8 @@ This may sound simple and trivial, but if you have a bunch of boxes in different
 So, let's use `Make` for what it does best
 
 ```
-ol7_uekr3:=$(shell curl -R -I <url_for_kernel_repo> -o ol7_uekr3.tx)
-ol7_latest:=$(shell curl -R -I <url_for_packages_repo> -o ol7_latest.txt)
+ol7_uekr3:=$(shell curl -R -I <url_for_kernel_repo_metadata> -o ol7_uekr3.tx)
+ol7_latest:=$(shell curl -R -I <url_for_packages_repo_metadata> -o ol7_latest.txt)
 ```
 
 With this simple code, on each `Make` run, it will generate a file, with the `header` information and the `time stamp` of the last change.
