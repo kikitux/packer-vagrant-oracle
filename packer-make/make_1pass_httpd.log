@@ -1,0 +1,8 @@
+rm -f virtualbox/oracle7-httpd.box
+packer build -only=virtualbox oracle7-httpd.json
+[1;32mvirtualbox output will be in this color.[0m
+
+[1;32m==> virtualbox: Downloading or copying Guest additions[0m
+[0;32m    virtualbox: Downloading or copying: file:///Applications/VirtualBox.app/Contents/MacOS/VBoxGuestAdditions.iso[0m
+[1;32m==> virtualbox: Downloading or copying ISO[0m
+[0;32m    virtualbox: Downloading or copying: http://ftp.icm.edu.pl/pub/Linux/dist/oracle-linux/OL7/u1/x86_64/OracleLinux-R7-U1-Server-x86_64-dvd.iso[0m
