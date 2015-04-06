@@ -76,7 +76,7 @@ for virtualbox will be `output-oracle7-ovf-virtualbox/`
 
 for vmware will be `output-oracle7-vmx-vmware/`
 
-and then, the new vm will use `virtualbox-ovf` and `virtualbox-vmx` to seep up the process
+and then, the new vm will use `virtualbox-ovf` and `virtualbox-vmx` to speed up the process
 
 ### Now what?
 
