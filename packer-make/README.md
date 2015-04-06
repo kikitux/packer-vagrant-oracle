@@ -262,4 +262,37 @@ If you like the diagram, I did it on lucidchart, and you can see it online with 
 
 Let's put this theory to test:
 
+```
+$make
+
+==> Builds finished. The artifacts of successful builds are:
+--> virtualbox: 'virtualbox' provider box: virtualbox/oracle7-httpd.box
+
+==> Builds finished. The artifacts of successful builds are:
+--> vmware: 'vmware' provider box: vmware/oracle7-httpd.box
+
+real    18m10.428s
+user    5m0.226s
+sys     1m1.908s
+```
+
+Ok, about 15 minutes quicker for 1 box, in `virtualbox` and `vmware` provisioner, which is good. 15 minutes per box, in a multi box setup is a lot.
+
+So, what's different:
+
+First pass:
+1. Create a VM
+1. Put the iso
+1. Create a web server and share kickstart/preseed file
+1. Turn on vm
+1. Using the console/keyboard tell the installer to pick the response file
+1. un-attended OS installation
+1. post-installation scripts to get httpd installed
+
+Second pass:
+1. Create a VM
+1. Turn on vm
+1. post-installation scripts to get httpd installed
+1. Profit!
+
 

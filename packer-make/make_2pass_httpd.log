@@ -1,0 +1,650 @@
+rm -f virtualbox/oracle7-httpd.box
+packer build -only=virtualbox oracle7-httpd.json
+[1;32mvirtualbox output will be in this color.[0m
+
+[1;32m==> virtualbox: Importing VM: output-oracle7-ovf-virtualbox/oracle7.ovf[0m
+[1;32m==> virtualbox: Creating forwarded port mapping for SSH (host port 3258)[0m
+[1;32m==> virtualbox: Starting the virtual machine...[0m
+[1;32m==> virtualbox: Waiting 10s for boot...[0m
+[1;32m==> virtualbox: Typing the boot command...[0m
+[1;32m==> virtualbox: Waiting for SSH to become available...[0m
+[1;32m==> virtualbox: Connected to SSH![0m
+[1;32m==> virtualbox: Uploading VirtualBox version info (4.3.26)[0m
+[1;32m==> virtualbox: Uploading proxy.env => /root/proxy.env[0m
+[1;32m==> virtualbox: Pausing 1s before the next provisioner...[0m
+[1;32m==> virtualbox: Provisioning with shell script: /var/folders/vh/plvhbdqx35ncp68sk1jvs0s80000gp/T/packer-shell029029943[0m
+[0;32m    virtualbox: ol7_UEKR3        | 1.2 kB     00:00[0m
+[0;32m    virtualbox: ol7_addons       | 1.2 kB     00:00[0m
+[0;32m    virtualbox: ol7_latest       | 1.4 kB     00:00[0m
+[0;32m    virtualbox: ol7_optional_lat | 1.2 kB     00:00[0m
+[0;32m    virtualbox: (1/9): ol7_UEKR3/x |  30 kB   00:00[0m
+[0;32m    virtualbox: (2/9): ol7_latest/ | 360 kB   00:00[0m
+[0;32m    virtualbox: (3/9): ol7_addons/ |  21 kB   00:00[0m
+[0;32m    virtualbox: (4/9): ol7_addons/ | 3.3 kB   00:00[0m
+[0;32m    virtualbox: (5/9): ol7_optiona | 269 kB   00:00[0m
+[0;32m    virtualbox: (6/9): ol7_latest/ | 652 kB   00:00[0m
+[0;32m    virtualbox: (7/9): ol7_optiona | 2.2 MB   00:00[0m
+[0;32m    virtualbox: (8/9): ol7_UEKR3/x | 6.9 MB   00:00[0m
+[0;32m    virtualbox: (9/9): ol7_latest/ | 8.9 MB   00:00[0m
+[0;32m    virtualbox: ol7_UEKR3                       167/167[0m
+[0;32m    virtualbox: ol7_addons                        65/65[0m
+[0;32m    virtualbox: ol7_latest                    9372/9372[0m
+[0;32m    virtualbox: ol7_optional_latest           7396/7396[0m
+[0;32m    virtualbox: No packages marked for update[0m
+[0;32m    virtualbox: epel-release-lat |  14 kB     00:00[0m
+[0;32m    virtualbox: Examining /var/tmp/yum-root-MQPA3z/epel-release-latest-7.noarch.rpm: epel-release-7-5.noarch[0m
+[0;32m    virtualbox: Marking /var/tmp/yum-root-MQPA3z/epel-release-latest-7.noarch.rpm to be installed[0m
+[0;32m    virtualbox: Resolving Dependencies[0m
+[0;32m    virtualbox: --> Running transaction check[0m
+[0;32m    virtualbox: ---> Package epel-release.noarch 0:7-5 will be installed[0m
+[0;32m    virtualbox: --> Finished Dependency Resolution[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Dependencies Resolved[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: ========================================[0m
+[0;32m    virtualbox: Package      Arch   Version[0m
+[0;32m    virtualbox: Repository[0m
+[0;32m    virtualbox: Size[0m
+[0;32m    virtualbox: ========================================[0m
+[0;32m    virtualbox: Installing:[0m
+[0;32m    virtualbox: [1mepel-release(B[m noarch 7-5 /epel-release-latest-7.noarch[0m
+[0;32m    virtualbox: 24 k[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Transaction Summary[0m
+[0;32m    virtualbox: ========================================[0m
+[0;32m    virtualbox: Install  1 Package[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Total size: 24 k[0m
+[0;32m    virtualbox: Installed size: 24 k[0m
+[0;32m    virtualbox: Downloading packages:[0m
+[0;32m    virtualbox: Running transaction check[0m
+[0;32m    virtualbox: Running transaction test[0m
+[0;32m    virtualbox: Transaction test succeeded[0m
+[0;32m    virtualbox: Running transaction[0m
+[0;32m    virtualbox:   Installing : epel-release-7-5.n   1/1[0m
+[0;32m    virtualbox: Verifying  : epel-release-7-5.n   1/1[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Installed:[0m
+[0;32m    virtualbox: epel-release.noarch 0:7-5[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Complete![0m
+[0;32m    virtualbox: Cleaning repos: epel ol7_UEKR3[0m
+[0;32m    virtualbox: ...: ol7_addons ol7_latest[0m
+[0;32m    virtualbox: ...: ol7_optional_latest[0m
+[0;32m    virtualbox: Cleaning up everything[0m
+[0;32m    virtualbox: ============== repo: epel ==============[0m
+[0;32m    virtualbox: [epel][0m
+[0;32m    virtualbox: async = True[0m
+[0;32m    virtualbox: bandwidth = 0[0m
+[0;32m    virtualbox: base_persistdir = /var/lib/yum/repos/x86_64/7Server[0m
+[0;32m    virtualbox: baseurl =[0m
+[0;32m    virtualbox: cache = 0[0m
+[0;32m    virtualbox: cachedir = /var/cache/yum/x86_64/7Server/epel[0m
+[0;32m    virtualbox: check_config_file_age = True[0m
+[0;32m    virtualbox: cost = 1000[0m
+[0;32m    virtualbox: deltarpm_metadata_percentage = 100[0m
+[0;32m    virtualbox: deltarpm_percentage =[0m
+[0;32m    virtualbox: enabled = 0[0m
+[0;32m    virtualbox: enablegroups = True[0m
+[0;32m    virtualbox: exclude =[0m
+[0;32m    virtualbox: failovermethod = priority[0m
+[0;32m    virtualbox: gpgcadir = /var/lib/yum/repos/x86_64/7Server/epel/gpgcadir[0m
+[0;32m    virtualbox: gpgcakey =[0m
+[0;32m    virtualbox: gpgcheck = True[0m
+[0;32m    virtualbox: gpgdir = /var/lib/yum/repos/x86_64/7Server/epel/gpgdir[0m
+[0;32m    virtualbox: gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7[0m
+[0;32m    virtualbox: hdrdir = /var/cache/yum/x86_64/7Server/epel/headers[0m
+[0;32m    virtualbox: http_caching = all[0m
+[0;32m    virtualbox: includepkgs =[0m
+[0;32m    virtualbox: ip_resolve =[0m
+[0;32m    virtualbox: keepalive = True[0m
+[0;32m    virtualbox: keepcache = False[0m
+[0;32m    virtualbox: mddownloadpolicy = sqlite[0m
+[0;32m    virtualbox: mdpolicy = group:small[0m
+[0;32m    virtualbox: mediaid =[0m
+[0;32m    virtualbox: metadata_expire = 21600[0m
+[0;32m    virtualbox: metadata_expire_filter = read-only:present[0m
+[0;32m    virtualbox: metalink =[0m
+[0;32m    virtualbox: minrate = 0[0m
+[0;32m    virtualbox: mirrorlist = https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=x86_64[0m
+[0;32m    virtualbox: mirrorlist_expire = 86400[0m
+[0;32m    virtualbox: name = Extra Packages for Enterprise Linux 7 - x86_64[0m
+[0;32m    virtualbox: old_base_cache_dir =[0m
+[0;32m    virtualbox: password =[0m
+[0;32m    virtualbox: persistdir = /var/lib/yum/repos/x86_64/7Server/epel[0m
+[0;32m    virtualbox: pkgdir = /var/cache/yum/x86_64/7Server/epel/packages[0m
+[0;32m    virtualbox: proxy = False[0m
+[0;32m    virtualbox: proxy_dict =[0m
+[0;32m    virtualbox: proxy_password =[0m
+[0;32m    virtualbox: proxy_username =[0m
+[0;32m    virtualbox: repo_gpgcheck = False[0m
+[0;32m    virtualbox: retries = 10[0m
+[0;32m    virtualbox: skip_if_unavailable = False[0m
+[0;32m    virtualbox: ssl_check_cert_permissions = True[0m
+[0;32m    virtualbox: sslcacert =[0m
+[0;32m    virtualbox: sslclientcert =[0m
+[0;32m    virtualbox: sslclientkey =[0m
+[0;32m    virtualbox: sslverify = True[0m
+[0;32m    virtualbox: throttle = 0[0m
+[0;32m    virtualbox: timeout = 30.0[0m
+[0;32m    virtualbox: ui_id = epel/x86_64[0m
+[0;32m    virtualbox: ui_repoid_vars = releasever,[0m
+[0;32m    virtualbox: basearch[0m
+[0;32m    virtualbox: username =[0m
+[0;32m    virtualbox:[0m
+[1;32m==> virtualbox: Pausing 10s before the next provisioner...[0m
+[1;32m==> virtualbox: Provisioning with shell script: /var/folders/vh/plvhbdqx35ncp68sk1jvs0s80000gp/T/packer-shell902425525[0m
+[0;32m    virtualbox: ol7_UEKR3        | 1.2 kB     00:00[0m
+[0;32m    virtualbox: ol7_addons       | 1.2 kB     00:00[0m
+[0;32m    virtualbox: ol7_latest       | 1.4 kB     00:00[0m
+[0;32m    virtualbox: ol7_optional_lat | 1.2 kB     00:00[0m
+[0;32m    virtualbox: (1/9): ol7_UEKR3/x |  30 kB   00:00[0m
+[0;32m    virtualbox: (2/9): ol7_latest/ | 360 kB   00:00[0m
+[0;32m    virtualbox: (3/9): ol7_addons/ | 3.3 kB   00:00[0m
+[0;32m    virtualbox: (4/9): ol7_optiona | 269 kB   00:00[0m
+[0;32m    virtualbox: (5/9): ol7_addons/ |  21 kB   00:00[0m
+[0;32m    virtualbox: (6/9): ol7_latest/ | 652 kB   00:00[0m
+[0;32m    virtualbox: (7/9): ol7_optiona | 2.2 MB   00:00[0m
+[0;32m    virtualbox: (8/9): ol7_UEKR3/x | 6.9 MB   00:00[0m
+[0;32m    virtualbox: (9/9): ol7_latest/ | 8.9 MB   00:00[0m
+[0;32m    virtualbox: ol7_UEKR3                       167/167[0m
+[0;32m    virtualbox: ol7_addons                        65/65[0m
+[0;32m    virtualbox: ol7_latest                    9372/9372[0m
+[0;32m    virtualbox: ol7_optional_latest           7396/7396[0m
+[0;32m    virtualbox: Resolving Dependencies[0m
+[0;32m    virtualbox: --> Running transaction check[0m
+[0;32m    virtualbox: ---> Package httpd.x86_64 0:2.4.6-31.0.1.el7 will be installed[0m
+[0;32m    virtualbox: --> Processing Dependency: httpd-tools = 2.4.6-31.0.1.el7 for package: httpd-2.4.6-31.0.1.el7.x86_64[0m
+[0;32m    virtualbox: --> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-31.0.1.el7.x86_64[0m
+[0;32m    virtualbox: --> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-31.0.1.el7.x86_64[0m
+[0;32m    virtualbox: --> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-31.0.1.el7.x86_64[0m
+[0;32m    virtualbox: ---> Package mod_ssl.x86_64 1:2.4.6-31.0.1.el7 will be installed[0m
+[0;32m    virtualbox: --> Running transaction check[0m
+[0;32m    virtualbox: ---> Package apr.x86_64 0:1.4.8-3.el7 will be installed[0m
+[0;32m    virtualbox: ---> Package apr-util.x86_64 0:1.5.2-6.0.1.el7 will be installed[0m
+[0;32m    virtualbox: ---> Package httpd-tools.x86_64 0:2.4.6-31.0.1.el7 will be installed[0m
+[0;32m    virtualbox: ---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed[0m
+[0;32m    virtualbox: --> Finished Dependency Resolution[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Dependencies Resolved[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: ========================================[0m
+[0;32m    virtualbox: Package     Arch   Version[0m
+[0;32m    virtualbox: Repository  Size[0m
+[0;32m    virtualbox: ========================================[0m
+[0;32m    virtualbox: Installing:[0m
+[0;32m    virtualbox: httpd       x86_64 2.4.6-31.0.1.el7[0m
+[0;32m    virtualbox: ol7_latest 1.2 M[0m
+[0;32m    virtualbox: mod_ssl     x86_64 1:2.4.6-31.0.1.el7[0m
+[0;32m    virtualbox: ol7_latest  99 k[0m
+[0;32m    virtualbox: Installing for dependencies:[0m
+[0;32m    virtualbox: apr         x86_64 1.4.8-3.el7[0m
+[0;32m    virtualbox: ol7_latest  99 k[0m
+[0;32m    virtualbox: apr-util    x86_64 1.5.2-6.0.1.el7[0m
+[0;32m    virtualbox: ol7_latest  91 k[0m
+[0;32m    virtualbox: httpd-tools x86_64 2.4.6-31.0.1.el7[0m
+[0;32m    virtualbox: ol7_latest  78 k[0m
+[0;32m    virtualbox: mailcap     noarch 2.1.41-2.el7[0m
+[0;32m    virtualbox: ol7_latest  30 k[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Transaction Summary[0m
+[0;32m    virtualbox: ========================================[0m
+[0;32m    virtualbox: Install  2 Packages (+4 Dependent packages)[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Total download size: 1.6 M[0m
+[0;32m    virtualbox: Installed size: 4.5 M[0m
+[0;32m    virtualbox: Downloading packages:[0m
+[0;32m    virtualbox: (1/6): apr-1.4.8-3 |  99 kB   00:00[0m
+[0;32m    virtualbox: (2/6): apr-util-1. |  91 kB   00:00[0m
+[0;32m    virtualbox: (3/6): httpd-tools |  78 kB   00:00[0m
+[0;32m    virtualbox: (4/6): mailcap-2.1 |  30 kB   00:00[0m
+[0;32m    virtualbox: (5/6): mod_ssl-2.4 |  99 kB   00:00[0m
+[0;32m    virtualbox: (6/6): httpd-2.4.6 | 1.2 MB   00:00[0m
+[0;32m    virtualbox: ----------------------------------------[0m
+[0;32m    virtualbox: Total      4.0 MB/s | 1.6 MB  00:00[0m
+[0;32m    virtualbox: Running transaction check[0m
+[0;32m    virtualbox: Running transaction test[0m
+[0;32m    virtualbox: Transaction test succeeded[0m
+[0;32m    virtualbox: Running transaction[0m
+[0;32m    virtualbox:   Installing : apr-1.4.8-3.el7.x8   1/6[0m
+[0;32m    virtualbox:   Installing : apr-util-1.5.2-6.0   2/6[0m
+[0;32m    virtualbox:   Installing : httpd-tools-2.4.6-   3/6[0m
+[0;32m    virtualbox:   Installing : mailcap-2.1.41-2.e   4/6[0m
+[0;32m    virtualbox:   Installing : httpd-2.4.6-31.0.1   5/6[0m
+[0;32m    virtualbox:   Installing : 1:mod_ssl-2.4.6-31   6/6[0m
+[0;32m    virtualbox: Verifying  : apr-1.4.8-3.el7.x8   1/6[0m
+[0;32m    virtualbox: Verifying  : mailcap-2.1.41-2.e   2/6[0m
+[0;32m    virtualbox: Verifying  : 1:mod_ssl-2.4.6-31   3/6[0m
+[0;32m    virtualbox: Verifying  : httpd-2.4.6-31.0.1   4/6[0m
+[0;32m    virtualbox: Verifying  : apr-util-1.5.2-6.0   5/6[0m
+[0;32m    virtualbox: Verifying  : httpd-tools-2.4.6-   6/6[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Installed:[0m
+[0;32m    virtualbox: httpd.x86_64 0:2.4.6-31.0.1.el7[0m
+[0;32m    virtualbox: mod_ssl.x86_64 1:2.4.6-31.0.1.el7[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Dependency Installed:[0m
+[0;32m    virtualbox: apr.x86_64 0:1.4.8-3.el7[0m
+[0;32m    virtualbox: apr-util.x86_64 0:1.5.2-6.0.1.el7[0m
+[0;32m    virtualbox: httpd-tools.x86_64 0:2.4.6-31.0.1.el7[0m
+[0;32m    virtualbox: mailcap.noarch 0:2.1.41-2.el7[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox: Complete![0m
+[1;32m==> virtualbox: Pausing 1s before the next provisioner...[0m
+[1;32m==> virtualbox: Provisioning with shell script: /var/folders/vh/plvhbdqx35ncp68sk1jvs0s80000gp/T/packer-shell219583593[0m
+[0;32m    virtualbox: Removing existing VirtualBox non-DKMS kernel modules[60G[[0;32m  OK  [0;39m][0m
+[0;32m    virtualbox: Building the VirtualBox Guest Additions kernel modules[0m
+[0;32m    virtualbox: Building the main Guest Additions module[60G[[0;32m  OK  [0;39m][0m
+[0;32m    virtualbox: Building the shared folder support module[60G[[0;32m  OK  [0;39m][0m
+[0;32m    virtualbox: Building the OpenGL support module[60G[[0;32m  OK  [0;39m][0m
+[0;32m    virtualbox: Doing non-kernel setup of the Guest Additions[60G[[0;32m  OK  [0;39m][0m
+[0;32m    virtualbox: You should restart your guest to make sure the new modules are actually used[0m
+[0;32m    virtualbox:[0m
+[0;32m    virtualbox:[0m
+[1;32m==> virtualbox: Pausing 1s before the next provisioner...[0m
+[1;32m==> virtualbox: Provisioning with shell script: /var/folders/vh/plvhbdqx35ncp68sk1jvs0s80000gp/T/packer-shell198025274[0m
+[1;32m==> virtualbox: Gracefully halting virtual machine...[0m
+[1;32m==> virtualbox: Preparing to export machine...[0m
+[0;32m    virtualbox: Deleting forwarded port mapping for SSH (host port 3258)[0m
+[1;32m==> virtualbox: Exporting virtual machine...[0m
+[0;32m    virtualbox: Executing: export oracle7-httpd --output virtualbox/output-oracle7-httpd/oracle7-httpd.ovf[0m
+[1;32m==> virtualbox: Unregistering and deleting imported VM...[0m
+[1;32m==> virtualbox: Running post-processor: vagrant[0m
+[1;32m==> virtualbox (vagrant): Creating Vagrant box for 'virtualbox' provider[0m
+[0;32m    virtualbox (vagrant): Copying from artifact: virtualbox/output-oracle7-httpd/oracle7-httpd-disk1.vmdk[0m
+[0;32m    virtualbox (vagrant): Copying from artifact: virtualbox/output-oracle7-httpd/oracle7-httpd.ovf[0m
+[0;32m    virtualbox (vagrant): Renaming the OVF to box.ovf...[0m
+[0;32m    virtualbox (vagrant): Compressing: Vagrantfile[0m
+[0;32m    virtualbox (vagrant): Compressing: box.ovf[0m
+[0;32m    virtualbox (vagrant): Compressing: metadata.json[0m
+[0;32m    virtualbox (vagrant): Compressing: oracle7-httpd-disk1.vmdk[0m
+[1;32mBuild 'virtualbox' finished.[0m
+
+==> Builds finished. The artifacts of successful builds are:
+--> virtualbox: 'virtualbox' provider box: virtualbox/oracle7-httpd.box
+rm -f vmware/oracle7-httpd.box
+packer build -only=vmware oracle7-httpd.json
+[1;32mvmware output will be in this color.[0m
+
+[1;32m==> vmware: Cloning source VM...[0m
+[1;32m==> vmware: Starting virtual machine...[0m
+[1;32m==> vmware: Waiting 10s for boot...[0m
+[1;32m==> vmware: Connecting to VM via VNC[0m
+[1;32m==> vmware: Typing the boot command over VNC...[0m
+[1;32m==> vmware: Waiting for SSH to become available...[0m
+[1;32m==> vmware: Connected to SSH![0m
+[1;32m==> vmware: Uploading proxy.env => /root/proxy.env[0m
+[1;32m==> vmware: Pausing 1s before the next provisioner...[0m
+[1;32m==> vmware: Provisioning with shell script: /var/folders/vh/plvhbdqx35ncp68sk1jvs0s80000gp/T/packer-shell583460019[0m
+[0;32m    vmware: ol7_UEKR3        | 1.2 kB     00:00[0m
+[0;32m    vmware: ol7_addons       | 1.2 kB     00:00[0m
+[0;32m    vmware: ol7_latest       | 1.4 kB     00:00[0m
+[0;32m    vmware: ol7_optional_lat | 1.2 kB     00:00[0m
+[0;32m    vmware: (1/9): ol7_UEKR3/x |  30 kB   00:00[0m
+[0;32m    vmware: (2/9): ol7_latest/ | 360 kB   00:00[0m
+[0;32m    vmware: (3/9): ol7_addons/ | 3.3 kB   00:00[0m
+[0;32m    vmware: (4/9): ol7_optiona | 269 kB   00:00[0m
+[0;32m    vmware: (5/9): ol7_addons/ |  21 kB   00:00[0m
+[0;32m    vmware: (6/9): ol7_latest/ | 652 kB   00:00[0m
+[0;32m    vmware: (7/9): ol7_optiona | 2.2 MB   00:00[0m
+[0;32m    vmware: (8/9): ol7_UEKR3/x | 6.9 MB   00:01[0m
+[0;32m    vmware: (9/9): ol7_latest/ | 8.9 MB   00:00[0m
+[0;32m    vmware: ol7_UEKR3                       167/167[0m
+[0;32m    vmware: ol7_addons                        65/65[0m
+[0;32m    vmware: ol7_latest                    9372/9372[0m
+[0;32m    vmware: ol7_optional_latest           7396/7396[0m
+[0;32m    vmware: No packages marked for update[0m
+[0;32m    vmware: epel-release-lat |  14 kB     00:00[0m
+[0;32m    vmware: Examining /var/tmp/yum-root-TGmMmw/epel-release-latest-7.noarch.rpm: epel-release-7-5.noarch[0m
+[0;32m    vmware: Marking /var/tmp/yum-root-TGmMmw/epel-release-latest-7.noarch.rpm to be installed[0m
+[0;32m    vmware: Resolving Dependencies[0m
+[0;32m    vmware: --> Running transaction check[0m
+[0;32m    vmware: ---> Package epel-release.noarch 0:7-5 will be installed[0m
+[0;32m    vmware: --> Finished Dependency Resolution[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Dependencies Resolved[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: ========================================[0m
+[0;32m    vmware: Package      Arch   Version[0m
+[0;32m    vmware: Repository[0m
+[0;32m    vmware: Size[0m
+[0;32m    vmware: ========================================[0m
+[0;32m    vmware: Installing:[0m
+[0;32m    vmware: [1mepel-release(B[m noarch 7-5 /epel-release-latest-7.noarch[0m
+[0;32m    vmware: 24 k[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Transaction Summary[0m
+[0;32m    vmware: ========================================[0m
+[0;32m    vmware: Install  1 Package[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Total size: 24 k[0m
+[0;32m    vmware: Installed size: 24 k[0m
+[0;32m    vmware: Downloading packages:[0m
+[0;32m    vmware: Running transaction check[0m
+[0;32m    vmware: Running transaction test[0m
+[0;32m    vmware: Transaction test succeeded[0m
+[0;32m    vmware: Running transaction[0m
+[0;32m    vmware:   Installing : epel-release-7-5.n   1/1[0m
+[0;32m    vmware: Verifying  : epel-release-7-5.n   1/1[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Installed:[0m
+[0;32m    vmware: epel-release.noarch 0:7-5[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Complete![0m
+[0;32m    vmware: Cleaning repos: epel ol7_UEKR3[0m
+[0;32m    vmware: ...: ol7_addons ol7_latest[0m
+[0;32m    vmware: ...: ol7_optional_latest[0m
+[0;32m    vmware: Cleaning up everything[0m
+[0;32m    vmware: ============== repo: epel ==============[0m
+[0;32m    vmware: [epel][0m
+[0;32m    vmware: async = True[0m
+[0;32m    vmware: bandwidth = 0[0m
+[0;32m    vmware: base_persistdir = /var/lib/yum/repos/x86_64/7Server[0m
+[0;32m    vmware: baseurl =[0m
+[0;32m    vmware: cache = 0[0m
+[0;32m    vmware: cachedir = /var/cache/yum/x86_64/7Server/epel[0m
+[0;32m    vmware: check_config_file_age = True[0m
+[0;32m    vmware: cost = 1000[0m
+[0;32m    vmware: deltarpm_metadata_percentage = 100[0m
+[0;32m    vmware: deltarpm_percentage =[0m
+[0;32m    vmware: enabled = 0[0m
+[0;32m    vmware: enablegroups = True[0m
+[0;32m    vmware: exclude =[0m
+[0;32m    vmware: failovermethod = priority[0m
+[0;32m    vmware: gpgcadir = /var/lib/yum/repos/x86_64/7Server/epel/gpgcadir[0m
+[0;32m    vmware: gpgcakey =[0m
+[0;32m    vmware: gpgcheck = True[0m
+[0;32m    vmware: gpgdir = /var/lib/yum/repos/x86_64/7Server/epel/gpgdir[0m
+[0;32m    vmware: gpgkey = file:///etc/pki/rpm-gpg/RPM-GPG-KEY-EPEL-7[0m
+[0;32m    vmware: hdrdir = /var/cache/yum/x86_64/7Server/epel/headers[0m
+[0;32m    vmware: http_caching = all[0m
+[0;32m    vmware: includepkgs =[0m
+[0;32m    vmware: ip_resolve =[0m
+[0;32m    vmware: keepalive = True[0m
+[0;32m    vmware: keepcache = False[0m
+[0;32m    vmware: mddownloadpolicy = sqlite[0m
+[0;32m    vmware: mdpolicy = group:small[0m
+[0;32m    vmware: mediaid =[0m
+[0;32m    vmware: metadata_expire = 21600[0m
+[0;32m    vmware: metadata_expire_filter = read-only:present[0m
+[0;32m    vmware: metalink =[0m
+[0;32m    vmware: minrate = 0[0m
+[0;32m    vmware: mirrorlist = https://mirrors.fedoraproject.org/metalink?repo=epel-7&arch=x86_64[0m
+[0;32m    vmware: mirrorlist_expire = 86400[0m
+[0;32m    vmware: name = Extra Packages for Enterprise Linux 7 - x86_64[0m
+[0;32m    vmware: old_base_cache_dir =[0m
+[0;32m    vmware: password =[0m
+[0;32m    vmware: persistdir = /var/lib/yum/repos/x86_64/7Server/epel[0m
+[0;32m    vmware: pkgdir = /var/cache/yum/x86_64/7Server/epel/packages[0m
+[0;32m    vmware: proxy = False[0m
+[0;32m    vmware: proxy_dict =[0m
+[0;32m    vmware: proxy_password =[0m
+[0;32m    vmware: proxy_username =[0m
+[0;32m    vmware: repo_gpgcheck = False[0m
+[0;32m    vmware: retries = 10[0m
+[0;32m    vmware: skip_if_unavailable = False[0m
+[0;32m    vmware: ssl_check_cert_permissions = True[0m
+[0;32m    vmware: sslcacert =[0m
+[0;32m    vmware: sslclientcert =[0m
+[0;32m    vmware: sslclientkey =[0m
+[0;32m    vmware: sslverify = True[0m
+[0;32m    vmware: throttle = 0[0m
+[0;32m    vmware: timeout = 30.0[0m
+[0;32m    vmware: ui_id = epel/x86_64[0m
+[0;32m    vmware: ui_repoid_vars = releasever,[0m
+[0;32m    vmware: basearch[0m
+[0;32m    vmware: username =[0m
+[0;32m    vmware:[0m
+[1;32m==> vmware: Pausing 10s before the next provisioner...[0m
+[1;32m==> vmware: Provisioning with shell script: /var/folders/vh/plvhbdqx35ncp68sk1jvs0s80000gp/T/packer-shell116754570[0m
+[0;32m    vmware: ol7_UEKR3        | 1.2 kB     00:00[0m
+[0;32m    vmware: ol7_addons       | 1.2 kB     00:00[0m
+[0;32m    vmware: ol7_latest       | 1.4 kB     00:00[0m
+[0;32m    vmware: ol7_optional_lat | 1.2 kB     00:00[0m
+[0;32m    vmware: (1/9): ol7_UEKR3/x |  30 kB   00:00[0m
+[0;32m    vmware: (2/9): ol7_latest/ | 360 kB   00:00[0m
+[0;32m    vmware: (3/9): ol7_addons/ | 3.3 kB   00:00[0m
+[0;32m    vmware: (4/9): ol7_optiona | 269 kB   00:00[0m
+[0;32m    vmware: (5/9): ol7_addons/ |  21 kB   00:00[0m
+[0;32m    vmware: (6/9): ol7_latest/ | 652 kB   00:00[0m
+[0;32m    vmware: (7/9): ol7_optiona | 2.2 MB   00:00[0m
+[0;32m    vmware: (8/9): ol7_latest/ | 8.9 MB   00:00[0m
+[0;32m    vmware: (9/9): ol7_UEKR3/x | 6.9 MB   00:00[0m
+[0;32m    vmware: ol7_UEKR3                       167/167[0m
+[0;32m    vmware: ol7_addons                        65/65[0m
+[0;32m    vmware: ol7_latest                    9372/9372[0m
+[0;32m    vmware: ol7_optional_latest           7396/7396[0m
+[0;32m    vmware: Resolving Dependencies[0m
+[0;32m    vmware: --> Running transaction check[0m
+[0;32m    vmware: ---> Package httpd.x86_64 0:2.4.6-31.0.1.el7 will be installed[0m
+[0;32m    vmware: --> Processing Dependency: httpd-tools = 2.4.6-31.0.1.el7 for package: httpd-2.4.6-31.0.1.el7.x86_64[0m
+[0;32m    vmware: --> Processing Dependency: /etc/mime.types for package: httpd-2.4.6-31.0.1.el7.x86_64[0m
+[0;32m    vmware: --> Processing Dependency: libaprutil-1.so.0()(64bit) for package: httpd-2.4.6-31.0.1.el7.x86_64[0m
+[0;32m    vmware: --> Processing Dependency: libapr-1.so.0()(64bit) for package: httpd-2.4.6-31.0.1.el7.x86_64[0m
+[0;32m    vmware: ---> Package mod_ssl.x86_64 1:2.4.6-31.0.1.el7 will be installed[0m
+[0;32m    vmware: --> Running transaction check[0m
+[0;32m    vmware: ---> Package apr.x86_64 0:1.4.8-3.el7 will be installed[0m
+[0;32m    vmware: ---> Package apr-util.x86_64 0:1.5.2-6.0.1.el7 will be installed[0m
+[0;32m    vmware: ---> Package httpd-tools.x86_64 0:2.4.6-31.0.1.el7 will be installed[0m
+[0;32m    vmware: ---> Package mailcap.noarch 0:2.1.41-2.el7 will be installed[0m
+[0;32m    vmware: --> Finished Dependency Resolution[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Dependencies Resolved[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: ========================================[0m
+[0;32m    vmware: Package     Arch   Version[0m
+[0;32m    vmware: Repository  Size[0m
+[0;32m    vmware: ========================================[0m
+[0;32m    vmware: Installing:[0m
+[0;32m    vmware: httpd       x86_64 2.4.6-31.0.1.el7[0m
+[0;32m    vmware: ol7_latest 1.2 M[0m
+[0;32m    vmware: mod_ssl     x86_64 1:2.4.6-31.0.1.el7[0m
+[0;32m    vmware: ol7_latest  99 k[0m
+[0;32m    vmware: Installing for dependencies:[0m
+[0;32m    vmware: apr         x86_64 1.4.8-3.el7[0m
+[0;32m    vmware: ol7_latest  99 k[0m
+[0;32m    vmware: apr-util    x86_64 1.5.2-6.0.1.el7[0m
+[0;32m    vmware: ol7_latest  91 k[0m
+[0;32m    vmware: httpd-tools x86_64 2.4.6-31.0.1.el7[0m
+[0;32m    vmware: ol7_latest  78 k[0m
+[0;32m    vmware: mailcap     noarch 2.1.41-2.el7[0m
+[0;32m    vmware: ol7_latest  30 k[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Transaction Summary[0m
+[0;32m    vmware: ========================================[0m
+[0;32m    vmware: Install  2 Packages (+4 Dependent packages)[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Total download size: 1.6 M[0m
+[0;32m    vmware: Installed size: 4.5 M[0m
+[0;32m    vmware: Downloading packages:[0m
+[0;32m    vmware: (1/6): apr-1.4.8-3 |  99 kB   00:00[0m
+[0;32m    vmware: (2/6): httpd-2.4.6 | 1.2 MB   00:00[0m
+[0;32m    vmware: (3/6): apr-util-1. |  91 kB   00:00[0m
+[0;32m    vmware: (4/6): httpd-tools |  78 kB   00:00[0m
+[0;32m    vmware: (5/6): mailcap-2.1 |  30 kB   00:00[0m
+[0;32m    vmware: (6/6): mod_ssl-2.4 |  99 kB   00:00[0m
+[0;32m    vmware: ----------------------------------------[0m
+[0;32m    vmware: Total      3.1 MB/s | 1.6 MB  00:00[0m
+[0;32m    vmware: Running transaction check[0m
+[0;32m    vmware: Running transaction test[0m
+[0;32m    vmware: Transaction test succeeded[0m
+[0;32m    vmware: Running transaction[0m
+[0;32m    vmware:   Installing : apr-1.4.8-3.el7.x8   1/6[0m
+[0;32m    vmware:   Installing : apr-util-1.5.2-6.0   2/6[0m
+[0;32m    vmware:   Installing : httpd-tools-2.4.6-   3/6[0m
+[0;32m    vmware:   Installing : mailcap-2.1.41-2.e   4/6[0m
+[0;32m    vmware:   Installing : httpd-2.4.6-31.0.1   5/6[0m
+[0;32m    vmware:   Installing : 1:mod_ssl-2.4.6-31   6/6[0m
+[0;32m    vmware: Verifying  : apr-1.4.8-3.el7.x8   1/6[0m
+[0;32m    vmware: Verifying  : mailcap-2.1.41-2.e   2/6[0m
+[0;32m    vmware: Verifying  : 1:mod_ssl-2.4.6-31   3/6[0m
+[0;32m    vmware: Verifying  : httpd-2.4.6-31.0.1   4/6[0m
+[0;32m    vmware: Verifying  : apr-util-1.5.2-6.0   5/6[0m
+[0;32m    vmware: Verifying  : httpd-tools-2.4.6-   6/6[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Installed:[0m
+[0;32m    vmware: httpd.x86_64 0:2.4.6-31.0.1.el7[0m
+[0;32m    vmware: mod_ssl.x86_64 1:2.4.6-31.0.1.el7[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Dependency Installed:[0m
+[0;32m    vmware: apr.x86_64 0:1.4.8-3.el7[0m
+[0;32m    vmware: apr-util.x86_64 0:1.5.2-6.0.1.el7[0m
+[0;32m    vmware: httpd-tools.x86_64 0:2.4.6-31.0.1.el7[0m
+[0;32m    vmware: mailcap.noarch 0:2.1.41-2.el7[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Complete![0m
+[1;32m==> vmware: Pausing 1s before the next provisioner...[0m
+[1;32m==> vmware: Provisioning with shell script: /var/folders/vh/plvhbdqx35ncp68sk1jvs0s80000gp/T/packer-shell270862607[0m
+[0;32m    vmware: Initializing...[0m
+[0;32m    vmware:[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Making sure services for VMware Tools are stopped.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Stopping Thinprint services in the virtual machine:[0m
+[0;32m    vmware: Stopping Virtual Printing daemon:[71G done[0m
+[0;32m    vmware: Stopping vmware-tools (via systemctl):  [60G[[0;32m  OK  [0;39m][0m
+[0;32m    vmware:[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: The module vmci has already been installed on this system by another installer[0m
+[0;32m    vmware: or package and will not be modified by this installer.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: The module vsock has already been installed on this system by another installer[0m
+[0;32m    vmware: or package and will not be modified by this installer.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: The module vmxnet3 has already been installed on this system by another[0m
+[0;32m    vmware: installer or package and will not be modified by this installer.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: The module pvscsi has already been installed on this system by another[0m
+[0;32m    vmware: installer or package and will not be modified by this installer.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: The module vmmemctl has already been installed on this system by another[0m
+[0;32m    vmware: installer or package and will not be modified by this installer.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: The VMware Host-Guest Filesystem allows for shared folders between the host OS[0m
+[0;32m    vmware: and the guest OS in a Fusion or Workstation virtual environment.  Do you wish[0m
+[0;32m    vmware: to enable this feature? [yes][0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Using kernel build system.[0m
+[0;32m    vmware: make: Entering directory `/tmp/modconfig-nhaci8/vmhgfs-only'[0m
+[0;32m    vmware: /bin/make -C /lib/modules/3.8.13-68.1.2.el7uek.x86_64/build/include/.. SUBDIRS=$PWD SRCROOT=$PWD/. \[0m
+[0;32m    vmware: MODULEBUILDDIR= modules[0m
+[0;32m    vmware: make[1]: Entering directory `/usr/src/kernels/3.8.13-68.1.2.el7uek.x86_64'[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/message.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/dir.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/rpcout.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/filesystem.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/cpName.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/request.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/module.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/hgfsUtil.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/hgfsEscape.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/link.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/bdhandler.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/transport.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/file.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/super.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/stubs.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/fsutil.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/cpNameLinux.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/hgfsBd.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/backdoorGcc64.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/page.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/backdoor.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/inode.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/dentry.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/cpNameLite.o[0m
+[0;32m    vmware: CC [M]  /tmp/modconfig-nhaci8/vmhgfs-only/kernelStubsLinux.o[0m
+[0;32m    vmware: SDTSTB  /tmp/modconfig-nhaci8/vmhgfs-only/vmhgfs.sdtstub.S[0m
+[0;32m    vmware: AS [M]  /tmp/modconfig-nhaci8/vmhgfs-only/vmhgfs.sdtstub.o[0m
+[0;32m    vmware: LD [M]  /tmp/modconfig-nhaci8/vmhgfs-only/vmhgfs.o[0m
+[0;32m    vmware: Building modules, stage 2.[0m
+[0;32m    vmware: MODPOST 1 modules[0m
+[0;32m    vmware: SDTINF  /tmp/modconfig-nhaci8/vmhgfs-only/vmhgfs.sdtinfo.c[0m
+[0;32m    vmware: CC      /tmp/modconfig-nhaci8/vmhgfs-only/vmhgfs.mod.o[0m
+[0;32m    vmware: CTF[0m
+[0;32m    vmware: LD [M]  /tmp/modconfig-nhaci8/vmhgfs-only/vmhgfs.ko[0m
+[0;32m    vmware: make[1]: Leaving directory `/usr/src/kernels/3.8.13-68.1.2.el7uek.x86_64'[0m
+[0;32m    vmware: /bin/make -C $PWD SRCROOT=$PWD/. \[0m
+[0;32m    vmware: MODULEBUILDDIR= postbuild[0m
+[0;32m    vmware: make[1]: Entering directory `/tmp/modconfig-nhaci8/vmhgfs-only'[0m
+[0;32m    vmware: make[1]: `postbuild' is up to date.[0m
+[0;32m    vmware: make[1]: Leaving directory `/tmp/modconfig-nhaci8/vmhgfs-only'[0m
+[0;32m    vmware: cp -f vmhgfs.ko ./../vmhgfs.o[0m
+[0;32m    vmware: make: Leaving directory `/tmp/modconfig-nhaci8/vmhgfs-only'[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: The vmxnet driver is no longer supported on kernels 3.3 and greater. Please[0m
+[0;32m    vmware: upgrade to a newer virtual NIC. (e.g., vmxnet3 or e1000e)[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: The vmblock enables dragging or copying files between host and guest in a[0m
+[0;32m    vmware: Fusion or Workstation virtual environment.  Do you wish to enable this feature?[0m
+[0;32m    vmware: [yes][0m
+[0;32m    vmware:[0m
+[0;32m    vmware: NOTICE:  It appears your system does not have the required fuse packages[0m
+[0;32m    vmware: installed.  The VMware blocking filesystem requires the fuse packages and its[0m
+[0;32m    vmware: libraries to function properly.  Please install the fuse or fuse-utils package[0m
+[0;32m    vmware: using your systems package management utility and re-run this script in order[0m
+[0;32m    vmware: to enable the VMware blocking filesystem.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: VMware automatic kernel modules enables automatic building and installation of[0m
+[0;32m    vmware: VMware kernel modules at boot that are not already present. This feature can be[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: enabled/disabled by re-running vmware-config-tools.pl.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Would you like to enable VMware automatic kernel modules?[0m
+[0;32m    vmware: [no][0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Do you want to enable Guest Authentication (vgauth)? [yes][0m
+[0;32m    vmware:[0m
+[0;32m    vmware: No X install found.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Creating a new initrd boot image for the kernel.[0m
+[0;32m    vmware: Starting Virtual Printing daemon:[71G done[0m
+[0;32m    vmware: Starting vmware-tools (via systemctl):  [60G[[0;32m  OK  [0;39m][0m
+[0;32m    vmware: The configuration of VMware Tools 9.9.2 build-2496486 for Linux for this[0m
+[0;32m    vmware: running kernel completed successfully.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: You must restart your X session before any mouse or graphics changes take[0m
+[0;32m    vmware: effect.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: You can now run VMware Tools by invoking "/usr/bin/vmware-toolbox-cmd" from the[0m
+[0;32m    vmware: command line.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: To enable advanced X features (e.g., guest resolution fit, drag and drop, and[0m
+[0;32m    vmware: file and text copy/paste), you will need to do one (or more) of the following:[0m
+[0;32m    vmware: 1. Manually start /usr/bin/vmware-user[0m
+[0;32m    vmware: 2. Log out and log back into your desktop session; and,[0m
+[0;32m    vmware: 3. Restart your X session.[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: Enjoy,[0m
+[0;32m    vmware:[0m
+[0;32m    vmware: --the VMware team[0m
+[0;32m    vmware:[0m
+[1;32m==> vmware: Pausing 1s before the next provisioner...[0m
+[1;32m==> vmware: Provisioning with shell script: /var/folders/vh/plvhbdqx35ncp68sk1jvs0s80000gp/T/packer-shell763434713[0m
+[1;32m==> vmware: Gracefully halting virtual machine...[0m
+[0;32m    vmware: Waiting for VMware to clean up after itself...[0m
+[1;32m==> vmware: Deleting unnecessary VMware files...[0m
+[0;32m    vmware: Deleting: vmware/output-oracle7-httpd/oracle7-httpd.plist[0m
+[0;32m    vmware: Deleting: vmware/output-oracle7-httpd/oracle7-httpd.vmx.lck/M65167.lck[0m
+[0;32m    vmware: Deleting: vmware/output-oracle7-httpd/vmware.log[0m
+[1;32m==> vmware: Cleaning VMX prior to finishing up...[0m
+[0;32m    vmware: Unmounting floppy from VMX...[0m
+[1;32m==> vmware: Compacting the disk image[0m
+[1;32m==> vmware: Running post-processor: vagrant[0m
+[1;32m==> vmware (vagrant): Creating Vagrant box for 'vmware' provider[0m
+[0;32m    vmware (vagrant): Copying: vmware/output-oracle7-httpd/disk-cl1.vmdk[0m
+[0;32m    vmware (vagrant): Copying: vmware/output-oracle7-httpd/oracle7-httpd.nvram[0m
+[0;32m    vmware (vagrant): Copying: vmware/output-oracle7-httpd/oracle7-httpd.vmsd[0m
+[0;32m    vmware (vagrant): Copying: vmware/output-oracle7-httpd/oracle7-httpd.vmx[0m
+[0;32m    vmware (vagrant): Copying: vmware/output-oracle7-httpd/oracle7-httpd.vmxf[0m
+[0;32m    vmware (vagrant): Compressing: Vagrantfile[0m
+[0;32m    vmware (vagrant): Compressing: disk-cl1.vmdk[0m
+[0;32m    vmware (vagrant): Compressing: metadata.json[0m
+[0;32m    vmware (vagrant): Compressing: oracle7-httpd.nvram[0m
+[0;32m    vmware (vagrant): Compressing: oracle7-httpd.vmsd[0m
+[0;32m    vmware (vagrant): Compressing: oracle7-httpd.vmx[0m
+[0;32m    vmware (vagrant): Compressing: oracle7-httpd.vmxf[0m
+[1;32mBuild 'vmware' finished.[0m
+
+==> Builds finished. The artifacts of successful builds are:
+--> vmware: 'vmware' provider box: vmware/oracle7-httpd.box
