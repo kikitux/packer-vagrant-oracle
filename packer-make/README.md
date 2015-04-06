@@ -9,7 +9,7 @@ The goal behind this, is to leverage on make for what he does best, that is chec
 ## TL;DR
 
 Go to [code](https://github.com/kikitux/packer-vagrant-oracle/tree/master/packer-make#code)
-and test what's suit ypu better.
+and test what's suits you better.
 
 ## Normal workflow:
 
