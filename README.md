@@ -92,4 +92,6 @@ For the impatient one, please skip to Vagrant section to get a environment up an
 
 [vagrant/rac]: https://github.com/kikitux/packer-vagrant-oracle/tree/master/vagrant/rac
 
+[packer-make]: https://github.com/kikitux/packer-vagrant-oracle/tree/master/packer-make
+
 [project]: https://github.com/kikitux/packer-vagrant-oracle/archive/master.zip
