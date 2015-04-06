@@ -8,6 +8,36 @@ The goal behind this, is to leverage on make for what he does best, that is chec
 
 ## TL;DR
 
+Choose [oracle7-1pass](oracle7-1pass) or [oracle7-2pass](oracle7-2pass)
+
+copy oracle7-latest.json as example
+
+Update the variable section:
+
+```json
+    "variables": {
+
+        "vm_name": "oracle7-httpd",
+
+    },
+
+}
+```
+
+And update the script part that install the software:
+
+FROM:
+
+```json
+      "echo your custom inline script",
+      "echo goes here"
+```
+
+TO:
+
+```bash
+      "yum install -y httpd mod_ssl"
+```
 
 ### 1 pass
 
