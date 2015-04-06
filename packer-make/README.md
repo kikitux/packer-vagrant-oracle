@@ -8,6 +8,33 @@ The goal behind this, is to leverage on make for what he does best, that is chec
 
 ## TL;DR
 
+
+### 1 pass
+
+Edit Makefile for provisioner, default is virtualbox and vmware
+
+[oracle7-1pass](oracle7-1pass) create VM from all json files, use oracle7-latest.json as example
+
+packer will download the iso, and then build the boxes.
+
+Run `make` and this will do all the job
+
+### 2 pass
+
+Edit Makefile for provisioner, default is virtualbox and vmware
+
+[oracle7-2pass](oracle7-2pass) It first create a base VM, then create VM from all json files, use oracle7-latest.json as example
+
+packer will download the iso, and then create an intermediate box.
+
+for virtualbox will be `output-oracle7-ovf-virtualbox/`
+
+for vmware will be `output-oracle7-vmx-vmware/`
+
+and then, the new vm will use `virtualbox-ovf` and `virtualbox-vmx` to seep up the process
+
+### Now what?
+
 Go to the end, code section and test what's suits you better.
 
 ## Normal workflow:
