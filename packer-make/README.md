@@ -14,7 +14,9 @@ The goal behind this, is to leverage on make for what he does best, that is chec
 
 Choose [oracle7-1pass](oracle7-1pass) or [oracle7-2pass](oracle7-2pass)
 
-copy oracle7-latest.json as example
+Edit Makefile for provisioner, vmware, virtualbox or both, as is is both
+
+Copy oracle7-latest.json as example, say new oracle7-httpd.json
 
 Update the variable section:
 
@@ -28,8 +30,8 @@ Update the variable section:
 }
 ```
 
-And update the script part that install the software:
-ie to install apache httpd
+And update the script part that install the software
+ie to install apache httpd:
 
 FROM:
 
@@ -44,7 +46,11 @@ TO:
       "yum install -y httpd mod_ssl"
 ```
 
-Base box include epel but it's disable, if you need anything from epel, use:
+```
+Note: This is json, so last line without , at the end
+```
+
+Base box does include epel but it's disable, if you need anything from epel, use:
 
 `yum --enablerepo=epel install <package>` 
 
