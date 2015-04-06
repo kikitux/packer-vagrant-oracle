@@ -76,6 +76,12 @@ and then, the new vm will use `virtualbox-ovf` and `virtualbox-vmx` to seep up t
 
 Go to the end, code section and test what's suits you better.
 
+## Assumptions
+
+This project, assume you know what [packer](http://packer.io) is, and you have created vm with packer before
+
+This project, also assume you want your boxes to be used by [vagrant](http://vagrantup.com) so a vagrant post-processor is included
+
 ## Normal workflow:
 
 A normal packer workflow goes like this:
