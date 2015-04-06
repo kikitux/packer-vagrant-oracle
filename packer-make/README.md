@@ -13,7 +13,9 @@ A normal packer workflow goes like this:
 1. Create a web server and share kickstart/preseed file
 1. Turn on vm
 1. Using the console/keyboard tell the installer to pick the response file
-1. Profit!, un-attended OS installation
+1. un-attended OS installation
+1. post-installation scripts
+1. Profit!
 
 Things start getting complex as the boxes age and in order to keep size to minimum, instead of patching, we recreate the box.
 
@@ -163,7 +165,7 @@ Not bad!
 
 If I want to add a new box, I just copy one of the `packer templates json file` like `nginx`, and create a new one for `httpd`
 
-
+Update the variable section:
 
 ```json
     "variables": {
@@ -220,5 +222,42 @@ Sweet!
 
 ## Optimize this:
 
+So, at this moment we have a `packer` bakery driven by `make`, why botter optimize it?
+
+On first view, this is cool and works, but if we leave as is, we have doing over-and-over the same heavy work, let's see an example:
+
+nginx:
+
+1. Create a VM
+1. Put the iso
+1. Create a web server and share kickstart/preseed file
+1. Turn on vm
+1. Using the console/keyboard tell the installer to pick the response file
+1. un-attended OS installation
+1. post-installation scripts to get nginx installed
+1. Profit!
+
+httpd:
+
+1. Create a VM
+1. Put the iso
+1. Create a web server and share kickstart/preseed file
+1. Turn on vm
+1. Using the console/keyboard tell the installer to pick the response file
+1. un-attended OS installation
+1. post-installation scripts to get httpd installed
+1. Profit!
+
+As you can see, much of the process is being repeated, not adding any value at all.
+
+Packer has `virtualbox-iso` and `vmware-iso` to start from an ISO and create a vm.
+
+Packer also has `virtualbox-ovf` and `vmware-vmx` to start from an existing VM and create a new VM.
+
+For my own boxes, I did solve this issue a while ago with this workflow:
+
 ![multi_state](screenshots/Packer_multi_state.png)
+
+Let's put this to test:
+
 
