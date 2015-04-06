@@ -10,7 +10,9 @@ This is work in progress, and I will be updating this page.
 
 Check [packer-make] that is a packer workflow driven by make!
 
-### November-2014, racattack-ansible-oracle, Rac with Vagrant and Ansible
+### November-2014, racattack-ansible-oracle
+
+Rac with Vagrant and Ansible
 
 The project has his own repo, please go to [github.com/racattack/racattack-ansible-oracle](https://github.com/racattack/racattack-ansible-oracle)
 
