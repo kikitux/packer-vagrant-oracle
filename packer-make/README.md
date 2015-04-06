@@ -29,6 +29,7 @@ Update the variable section:
 ```
 
 And update the script part that install the software:
+ie to install apache httpd
 
 FROM:
 
@@ -42,6 +43,10 @@ TO:
 ```bash
       "yum install -y httpd mod_ssl"
 ```
+
+Base box include epel but it's disable, if you need anything from epel, use:
+
+`yum --enablerepo=epel install <package>` 
 
 ### 1 pass
 
@@ -384,6 +389,10 @@ Copy `oracle7-latest.json` and edit `vm_name` on variables section, and put your
       "echo your custom inline script",
       "echo goes here"
 ```
+
+Base box include epel but it's disable, if you need anything from epel, use:
+
+`yum --enablerepo=epel install <package>` 
 
 alvaro at kikitux.net
 
