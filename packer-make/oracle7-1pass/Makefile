@@ -28,12 +28,12 @@ all: $(BOX_FILES)
 virtualbox/%.box: %.json ol7_latest.txt ol7_uekr3.txt
 	-rm -f $@
 	@-mkdir -p $(@D)
-	packer build -only=$(@D) $<
+	packer build -color=false -only=$(@D) $<
 
 vmware/%.box: %.json ol7_latest.txt ol7_uekr3.txt
 	-rm -f $@
 	@-mkdir -p $(@D)
-	packer build -only=$(@D) $<
+	packer build -color=false -only=$(@D) $<
 
 .PHONY: list
 list:
