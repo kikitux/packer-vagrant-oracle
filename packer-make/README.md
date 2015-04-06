@@ -47,30 +47,36 @@ TO:
 ```
 
 ```
-Note: This is json, so last line without , at the end
+Note: This is json, so last line without ',' at the end
 ```
 
 Base box does include epel but it's disable, if you need anything from epel, use:
 
 `yum --enablerepo=epel install <package>` 
 
-### 1 pass
+### 1 pass, iso to vm
+
+cd [oracle7-1pass](oracle7-1pass) 
 
 Edit Makefile for provisioner, default is virtualbox and vmware
 
-[oracle7-1pass](oracle7-1pass) create VM from all json files, use oracle7-latest.json as example
+First run of `make` will create VM from all json files, packer will download the iso, and then build the boxes.
 
-packer will download the iso, and then build the boxes.
+For new VM, use oracle7-latest.json as example
 
 Run `make` and this will do all the job
 
-### 2 pass
+### 2 pass, use an intermediate vm
 
 Edit Makefile for provisioner, default is virtualbox and vmware
 
-[oracle7-2pass](oracle7-2pass) It first create a base VM, then create VM from all json files, use oracle7-latest.json as example
+cd [oracle7-2pass](oracle7-2pass)
 
-packer will download the iso, and then create an intermediate box.
+Edit Makefile for provisioner, default is virtualbox and vmware
+
+First run of `make` will create a base VM, then will create VM from all json files, packer will download the iso, and then create an intermediate box.
+
+For new VM, use oracle7-latest.json as example
 
 for virtualbox will be `output-oracle7-ovf-virtualbox/`
 
@@ -82,7 +88,9 @@ and then, the new vm will use `virtualbox-ovf` and `virtualbox-vmx` to speed up 
 
 Go to the end, code section and test what's suits you better.
 
-## Assumptions
+## Long explanation
+
+### Assumptions
 
 This project, assume you know what [packer](http://packer.io) is, and you have created vm with packer before
 
@@ -378,11 +386,12 @@ First pass (base box):
 1. Turn on vm
 1. Using the console/keyboard tell the installer to pick the response file
 1. un-attended OS installation
-1. post-installation scripts to get httpd installed
+1. post-installation scripts
+1. base box ready
 
 Second pass (our box):
 
-1. Create a VM
+1. Create a VM from base box
 1. Turn on vm
 1. post-installation scripts to get httpd installed
 1. Profit!
