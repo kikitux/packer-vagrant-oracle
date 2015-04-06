@@ -6,7 +6,11 @@ This is work in progress, and I will be updating this page.
 
 ## What's new??
 
-Feb-2014, added oracle rac made easy with Vagrant !
+### March-2015, added packer-make 
+
+Check [packer-make]
+
+### February-2014, added oracle rac made easy with Vagrant !
 
 Check [vagrant/rac]
 
@@ -34,6 +38,12 @@ For custom build:
 * [Vagrant] installed
 * [VirtualBox] installed
 * OracleLinux ISO available
+
+## packer-make
+
+This is a project of Make driven packer build
+
+Please check [packer-make] for instructions and times
 
 # Installation
 

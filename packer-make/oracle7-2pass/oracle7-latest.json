@@ -1,0 +1,107 @@
+{
+    "variables": {
+        "ssh_name": "root",
+        "ssh_pass": "root",
+        "vm_name": "oracle7-latest",
+	"compression" : 6
+    },
+
+    "builders": [{
+        "name": "virtualbox",
+        "type": "virtualbox-ovf",
+        "guest_additions_mode": "disable",
+        "source_path": "output-oracle7-ovf-virtualbox/oracle7.ovf",
+        "output_directory": "virtualbox/output-{{user `vm_name`}}",
+        "vm_name": "{{user `vm_name`}}",
+	"headless": 0,
+        "guest_additions_mode": "disable",
+        "ssh_username": "{{user `ssh_name`}}",
+        "ssh_password": "{{user `ssh_pass`}}",
+        "ssh_wait_timeout": "40m",
+        "shutdown_command": "shutdown -h now",
+        "shutdown_timeout": "40m"
+    },
+    {
+        "name": "vmware",
+        "type": "vmware-vmx",
+        "source_path": "output-oracle7-vmx-vmware/oracle7.vmx",
+        "output_directory": "vmware/output-{{user `vm_name`}}",
+        "vm_name": "{{user `vm_name`}}",
+        "headless": 0,
+        "ssh_username": "{{user `ssh_name`}}",
+        "ssh_password": "{{user `ssh_pass`}}",
+        "ssh_wait_timeout": "40m",
+        "shutdown_command": "shutdown -h now",
+        "shutdown_timeout": "40m"
+    }
+    ],
+
+  "provisioners"             : [
+    {
+    "type": "file",
+    "source": "proxy.env",
+    "destination": "/root/proxy.env"
+    },
+    {
+    "type": "shell",
+    "execute_command": "sh '{{ .Path }}'",
+    "pause_before": "1s",
+    "inline": [
+      "[ -f /root/proxy.env ] && source /root/proxy.env",
+      "yum update -y",
+      "yum localinstall -y http://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm",
+      "yum clean all",
+      "yum-config-manager --disable epel",
+      "reboot"
+       ]
+  },
+    {
+    "type": "shell",
+    "execute_command": "sh '{{ .Path }}'",
+    "pause_before": "10s",
+    "inline": [
+      "[ -f /root/proxy.env ] && source /root/proxy.env",
+      "echo your custom inline script",
+      "echo goes here"
+       ]
+  },
+    {
+    "type": "shell",
+    "only": ["virtualbox"],
+    "execute_command": "sh '{{ .Path }}'",
+    "pause_before": "1s",
+    "inline": [
+      "[ -f /etc/init.d/vboxadd ] && /etc/init.d/vboxadd setup || true"
+       ]
+    },
+    {
+    "type": "shell",
+    "only": ["vmware"],
+    "execute_command": "sh '{{ .Path }}'",
+    "pause_before": "1s",
+    "inline": [
+      "[ -f /usr/bin/vmware-config-tools.pl ] && /usr/bin/vmware-config-tools.pl -default || true"
+       ]
+    },
+    {
+    "type": "shell",
+    "execute_command": "sh '{{ .Path }}'",
+    "pause_before": "1s",
+    "inline": [
+      "[ -f /etc/udev/rules.d/70-persistent-net.rules ] && rm /etc/udev/rules.d/??-persistent-net.rules",
+      "[ -d /var/vache/yum ] && rm -fr /var/cache/yum",
+      "history -c",
+      "true"
+       ]
+  }
+],
+  "post-processors": [
+    {
+      "type": "vagrant",
+      "only": ["virtualbox","vmware"],
+      "keep_input_artifact": false,
+      "output": "{{.Provider}}/{{user `vm_name`}}.box",
+      "compression_level": "{{user `compression`}}"
+    }
+  ]
+}
