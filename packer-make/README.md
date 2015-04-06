@@ -122,7 +122,7 @@ ol7_latest:=$(shell curl -R -I <url_for_packages_repo_metadata> -o ol7_latest.tx
 
 With this simple code, on each `Make` run, it will generate a file, with the `header` information and the `time stamp` of the last change.
 
-The first time we run `Make` it will run packer and create the boxes, and later, if the `yum repo` packaged get updated, only then, make will kick a rebuild
+The first time we run `Make` it will run packer and create the boxes, and later, if the `packer template` or `yum repo` gets updated, only then, make will kick a rebuild.
 
 
 ## One (1) pass
@@ -132,7 +132,12 @@ On first run, `make list` will show us what will be generated:
 ```bash
 $ cd oracle7-1pass/
 $ make list
-virtualbox/oracle7-docker.box virtualbox/oracle7-latest.box virtualbox/oracle7-nginx.box vmware/oracle7-docker.box vmware/oracle7-latest.box vmware/oracle7-nginx.box
+virtualbox/oracle7-docker.box
+virtualbox/oracle7-latest.box
+virtualbox/oracle7-nginx.box
+vmware/oracle7-docker.box
+vmware/oracle7-latest.box
+vmware/oracle7-nginx.box
 $ 
 ```
 
@@ -156,15 +161,17 @@ $
 
 Not bad!
 
-If I want to add a new box, I just copy one of the `packer templates json file` like nginx, and create a new one
+If I want to add a new box, I just copy one of the `packer templates json file` like `nginx`, and create a new one for `httpd`
+
+
 
 ```json
     "variables": {
-        ...
+
         "vm_name": "oracle7-httpd",
-        ...
+
     },
-    ...
+
 }
 ```
 
@@ -175,4 +182,43 @@ And update the script part that install the software:
 ```
 
 And let's `make` to do the magic:
+
+```bash
+$ make list
+virtualbox/oracle7-docker.box
+virtualbox/oracle7-httpd.box
+virtualbox/oracle7-latest.box
+virtualbox/oracle7-nginx.box
+vmware/oracle7-docker.box
+vmware/oracle7-httpd.box
+vmware/oracle7-latest.box
+vmware/oracle7-nginx.box
+
+$make
+
+==> Builds finished. The artifacts of successful builds are:
+--> virtualbox: 'virtualbox' provider box: virtualbox/oracle7-httpd.box
+
+==> Builds finished. The artifacts of successful builds are:
+--> vmware: 'vmware' provider box: vmware/oracle7-httpd.box
+
+real    33m24.162s
+user    4m30.362s
+sys     0m59.775s
+```
+
+Lets test the theory:
+
+```bash
+$ make
+make: Nothing to be done for `all'.
+$
+```
+
+Sweet!
+
+
+## Optimize this:
+
+![multi_state](screenshots/Packer_multi_state.png)
 
