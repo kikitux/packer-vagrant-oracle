@@ -258,6 +258,8 @@ For my own boxes, I did solve this issue a while ago with this workflow:
 
 ![multi_state](screenshots/Packer_multi_state.png)
 
-Let's put this to test:
+If you like the diagram, I did it on lucidchart, and you can see it online with this [link](https://www.lucidchart.com/invitations/accept/a6854afa-0235-4072-a99c-b7fb149a62f2)
+
+Let's put this theory to test:
 
 
