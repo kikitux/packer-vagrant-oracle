@@ -6,6 +6,13 @@ This is a packer workflow driven by make.
 
 The goal behind this, is to leverage on make for what he does best, that is check dependencies and rebuild when needed.
 
+## TL;DR
+
+Go to [code](https://github.com/kikitux/packer-vagrant-oracle/tree/master/packer-make#code)
+and test what's suit ypu better.
+
+## Normal workflow:
+
 A normal packer workflow goes like this:
 
 1. Create a VM
@@ -22,6 +29,8 @@ Things start getting complex as the boxes age and in order to keep size to minim
 So, for serveral boxes, you have several packer templates (json files), and you need to somehow decide when to rebuild, some/all of the boxes or just the new ones.
 
 ## Make for the non-developers (like me)
+
+### Basic explanation
 
 Enter make!
 
@@ -88,7 +97,7 @@ hello: hello.c <pre-req2> .. <pre-reqN>
 
 Which is something we will use for packer.
 
-## Simple Makefile for packer
+### Simple Makefile for packer
 
 A simple project for packer, require a `Makefile` and a `packer templatefile` and would look like this:
 
@@ -220,7 +229,7 @@ $
 Sweet!
 
 
-## Optimize this:
+## Two (2) Pass
 
 So, at this moment we have a `packer` bakery driven by `make`, why optimize it?
 
@@ -280,7 +289,8 @@ Ok, about 15 minutes quicker for 1 box, in `virtualbox` and `vmware` provisioner
 
 So, what's different:
 
-First pass:
+First pass (base box):
+
 1. Create a VM
 1. Put the iso
 1. Create a web server and share kickstart/preseed file
@@ -289,10 +299,27 @@ First pass:
 1. un-attended OS installation
 1. post-installation scripts to get httpd installed
 
-Second pass:
+Second pass (our box):
+
 1. Create a VM
 1. Turn on vm
 1. post-installation scripts to get httpd installed
 1. Profit!
 
+## Code
+
+If you want start from ISO, create VM from scratch without intermediate box, use [oracle7-1pass](oracle7-1pass)
+
+If you want to optize if possible, and reuse an intermediate box, use [oracle7-2pass](oracle7-2pass)
+
+In both cases, edit `Makefile` and remove either `virtualbox` or `vmware` if you only want one of the providers.
+
+Copy `oracle7-latest.json` and edit `vm_name` on variables section, and put your script on the script block:
+
+```json
+      "echo your custom inline script",
+      "echo goes here"
+```
+
+alvaro at kikitux.net
 
