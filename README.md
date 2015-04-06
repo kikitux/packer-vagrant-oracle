@@ -8,11 +8,23 @@ This is work in progress, and I will be updating this page.
 
 ### March-2015, added packer-make 
 
-Check [packer-make]
+Check [packer-make] that is a packer workflow driven by make!
+
+### November-2014, racattack-ansible-oracle, Rac with Vagrant and Ansible
+
+The project has his own repo, please go to [github.com/racattack/racattack-ansible-oracle](https://github.com/racattack/racattack-ansible-oracle)
+
+This is a full un-attended zero-to-oracle-rac using vagrant and ansible.
+
+### April-2014, racattack with Vagrant
+
+The project has his own repo, please go to [github.com/racattack/vagrant/file/tree/master/OracleLinux](https://github.com/racattack/vagrantfile/tree/master/OracleLinux)
+
+This is an un-attended VM creation for Oracle RAC, it doesn't install any Oracle Grid/DB software, however it does all the heavy lifting to just run `runInstaller`
 
 ### February-2014, added oracle rac made easy with Vagrant !
 
-Check [vagrant/rac]
+Check [vagrant/rac], a somewhat scripted rac installation, this was used as base for racattack automation
 
 ## Why this project?
 
