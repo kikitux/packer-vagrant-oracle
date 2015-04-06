@@ -93,7 +93,7 @@ Which is something we will use for packer.
 A simple project for packer, require a `Makefile` and a `packer templatefile` and would look like this:
 
 ```c
-virtualbox.box: packer-template.json <some_external_dependencie.txt>
+virtualbox.box: packer-template.json <some_external_dependencies.txt>
 	packer build packer-template.json
 ```
 
@@ -222,7 +222,7 @@ Sweet!
 
 ## Optimize this:
 
-So, at this moment we have a `packer` bakery driven by `make`, why botter optimize it?
+So, at this moment we have a `packer` bakery driven by `make`, why optimize it?
 
 On first view, this is cool and works, but if we leave as is, we have doing over-and-over the same heavy work, let's see an example:
 
