@@ -194,6 +194,8 @@ The first time we run `Make` it will run packer and create the boxes, and later,
 
 ## One (1) pass
 
+cd into [oracle7-1pass](oracle7-1pass), and run `make`
+
 On first run, `make list` will show us what will be generated:
 
 ```bash
@@ -325,7 +327,9 @@ For my own boxes, I did solve this issue a while ago with this workflow:
 
 If you like the diagram, I did it on lucidchart, and you can see it online with this [link](https://www.lucidchart.com/invitations/accept/a6854afa-0235-4072-a99c-b7fb149a62f2)
 
-Let's put this theory to test:
+Let's put this theory to test, create a new VM after the base one has been built:
+
+cd into [oracle7-2pass](oracle7-2pass), and run `make`
 
 ```
 $make
@@ -341,7 +345,7 @@ user    5m0.226s
 sys     1m1.908s
 ```
 
-Ok, about 15 minutes quicker for 1 box, in `virtualbox` and `vmware` provisioner, which is good. 15 minutes per box, in a multi box setup is a lot.
+Ok, about 15 minutes quicker for 1 box, in `virtualbox` and `vmware` provisioner, which is good, say 8 minutes per box, in a multi box setup is a lot.
 
 So, what's different:
 
