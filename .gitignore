@@ -1,3 +1,4 @@
 *.vdi
 *~
 *.box
+packer-make/*/output-*

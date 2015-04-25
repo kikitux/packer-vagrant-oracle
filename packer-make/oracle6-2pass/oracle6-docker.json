@@ -31,21 +31,12 @@
     "execute_command": "sh '{{ .Path }}'",
     "inline": [
       "yum clean all",
-      "export http_proxy=http://z2-3.kikitux.net:3128",
-      "export https_proxy=http://z2-3.kikitux.net:3128",
-      "yum install -y yum-utils",
-      "yum-config-manager --enable ol6_addons",
-      "yum-config-manager --enable ol6_MySQL56",
-      "yum-config-manager --enable ol6_UEKR3_latest",
       "yum update -y",
-      "rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm",
-      "yum install -y puppet hiera docker-io lxc lxc-templates ansible screen mc htop iftop iotop tmux bind-utils dnsmasq haproxy nginx keepalived bridge-utils",
+      "yum install -y docker-io lxc lxc-templates bind-utils dnsmasq bridge-utils",
       "yum clean all",
       "usermod -a -G docker vagrant",
       "chkconfig docker off",
       "chkconfig libvirtd off",
-      "curl -L https://www.opscode.com/chef/install.sh | bash",
-      "for nic in /etc/sysconfig/network-scripts/ifcfg-eth*; do sed -i /HWADDR/d $nic; done",
       "rm /etc/udev/rules.d/70-persistent-net.rules",
       "/etc/init.d/vboxadd setup",
       "rm -fr /var/cache/yum || true",
@@ -58,7 +49,6 @@
     {
       "type": "vagrant",
       "only": ["virtualbox"],
-      "keep_input_artifact": true,
       "output": "virtualbox/{{user `output`}}.box",
       "compression_level": "{{user `compression`}}"
     }

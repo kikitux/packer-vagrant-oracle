@@ -12,6 +12,7 @@
 
     "builders": [{
         "type": "virtualbox-ovf",
+        "name": "virtualbox",
         "source_path": "output-oracle6-ovf-virtualbox/oracle6.ovf",
         "output_directory": "output-{{user `output`}}",
         "vm_name": "{{user `hostname`}}",
@@ -27,31 +28,19 @@
     "type": "shell",
     "execute_command": "sh '{{ .Path }}'",
     "inline": [
-      "for nic in /etc/sysconfig/network-scripts/ifcfg-eth*; do sed -i /HWADDR/d $nic; done",
-      "rm /etc/udev/rules.d/70-persistent-net.rules",
       "yum clean all",
-      "export http_proxy=http://z2-3.kikitux.net:3128",
-      "export https_proxy=http://z2-3.kikitux.net:3128",
-      "yum install -y yum-utils",
-      "yum-config-manager --enable ol6_addons",
-      "yum-config-manager --enable ol6_MySQL56",
       "yum update -y",
       "yum install -y oracle*preinstall",
-      "yum install -y man yum-plugin-security openssh-clients make gcc wget unzip expect perl parted oracleasm-support unzip",
-      "yum install -y sudo wget tigervnc-server.x86_64 xorg-x11-utils xclock parted.x86_64 unzip.x86_64 xterm lsof bind xorg-x11-twm",
-      "yum install -y glibc-devel.x86_64 glibc-devel.i686 strace rsync smartmontools yum-utils bash bc bind-utils binutils compat-libcap1",
-      "yum install -y compat-libstdc++-33 ethtool gcc gcc-c++ glibc glibc-devel initscripts ksh libaio libaio-devel libgcc libstdc++ libstdc++-devel",
-      "yum install -y make module-init-tools nfs-utils openssh-clients pam procps smartmontools sysstat util-linux-ng xorg-x11-utils xorg-x11-xauth",
-      "yum clean all"
+      "yum clean all",
+      "rm /etc/udev/rules.d/70-persistent-net.rules"
        ]
   }],
 
   "post-processors": [
     {
       "type": "vagrant",
-      "only": ["virtualbox-ovf"],
-      "keep_input_artifact": true,
-      "output": "{{user `output`}}.box",
+      "only": ["virtualbox"],
+      "output": "virtualbox/{{user `output`}}.box",
       "compression_level": "{{user `compression`}}"
     }
   ]
