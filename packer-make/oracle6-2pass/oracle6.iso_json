@@ -1,7 +1,7 @@
 {
     "variables": {
         "isourl": "http://mirror.aarnet.edu.au/pub/oraclelinux/OL6/U6/x86_64/OracleLinux-R6-U6-Server-x86_64-dvd.iso",
-        "isomd5": "5738f10a506d3630edfd297ef179b553091c6a48",
+        "isomd5": "f88bd160b450c8df582e736fc502b3b5",
         "ssh_name": "root",
         "ssh_pass": "root",
         "hostname": "oracle6",
@@ -15,7 +15,7 @@
         "guest_additions_url": "",
         "guest_additions_sha256": "",
         "guest_additions_path": "",
-	"guest_additions_mode": "attach",
+        "guest_additions_mode": "upload",
         "output_directory": "output-{{user `vm_name`}}-ovf-virtualbox",
         "vm_name": "{{user `hostname`}}",
 
@@ -57,11 +57,23 @@
     "execute_command": "sh '{{ .Path }}'",
     "inline": [
       "yum clean all",
+      "yum-config-manager --enable ol6_UEKR3_latest",
+      "yum-config-manager --enable ol6_addons",
+      "yum update -y",
+      "history -c",
+      "reboot"
+      ]
+    },
+    {
+    "type": "shell",
+    "execute_command": "sh '{{ .Path }}'",
+    "pause_before": "20s",
+    "inline": [
       "mkdir -p /media/dvd",
-      "mount /dev/sr1 /media/dvd",
-      "ls -alh /media/dvd",
+      "mount -o loop,ro VBoxGuestAdditions*.iso /media/dvd",
       "sh /media/dvd/VBoxLinuxAdditions.run --nox11",
       "umount /media/dvd",
+      "rm VBoxGuestAdditions*.iso",
       "useradd vagrant",
       "cp /etc/sudoers /etc/sudoers.orig",
       "sed -i -e 's/Defaults\\s*requiretty$/#Defaults\trequiretty/' /etc/sudoers",
