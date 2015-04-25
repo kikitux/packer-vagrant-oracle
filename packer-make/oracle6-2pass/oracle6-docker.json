@@ -3,7 +3,7 @@
         "ssh_name": "root",
         "ssh_pass": "root",
         "hostname": "oracle6",
-	"output": "oracle6",
+	"output": "oracle6-docker",
         "rootfs"  : "ext4",
         "swapsize": "6000",
         "yum": "",
@@ -12,8 +12,9 @@
 
     "builders": [{
         "type": "virtualbox-ovf",
+        "name": "virtualbox",
         "guest_additions_mode": "disable",
-        "source_path": "output-oracle6-minimal-uek3/oracle6.ovf",
+        "source_path": "output-oracle6-ovf-virtualbox/oracle6.ovf",
         "output_directory": "output-{{user `output`}}",
         "vm_name": "{{user `hostname`}}",
 	"headless" : 0,
@@ -56,9 +57,9 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "only": ["virtualbox-ovf"],
+      "only": ["virtualbox"],
       "keep_input_artifact": true,
-      "output": "{{user `output`}}.box",
+      "output": "virtualbox/{{user `output`}}.box",
       "compression_level": "{{user `compression`}}"
     }
   ]

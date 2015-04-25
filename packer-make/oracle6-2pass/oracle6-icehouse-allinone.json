@@ -12,6 +12,7 @@
 
     "builders": [{
         "type": "virtualbox-ovf",
+        "name": "virtualbox",
         "vboxmanage": [
            ["modifyvm", "{{.Name}}", "--vram", "32"],
            ["modifyvm", "{{.Name}}", "--memory", "4096"],
@@ -20,7 +21,7 @@
            ["modifyvm", "{{.Name}}", "--nicpromisc3", "allow-all"],
            ["modifyvm", "{{.Name}}", "--nictype3", "Am79C973"]
 	    ],
-        "source_path": "output-oracle6-minimal-uek3/oracle6.ovf",
+        "source_path": "output-oracle6-ovf-virtualbox/oracle6.ovf",
         "output_directory": "output-{{user `output`}}",
         "vm_name": "{{user `hostname`}}",
 	    "headless" : 0,
@@ -37,12 +38,7 @@
     "execute_command": "sh '{{ .Path }}'",
     "inline": [
       "yum clean all",
-      "export http_proxy=http://z2-3.kikitux.net:3128",
-      "export https_proxy=http://z2-3.kikitux.net:3128",
       "curl -o /etc/yum.repos.d/public-yum-openstack-ol6.repo http://public-yum.oracle.com/public-yum-openstack-ol6.repo",
-      "yum install -y yum-utils ",
-      "yum-config-manager --enable ol6_addons",
-      "yum-config-manager --enable ol6_UEKR3_latest",
       "yum update -y",
       "yum install -y openstack-packstack cronie",
       "yum clean all",
@@ -50,7 +46,7 @@
       "cp ~/.ssh/id_rsa.pub ~/.ssh/authorized_keys",
       "ssh-keyscan -H localhost > ~/.ssh/known_hosts",
       "touch /etc/sysconfig/iptables",
-      "packstack --allinone",
+      "packstack --install-hosts=127.0.0.1",
       "history -c",
       "reboot"
       ]
@@ -70,9 +66,9 @@
   "post-processors": [
     {
       "type": "vagrant",
-      "only": ["virtualbox-ovf"],
+      "only": ["virtualbox"],
       "keep_input_artifact": true,
-      "output": "{{user `output`}}.box",
+      "output": "virtualbox/{{user `output`}}.box",
       "compression_level": "{{user `compression`}}"
     }
   ]

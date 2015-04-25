@@ -12,7 +12,7 @@
 
     "builders": [{
         "type": "virtualbox-ovf",
-        "source_path": "output-oracle6-minimal-uek2/oracle6.ovf",
+        "source_path": "output-oracle6-ovf-virtualbox/oracle6.ovf",
         "output_directory": "output-{{user `output`}}",
         "vm_name": "{{user `hostname`}}",
 	"headless" : 0,
