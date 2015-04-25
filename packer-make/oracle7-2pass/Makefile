@@ -28,12 +28,12 @@ all: $(BOX_FILES)
 output-oracle7-ovf-virtualbox/oracle7.ovf: oracle7.iso_json
 	@-rm -rf output-oracle7-ovf-virtualbox/
 	@-rm -f virtualbox/*.box
-	packer build -only virtualbox oracle7.iso_json
+	packer build -color=false -only virtualbox oracle7.iso_json
 
 output-oracle7-vmx-vmware/oracle7.vmx: oracle7.iso_json
 	@-rm -rf output-oracle7-vmx-vmware/
 	@-rm -f vmware/*.box
-	packer build -only vmware oracle7.iso_json
+	packer build -color=false -only vmware oracle7.iso_json
 
 virtualbox/%.box: %.json output-oracle7-ovf-virtualbox/oracle7.ovf ol7_latest.txt ol7_uekr3.txt
 	-rm -f $@
