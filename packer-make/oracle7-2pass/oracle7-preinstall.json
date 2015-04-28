@@ -2,7 +2,7 @@
     "variables": {
         "ssh_name": "root",
         "ssh_pass": "root",
-        "vm_name": "oracle7-latest",
+        "vm_name": "oracle7-preinstall",
 	"compression" : 6
     },
 
