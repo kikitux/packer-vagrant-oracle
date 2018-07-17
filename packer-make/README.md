@@ -140,7 +140,7 @@ On first run, due `hello` program doesn't exist, and the pre-requisite exist, so
 
 So, lets tell make we want him take care of our project:
 
-```bash`
+```
 $ make
 gcc -o hello hello.c
 $ make
@@ -153,7 +153,7 @@ On second run, make is telling us the project is `up to date`.
 
 Let's update our source code:
 
-```bash
+```
 $ touch hello.c 
 $ make
 gcc -o hello hello.c
