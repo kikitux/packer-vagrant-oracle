@@ -51,4 +51,6 @@ list:
 
 .PHONY: clean
 clean:
-	-rm -f $(BOX_FILES)
+	-rm -f date.txt  ol7_latest.txt  ol7_uekr5.txt
+	-rm -f $(BOX_FILES) oracle7-latest-vmware.ova oracle7-latest-virtualbox.ova 
+	-rm -fr output-oracle7-latest-ovf-virtualbox/  output-oracle7-latest-vmx-vmware/
