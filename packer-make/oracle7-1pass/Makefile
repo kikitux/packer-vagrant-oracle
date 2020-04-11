@@ -5,7 +5,7 @@
 # https://github.com/YungSang/fedora-atomic-packer
 
 date:=$(shell date +%y.%m.%d 2>/dev/null | tee date.txt)
-ol7_uekr5:=$(shell curl -R -I http://public-yum.oracle.com/repo/OracleLinux/OL7/UEKR5/x86_64/repodata -o ol7_uekr5.txt 2>/dev/null)
+ol7_uekr6:=$(shell curl -R -I http://public-yum.oracle.com/repo/OracleLinux/OL7/UEKR6/x86_64/repodata -o ol7_uekr6.txt 2>/dev/null)
 ol7_latest:=$(shell curl -R -I http://public-yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/repodata -o ol7_latest.txt 2>/dev/null)
 
 BUILDER_TYPES = virtualbox vmware
@@ -33,13 +33,13 @@ all: $(BOX_FILES)
 # to make local code as much portable possible
 # we leverage on packer for iso cache
 
-virtualbox/%.box: %.json ol7_latest.txt ol7_uekr5.txt
+virtualbox/%.box: %.json ol7_latest.txt ol7_uekr6.txt
 	-rm -f $@
 	@-mkdir -p $(@D)
 	packer build -color=false -only=$(@D) $<
 	mv output-oracle7-latest-ovf-virtualbox/oracle7-latest.ova oracle7-latest-virtualbox.ova
 
-vmware/%.box: %.json ol7_latest.txt ol7_uekr5.txt
+vmware/%.box: %.json ol7_latest.txt ol7_uekr6.txt
 	-rm -f $@
 	@-mkdir -p $(@D)
 	packer build -color=false -only=$(@D) $<
@@ -51,6 +51,6 @@ list:
 
 .PHONY: clean
 clean:
-	-rm -f date.txt  ol7_latest.txt  ol7_uekr5.txt
+	-rm -f date.txt  ol7_latest.txt  ol7_uekr6.txt
 	-rm -f $(BOX_FILES) oracle7-latest-vmware.ova oracle7-latest-virtualbox.ova 
 	-rm -fr output-oracle7-latest-ovf-virtualbox/  output-oracle7-latest-vmx-vmware/
