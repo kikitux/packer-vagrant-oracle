@@ -5,7 +5,7 @@
 # https://github.com/YungSang/fedora-atomic-packer
 
 date:=$(shell date +%y.%m.%d 2>/dev/null | tee date.txt)
-ol7_uekr3:=$(shell curl -R -I http://public-yum.oracle.com/repo/OracleLinux/OL7/UEKR3/x86_64/repodata -o ol7_uekr3.txt 2>/dev/null)
+ol7_uekr5:=$(shell curl -R -I http://public-yum.oracle.com/repo/OracleLinux/OL7/UEKR5/x86_64/repodata -o ol7_uekr5.txt 2>/dev/null)
 ol7_latest:=$(shell curl -R -I http://public-yum.oracle.com/repo/OracleLinux/OL7/latest/x86_64/repodata -o ol7_latest.txt 2>/dev/null)
 
 BUILDER_TYPES = virtualbox vmware
@@ -14,6 +14,14 @@ BOX_FILENAMES := $(TEMPLATE_FILES:.json=.box)
 BOX_FILES := $(foreach builder, $(BUILDER_TYPES), $(foreach box_filename, $(BOX_FILENAMES), $(builder)/$(box_filename)))
 
 PWD := `pwd`
+
+UNAME_S := $(shell uname -s)
+ifeq ($(UNAME_S),Linux)
+	        OVFTOOL=ovftool
+	endif
+	ifeq ($(UNAME_S),Darwin)
+	        OVFTOOL="/Applications//VMware Fusion.app/Contents/Library/VMware OVF Tool/ovftool"
+	endif
 
 .PHONY: all
 
@@ -25,15 +33,17 @@ all: $(BOX_FILES)
 # to make local code as much portable possible
 # we leverage on packer for iso cache
 
-virtualbox/%.box: %.json ol7_latest.txt ol7_uekr3.txt
+virtualbox/%.box: %.json ol7_latest.txt ol7_uekr5.txt
 	-rm -f $@
 	@-mkdir -p $(@D)
 	packer build -color=false -only=$(@D) $<
+	mv output-oracle7-latest-ovf-virtualbox/oracle7-latest.ova oracle7-latest-virtualbox.ova
 
-vmware/%.box: %.json ol7_latest.txt ol7_uekr3.txt
+vmware/%.box: %.json ol7_latest.txt ol7_uekr5.txt
 	-rm -f $@
 	@-mkdir -p $(@D)
 	packer build -color=false -only=$(@D) $<
+	$(OVFTOOL) output-oracle7-latest-vmx-vmware/oracle7.vmx oracle7-latest-vmware.ova
 
 .PHONY: list
 list:
